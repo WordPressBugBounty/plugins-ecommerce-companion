@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.6
 Requires PHP: 6.1
-Stable tag: 8.1.22
+Stable tag: 8.1.23
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -40,8 +40,8 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 - [Express Store](https://wordpress.org/themes/express-store/) 	- [Free Demo](https://preview.sellerthemes.com/lite/express-store/)
 - [Storefit](https://wordpress.org/themes/storefit/)		   	- [Free Demo](https://preview.sellerthemes.com/lite/storefit/)
 - [Flossy](https://wordpress.org/themes/flossy/)			   	- [Free Demo](https://preview.sellerthemes.com/lite/flossy/)
-- [Flow Store](https://wordpress.org/themes/flow-store/)	   	- [Free Demo](https://preview.sellerthemes.com/lite/flow-store/)
-- [Flexi Mart](https://wordpress.org/themes/flexi-mart/)	   	- [Free Demo](https://preview.sellerthemes.com/lite/flexi-mart/)
+- [Flow Store](https://wordpress.org/themes/flow-store/)	   	- [Free Demo](https://preview.sellerthemes.com/lite/flowstore/)
+- [Flexi Mart]
 
 
 == Installation ==
@@ -86,9 +86,19 @@ Yes, This plugin is specially make for Seller Themes. You can install theme for 
 == Screenshots ==
 
 1. Storely
-2. Aromatic
-3. Retailsy
-4. Flossy
+2. Shoply
+3. Storess
+4. Storezia
+5. Shopiva
+6. Shopient
+7. Aromatic
+8. Ayroma
+9. Feauty
+10. Retailsy
+11. Express Store
+12. Storefit
+13. Flossy
+14. Flow Store
 
 == License ==
 
@@ -97,6 +107,10 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.23 =
+* Added Theme Screenshots Names
+* Fixed Theme Demo Links
 
 = 8.1.22 =
 * Fixed Readme Link Issue
