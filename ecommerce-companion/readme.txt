@@ -4,11 +4,11 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.6
 Requires PHP: 6.1
-Stable tag: 8.1.24
+Stable tag: 8.1.25
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-eCommerce Companion plugin only for Seller Themes
+eCommerce Companion plugin only for Seller Themes. Its fully WooCommerce Compatible Themes
 
 == Description ==
 
@@ -64,10 +64,10 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 = How to Install Plugin ? =
 Just upload the `ecommerce-companion.zip` to the `/wp-content/plugins/` directory, and then activate it from 'Plugins' menu in WordPress.
 
-= E-Commerce Companion only for Seller Themes ? =
+= e-Commerce Companion only for Seller Themes ? =
 Yes, This plugin is specially make for Seller Themes. You can install theme for enhance your experience.
 
-= E-Commerce Companion Compatible Themes =
+= e-Commerce Companion Compatible Themes =
 - [Storely](https://wordpress.org/themes/storely/)
 - [Shoply](https://wordpress.org/themes/shoply/)
 - [Storess](https://wordpress.org/themes/storess/)
@@ -108,6 +108,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.25 =
+* Readme Changes
 
 = 8.1.24 =
 * Readme Changes
