@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.6
 Requires PHP: 6.1
-Stable tag: 8.1.25
+Stable tag: 8.1.26
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -42,7 +42,7 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 - [Storefit](https://wordpress.org/themes/storefit/)		   	- [Free Demo](https://preview.sellerthemes.com/lite/storefit/)
 - [Flossy](https://wordpress.org/themes/flossy/)			   	- [Free Demo](https://preview.sellerthemes.com/lite/flossy/)
 - [Flow Store](https://wordpress.org/themes/flow-store/)	   	- [Free Demo](https://preview.sellerthemes.com/lite/flowstore/)
-- [Flexi Mart]
+- [Flexi Mart](https://wordpress.org/themes/flexi-mart/)		- [Free Demo](https://preview.sellerthemes.com/lite/fleximart/)
 
 
 == Installation ==
@@ -79,10 +79,10 @@ Yes, This plugin is specially make for Seller Themes. You can install theme for 
 - [Shopient](https://wordpress.org/themes/shopiva/)
 - [Retailsy](https://wordpress.org/themes/retailsy/)
 - [Express Store](https://wordpress.org/themes/express-store/)
-- [Storefit] (https://wordpress.org/themes/storefit/)
-- [Flossy] (https://wordpress.org/themes/flossy/)
-- [Flow Store] (https://wordpress.org/themes/flow-store/)
-- [Flexi Mart] (https://wordpress.org/themes/flexi-mart/)
+- [Storefit](https://wordpress.org/themes/storefit/)
+- [Flossy](https://wordpress.org/themes/flossy/)
+- [Flow Store](https://wordpress.org/themes/flow-store/)
+- [Flexi Mart](https://wordpress.org/themes/flexi-mart/)
 
 == Screenshots ==
 
@@ -108,6 +108,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.26 =
+* Readme Changes
 
 = 8.1.25 =
 * Readme Changes
