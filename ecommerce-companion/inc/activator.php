@@ -43,6 +43,13 @@ class eCommerce_Comapnion_Activator {
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/pages-widget/default-widget.php';
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/pages-widget/default-post.php';
 			}
+			
+			if ( 'Pet Bazaar' == $theme->name){
+				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pages-widget/upload-media.php';
+				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pages-widget/home-page.php';
+				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pages-widget/default-widget.php';
+				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pages-widget/default-post.php';
+			}
 						
 			update_option( 'item_details_page', 'Done' );
 		}

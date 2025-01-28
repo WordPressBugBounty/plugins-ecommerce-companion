@@ -59,4 +59,8 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	
 	if( 'Flexi Mart' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flexi-mart/flexi-mart.php';
+	}
+	
+	if( 'Pet Bazaar' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pet-bazaar.php';
 	}	
