@@ -141,20 +141,22 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	
 	
 	// Product Category
-	$wp_customize->add_setting(
-    'feature_product_cat',
-		array(
-		'capability' => 'edit_theme_options',
-		'priority' => 5,
-		)
-	);	
-	$wp_customize->add_control( new Ecommerce_Comp_Product_Category_Control( $wp_customize, 
-	'feature_product_cat', 
-		array(
-		'label'   => __('Select category','ecommerce-companion'),
-		'section' => 'feature_product_setting',
-		) 
-	) );
+	if ( class_exists( 'woocommerce' ) ) {
+		$wp_customize->add_setting(
+		'feature_product_cat',
+			array(
+			'capability' => 'edit_theme_options',
+			'priority' => 5
+			)
+		);	
+		$wp_customize->add_control( new Ecommerce_Comp_Product_Category_Control( $wp_customize, 
+		'feature_product_cat', 
+			array(
+			'label'   => __('Select category','ecommerce-companion'),
+			'section' => 'feature_product_setting',
+			) 
+		) );
+	}
 	
 	// No. of Products Display
 	if ( class_exists( 'Ecommerce_Comp_Customizer_Range_Control' ) ) {
