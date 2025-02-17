@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.7.1
 Requires PHP: 6.1
-Stable tag: 8.1.31
+Stable tag: 8.1.32
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -43,6 +43,7 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 - [Flossy](https://wordpress.org/themes/flossy/)			   	- [Free Demo](https://preview.sellerthemes.com/lite/flossy/)
 - [Flow Store](https://wordpress.org/themes/flow-store/)	   	- [Free Demo](https://preview.sellerthemes.com/lite/flowstore/)
 - [Flexi Mart](https://wordpress.org/themes/flexi-mart/)		- [Free Demo](https://preview.sellerthemes.com/lite/fleximart/)
+- [Pet Bazaar](https://wordpress.org/themes/pet-bazaar/)		- [Free Demo](https://preview.sellerthemes.com/lite/petbazaar/)
 
 
 == Installation ==
@@ -108,6 +109,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.32 =
+* Readme Updated
 
 = 8.1.31 =
 * Fixed Minor Issue
