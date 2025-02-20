@@ -1,247 +1,184 @@
 <?php
 $MediaId = get_option('pet_bazaar_media_id');
-$title = "Cooking Healthful Joyful";
-$title2 = "Clothing Blog Section Contains";
-$title3 = "How to Have More Focused";
-$content='<p>Here are a few of our primary fashion blog categories.</p>';
-$product_ttl1 = "Bridal Dress";
-$product_ttl2 = "Fit Sopie";
-$product_ttl3 = "Stylish Wear";
-$product_ttl4 = "Smart Watch";
-$product_ttl5 = "Alarm Clock";
-$product_ttl6 = "Camera";
-$product_ttl7 = "Snaeakers";
-$product_ttl8 = "Hat";
+$content = '<p>The bond between human and pet is built on love, trust, loyalty, and mutual affection, creating an unbreakable connection.</p>';
+$product_ttl1 = "Purepet";
+$product_ttl2 = "Exotic Fruit";
+$product_ttl3 = "Rainbow Fish";
+$product_ttl4 = "Macaw";
+$product_ttl5 = "Cat";
+$product_ttl6 = "Dog";
 
-wp_insert_term(
-    'Fashion',
-    'category',
-    array(
-      'description' => 'example category',
-      'slug'    => 'fashion'
-    )
-  );
+// Create post categories
+$relax_category = wp_insert_term('Relax', 'category', array('slug' => 'relax'));
+$joy_category = wp_insert_term('Joy', 'category', array('slug' => 'joy'));
+$lifestyle_category = wp_insert_term('Lifestyle', 'category', array('slug' => 'lifestyle'));
 
-
-wp_insert_term(
-    'Designer',
-    'category',
-    array(
-      'description' => 'example category',
-      'slug'    => 'designer'
-    )
-  );
-  
-wp_insert_term(
-    'Lifestyle',
-    'category',
-    array(
-      'description' => 'example category',
-      'slug'    => 'lifestyle'
-    )
-  ); 
-  
-if ( class_exists( 'woocommerce' ) ) { 
-	wp_insert_term(
-		'All',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'all'
-		)
-	  );
-	  
-	wp_insert_term(
-		'Best Seller',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'best-seller'
-		)
-	); 
-
-	wp_insert_term(
-		'Trending',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'trending'
-		)
-	); 
-
-
-	wp_insert_term(
-		'Clothes',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'clothes'
-		)
-	); 
-
-	wp_insert_term(
-		'Electronics',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'electronics'
-		)
-	); 
-
-	wp_insert_term(
-		'Footwear',
-		'product_cat',
-		array(
-		  'description' => 'example category',
-		  'slug'    => 'footwear'
-		)
-	); 
-
+// Product categories (using WooCommerce)
+if (class_exists('woocommerce')) {
+    $all_category = wp_insert_term('All', 'product_cat', array('slug' => 'all'));
+    $birds_category = wp_insert_term('Birds', 'product_cat', array('slug' => 'birds'));
+    $cats_category = wp_insert_term('Cats', 'product_cat', array('slug' => 'cats'));
+    $dogs_category = wp_insert_term('Dogs', 'product_cat', array('slug' => 'dogs'));
+    $fish_category = wp_insert_term('Fish', 'product_cat', array('slug' => 'fish'));
+    $food_category = wp_insert_term('Food', 'product_cat', array('slug' => 'food'));
 }
+
+// Prepare post data for blog and products
 $postData = array(
-				array(
-					'post_title' => $title,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'post',
-					'post_category' => array(1,16),
-					'tax_input'    => array(
-						'post_tag' => array('Lifestyle')
-					),
-				),
-				array(
-					'post_title' => $title2,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'post',
-					'post_category' => array(1,16,17),
-					'tax_input'    => array(
-						'post_tag' => array('Fashion')
-					),
-				),
-				array(
-					'post_title' => $title3,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'post',
-					'post_category' => array(1,16,18),
-					'tax_input'    => array(
-						'post_tag' => array('Designer')
-					),
-				),
-				array(
-					'post_title' => $product_ttl1,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					'post_category' => array(15,17,18)
-				),
-				array(
-					'post_title' => $product_ttl2,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,19)
-				),
-				array(
-					'post_title' => $product_ttl3,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,18)
-				),
-				array(
-					'post_title' => $product_ttl4,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,20)
-				),
-				array(
-					'post_title' => $product_ttl5,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,18)
-				),
-				array(
-					'post_title' => $product_ttl6,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,19)
-				),
-				array(
-					'post_title' => $product_ttl7,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,18)
-				),
-				array(
-					'post_title' => $product_ttl8,
-					'post_status' => 'publish',
-					'post_content' => $content,
-					'post_author' => 1,
-					'post_type'         =>   'product',
-					//'post_category' => array(15,17,20)
-				)
-			);
+    // Blog Posts
+    array(
+        'post_title' => 'Cozy Moments with a Pet',
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'post',
+        'post_category' => array($relax_category['term_id']),
+        'tax_input' => array('post_tag' => array('Relax')),
+    ),
+    array(
+        'post_title' => 'Capturing Joy with a Pet',
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'post',
+        'post_category' => array($joy_category['term_id']),
+        'tax_input' => array('post_tag' => array('Joy')),
+    ),
+    array(
+        'post_title' => 'Embracing Technology and Love',
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'post',
+        'post_category' => array($lifestyle_category['term_id']),
+        'tax_input' => array('post_tag' => array('Lifestyle')),
+    ),
+    // Product Posts
+    array(
+        'post_title' => $product_ttl1,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($dogs_category['term_id'], $food_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl2,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($birds_category['term_id'], $food_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl3,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($fish_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl4,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($birds_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl5,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($cats_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl6,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($dogs_category['term_id'], $all_category['term_id']),
+    ),
+);
 
 kses_remove_filters();
-//foreach ( $MediaId as $media) :
-foreach ( $postData as $i => $postData1) : 
-	$id = wp_insert_post($postData1);
-	set_post_thumbnail( $id, $MediaId[$i + 1] );
-	
-	if ( class_exists( 'woocommerce' ) ) {
-		if($i>2 && $i<=10){
-			wp_set_object_terms( $id, 'simple', 'product_type' ); // set product is simple/variable/grouped
-			update_post_meta( $id, '_visibility', 'visible' );
-			update_post_meta( $id, '_stock_status', 'instock');
-			update_post_meta( $id, 'total_sales', '0' );
-			update_post_meta( $id, '_downloadable', 'no' );
-			update_post_meta( $id, '_virtual', 'yes' );
-			update_post_meta( $id, '_regular_price', '' );
-			update_post_meta( $id, '_sale_price', '' );
-			update_post_meta( $id, '_purchase_note', '' );
-			update_post_meta( $id, '_featured', 'no' );
-			update_post_meta( $id, '_weight', '11' );
-			update_post_meta( $id, '_length', '11' );
-			update_post_meta( $id, '_width', '11' );
-			update_post_meta( $id, '_height', '11' );
-			update_post_meta( $id, '_sku', 'SKU11' );
-			update_post_meta( $id, '_product_attributes', array() );
-			update_post_meta( $id, '_sale_price_dates_from', '' );
-			update_post_meta( $id, '_sale_price_dates_to', '' );
-			update_post_meta( $id, '_price', '11' );
-			update_post_meta( $id, '_sold_individually', '' );
-			update_post_meta( $id, '_manage_stock', 'yes' ); // activate stock management
-			wc_update_product_stock($id, 100, 'set'); // set 1000 in stock
-			update_post_meta( $id, '_backorders', 'no' );
-		}
-	}
-endforeach;
-//endforeach;
 
-if ( class_exists( 'woocommerce' ) ) {
-	wp_set_object_terms( 21, [ 15, 17, 18 ], 'product_cat' );
-	wp_set_object_terms( 22, [ 15, 22, 18 ], 'product_cat' );
-	wp_set_object_terms( 23, [ 15, 21, 18 ], 'product_cat' );
-	wp_set_object_terms( 24, [ 15, 20, 21 ], 'product_cat' );
-	wp_set_object_terms( 25, [ 15, 22, 18 ], 'product_cat' );
-	wp_set_object_terms( 26, [ 15, 21, 18 ], 'product_cat' );
-	wp_set_object_terms( 27, [ 15, 20, 18 ], 'product_cat' );
-	wp_set_object_terms( 28, [ 15, 17, 18 ], 'product_cat' );
-}
+foreach ($postData as $i => $postData1) :
+    $id = wp_insert_post($postData1);
+    set_post_thumbnail($id, $MediaId[$i + 1]); // Assuming MediaId contains the image IDs for each post
+
+    // Set product meta information (only for product posts)
+    if (class_exists('woocommerce') && $i >= 3) {
+        wp_set_object_terms($id, 'simple', 'product_type'); // Set product type as simple
+        update_post_meta($id, '_visibility', 'visible');
+        update_post_meta($id, '_stock_status', 'instock');
+        update_post_meta($id, 'total_sales', '0');
+        update_post_meta($id, '_downloadable', 'no');
+        update_post_meta($id, '_virtual', 'no'); // Changed from 'yes' to 'no' to indicate physical product
+        update_post_meta($id, '_regular_price', '10');
+        update_post_meta($id, '_sale_price', '8');
+        update_post_meta($id, '_price', '10');
+        update_post_meta($id, '_sku', 'SKU-' . $i);
+        wc_update_product_stock($id, 100, 'set'); // Set 100 in stock
+    }
+endforeach;
+
 kses_init_filters();
+
+if (class_exists('woocommerce')) {
+    wp_set_object_terms(32, [$food_category['term_id'], $all_category['term_id']], 'product_cat'); //32 : Product Id 
+    wp_set_object_terms(33, [$food_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(34, [$fish_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(35,	[$birds_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(36, [$cats_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(37, [$dogs_category['term_id'], $all_category['term_id']], 'product_cat');
+
+	
+	$category_icons = array(
+        'all' => 'fa-home',  // category with slug 'all' gets 'fa-home' icon
+        'food' => 'fa-bowl-food', 
+        'fish' => 'fa-fish', 
+        'birds' => 'fa-dove',        
+        'cats' => 'fa-cat',        
+        'dogs' => 'fa-dog',        
+        'uncategorized' => 'fa-code-fork',        
+    );
+	
+	$category_images = array(
+        'cats' => 21,        
+        'dogs' => 22,        
+        'birds' => 23,        
+        'food' => 24, 
+        'fish' => 25, 
+        'all' => 26, // 26 is the media ID of the image in the WordPress media library
+        'uncategorized' => 27,
+    );
+
+    // Loop through each category in the mapping
+    foreach ($category_icons as $category_slug => $icon_text) {
+        // Get the category by slug
+        $category = get_term_by('slug', $category_slug, 'product_cat');
+
+        if ($category) {
+            // Update the category's meta field with the Font Awesome icon text
+            update_term_meta($category->term_id, 'pet_bazaar_product_cat_icon', $icon_text);
+			
+			 // Get the image ID from the mapping (this can be the ID of an image from the media library)
+             if (isset($category_images[$category_slug])) {
+                $image_id = $category_images[$category_slug];
+				
+				clean_term_cache($category->term_id);
+
+				if (get_post($image_id)) {
+                // Update the category's thumbnail (image) using the media ID
+                update_term_meta($category->term_id, 'thumbnail_id', $image_id);
+                }
+            } 
+        }
+    }	
+}
+
+?>

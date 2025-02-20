@@ -1,7 +1,11 @@
 <?php
 	$theme = wp_get_theme();
 	$name = strtolower(str_replace(' ', '-', $theme));
-	$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/logo.png';
+	if($name == 'paw-bazaar') {
+		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/footer-logo.png';
+	}else{
+		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/logo.png';
+	}
 
 $activate = array(
         'pet-bazaar-sidebar-primary' => array(

@@ -1,23 +1,29 @@
 <?php
 $theme = wp_get_theme(); // gets the current theme
+print_r($theme);
 $name = strtolower(str_replace(' ', '-', $theme));
 $file = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/logo.png';
 	
-$PImagePath = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/storely/assets/images';
+$PImagePath = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/pet-bazaar/assets/images';
 
 $images = array(
 $file,
 $PImagePath. '/blog/blog-1.jpg',
 $PImagePath. '/blog/blog-2.jpg',
 $PImagePath. '/blog/blog-3.jpg',
-$PImagePath. '/product/product-1.jpg',
-$PImagePath. '/product/product-2.jpg',
-$PImagePath. '/product/product-3.jpg',
-$PImagePath. '/product/product-4.jpg',
-$PImagePath. '/product/product-5.jpg',
-$PImagePath. '/product/product-6.jpg',
-$PImagePath. '/product/product-7.jpg',
-$PImagePath. '/product/product-8.jpg'
+$PImagePath. '/product/product-1.png',
+$PImagePath. '/product/product-2.png',
+$PImagePath. '/product/product-3.png',
+$PImagePath. '/product/product-4.png',
+$PImagePath. '/product/product-5.png',
+$PImagePath. '/product/product-6.png',
+$PImagePath. '/categories/cat-1.png',
+$PImagePath. '/categories/cat-2.png',
+$PImagePath. '/categories/cat-3.png',
+$PImagePath. '/categories/cat-4.png',
+$PImagePath. '/categories/cat-5.png',
+$PImagePath. '/categories/cat-6.png',
+$PImagePath. '/categories/cat-7.png',
 );
 $parent_post_id = null;
 foreach($images as $name) {
@@ -29,7 +35,7 @@ if (!$upload_file['error']) {
 		'post_mime_type' => $wp_filetype['type'],
 		'post_parent' => $parent_post_id,
 		'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
-		'post_excerpt' => 'pet_bazaar caption',
+		'post_excerpt' => 'pet bazaar caption',
 		'post_status' => 'inherit'
 	);
 	$ImageId[] = $attachment_id = wp_insert_attachment( $attachment, $upload_file['file'], $parent_post_id );
