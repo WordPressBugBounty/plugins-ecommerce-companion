@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.7.1
 Requires PHP: 6.1
-Stable tag: 8.1.33
+Stable tag: 8.1.34
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -109,6 +109,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.34 =
+* Product Column Issue Fixed
 
 = 8.1.33 =
 * New Theme Added

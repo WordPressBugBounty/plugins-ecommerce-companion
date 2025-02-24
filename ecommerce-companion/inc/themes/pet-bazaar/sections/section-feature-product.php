@@ -73,7 +73,7 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
 						$tax = join( '","', $links );	
 					endif;
 				?>
-				<li <?php  wc_product_class( 'col-lg-4 col-md-6 product-filter-item', $product ); ?>>
+				<li <?php  wc_product_class( 'col-lg-3 col-md-6 product-filter-item', $product ); ?>>
 				<?php get_template_part('woocommerce/content','product'); ?>
 				</li>
 				<?php endwhile; ?>

@@ -1,12 +1,14 @@
 <?php
 $MediaId = get_option('pet_bazaar_media_id');
 $content = '<p>The bond between human and pet is built on love, trust, loyalty, and mutual affection, creating an unbreakable connection.</p>';
-$product_ttl1 = "Purepet";
+$product_ttl1 = "Purepet Dog";
 $product_ttl2 = "Exotic Fruit";
 $product_ttl3 = "Rainbow Fish";
 $product_ttl4 = "Macaw";
 $product_ttl5 = "Cat";
 $product_ttl6 = "Dog";
+$product_ttl7 = "TetraBits";
+$product_ttl8 = "Purepet Cat";
 
 // Create post categories
 $relax_category = wp_insert_term('Relax', 'category', array('slug' => 'relax'));
@@ -102,6 +104,22 @@ $postData = array(
         'post_type' => 'product',
         'post_category' => array($dogs_category['term_id'], $all_category['term_id']),
     ),
+    array(
+        'post_title' => $product_ttl7,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($fish_category['term_id'], $all_category['term_id']),
+    ),
+    array(
+        'post_title' => $product_ttl8,
+        'post_status' => 'publish',
+        'post_content' => $content,
+        'post_author' => 1,
+        'post_type' => 'product',
+        'post_category' => array($cats_category['term_id'], $all_category['term_id']),
+    ),
 );
 
 kses_remove_filters();
@@ -129,12 +147,14 @@ endforeach;
 kses_init_filters();
 
 if (class_exists('woocommerce')) {
-    wp_set_object_terms(32, [$food_category['term_id'], $all_category['term_id']], 'product_cat'); //32 : Product Id 
-    wp_set_object_terms(33, [$food_category['term_id'], $all_category['term_id']], 'product_cat');
-    wp_set_object_terms(34, [$fish_category['term_id'], $all_category['term_id']], 'product_cat');
-    wp_set_object_terms(35,	[$birds_category['term_id'], $all_category['term_id']], 'product_cat');
-    wp_set_object_terms(36, [$cats_category['term_id'], $all_category['term_id']], 'product_cat');
-    wp_set_object_terms(37, [$dogs_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(34, [$food_category['term_id'], $all_category['term_id'], $dogs_category['term_id']], 'product_cat'); //32 : Product Id 
+    wp_set_object_terms(35, [$food_category['term_id'], $all_category['term_id'], $birds_category['term_id']], 'product_cat');
+    wp_set_object_terms(36, [$fish_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(37,	[$birds_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(38, [$cats_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(39, [$dogs_category['term_id'], $all_category['term_id']], 'product_cat');
+    wp_set_object_terms(40, [$food_category['term_id'], $all_category['term_id'], $fish_category['term_id']], 'product_cat');
+    wp_set_object_terms(41, [$food_category['term_id'], $all_category['term_id'], $cats_category['term_id']], 'product_cat');
 
 	
 	$category_icons = array(
@@ -148,13 +168,13 @@ if (class_exists('woocommerce')) {
     );
 	
 	$category_images = array(
-        'cats' => 21,        
-        'dogs' => 22,        
-        'birds' => 23,        
-        'food' => 24, 
-        'fish' => 25, 
-        'all' => 26, // 26 is the media ID of the image in the WordPress media library
-        'uncategorized' => 27,
+        'cats' => 23,        
+        'dogs' => 24,        
+        'birds' => 25,        
+        'food' => 26, 
+        'fish' => 27, 
+        'all' => 28, // 26 is the media ID of the image in the WordPress media library
+        'uncategorized' => 29,
     );
 
     // Loop through each category in the mapping
