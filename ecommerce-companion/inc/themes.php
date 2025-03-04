@@ -68,3 +68,7 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Paw Bazaar' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/paw-bazaar/paw-bazaar.php';
 	}
+	
+	if( 'Pet Store' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-store/pet-store.php';
+	}
