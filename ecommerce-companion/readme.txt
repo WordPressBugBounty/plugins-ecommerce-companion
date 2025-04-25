@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.8
 Requires PHP: 6.1
-Stable tag: 8.1.40
+Stable tag: 8.1.41
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -12,7 +12,7 @@ eCommerce Companion plugin only for Seller Themes. Its fully WooCommerce Compati
 
 == Description ==
 
-Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of <a href="https://sellerthemes.com/" rel="nofollow">Seller Themes</a> with full WooCommerce support. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! See below our popular free themes listed here. <a href="https://wordpress.org/themes/storely/" rel="nofollow">Storely</a>, <a href="https://wordpress.org/themes/shopient/" rel="nofollow">Shopient</a>, <a href="https://wordpress.org/themes/retailsy/" rel="nofollow">Retailsy</a>, <a href="https://wordpress.org/themes/express-store/" rel="nofollow">Express Store</a>, <a href="https://wordpress.org/themes/flossy/" rel="nofollow">Flossy</a>. See All Themes Here 
+Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of <a href="https://sellerthemes.com/" rel="nofollow">Seller Themes</a> with full WooCommerce support. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! See below our popular free themes listed here. <a href="https://wordpress.org/themes/storely/" rel="nofollow">Storely</a>, <a href="https://wordpress.org/themes/shopient/" rel="nofollow">Shopient</a>, <a href="https://wordpress.org/themes/retailsy/" rel="nofollow">Retailsy</a>, <a href="https://wordpress.org/themes/express-store/" rel="nofollow">Express Store</a>, <a href="https://wordpress.org/themes/flossy/" rel="nofollow">Flossy</a>, <a href="https://wordpress.org/themes/pet-bazaar/" rel="nofollow">Pet Bazaar</a>. See All Themes Here 
 <a href="https://www.sellerthemes.com/themes/" rel="nofollow">https://www.sellerthemes.com/themes/</a>
 
 **Features:**
@@ -111,6 +111,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.41 =
+* Readme Updated
 
 = 8.1.40 =
 * Tested WP 6.8 Compatibility
