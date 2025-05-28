@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: eCommerce Companion
-Description: Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of Seller Themes with full WooCommerce support. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! https://www.sellerthemes.com/themes
-Version: 8.1.43
+Description: Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of Seller Themes with full WooCommerce support. More than 10000+ trusted websites with Seller Themes. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! https://www.sellerthemes.com/themes
+Version: 8.1.44
 Requires: 4.6 or higher
 Author: sellerthemes
 Author URI: https://sellerthemes.com
