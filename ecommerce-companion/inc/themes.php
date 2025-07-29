@@ -72,3 +72,7 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Pet Store' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-store/pet-store.php';
 	}
+	
+	if( 'Mega Mart' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/mega-mart.php';
+	}
