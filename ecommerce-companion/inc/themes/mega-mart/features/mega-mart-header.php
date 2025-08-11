@@ -253,7 +253,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 				'section' => 'above_header',
 				'add_field_label'                   => esc_html__( 'Add New ', 'ecommerce-companion' ),
 				'item_name'                         => esc_html__( 'Content', 'ecommerce-companion' ),
-				'customizer_repeater_title_control' => true,
+				'customizer_repeater_text_control' => true,
+				'customizer_repeater_text2_control' => true,
 				'customizer_repeater_icon_control' => true,
 				'customizer_repeater_link_control' => true,
 			) 

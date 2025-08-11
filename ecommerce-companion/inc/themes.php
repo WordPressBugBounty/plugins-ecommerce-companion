@@ -76,3 +76,7 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Mega Mart' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/mega-mart.php';
 	}
+	
+	if( 'Super Mart' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/super-mart/super-mart.php';
+	}

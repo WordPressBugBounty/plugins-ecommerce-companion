@@ -102,7 +102,7 @@ if( ! function_exists( 'ecommerce_comp_mega_mart_dynamic_style' ) ):
 			}\n";
 		 }
 		
-        wp_add_inline_style( 'mega-martstyle', $output_css );
+        wp_add_inline_style( 'mega-mart-style', $output_css );
     }
 endif;
 add_action( 'wp_enqueue_scripts', 'ecommerce_comp_mega_mart_dynamic_style' );

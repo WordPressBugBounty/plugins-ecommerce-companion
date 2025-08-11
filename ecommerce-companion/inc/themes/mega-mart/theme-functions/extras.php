@@ -7,13 +7,13 @@
 $theme = wp_get_theme();
 $slide_image1 = [];
 
-if ($theme->name == 'theme-2') {
+if ($theme->name == 'Super Mart') {
     for ($i = 1; $i <= 4; $i++) {
-        $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . '/assets/images/slider/home2/img01.png';
+        $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/super-mart/assets/images/page-slider/img01.jpg';
     }
 } elseif ($theme->name == 'theme-4') {
     for ($i = 1; $i <= 4; $i++) {
-        $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . '/assets/images/slider/banner4.png';
+        $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/theme-4/assets/images/page-slider/img0' . $i . '.jpg';
     }
 } else {
     for ($i = 1; $i <= 4; $i++) {
@@ -120,8 +120,8 @@ return apply_filters(
 	function mega_mart_premium_links() {
 		
 		$theme = wp_get_theme(); // gets the current theme
-		if( 'Child' == $theme->name){
-			$mega_mart_premium_url= 'https://sellerthemes.com/mart-premium/';
+		if( 'Super Mart' == $theme->name){
+			$mega_mart_premium_url= 'https://sellerthemes.com/super-mart-premium/';
 		}elseif( 'Child2' == $theme->name){
 			$mega_mart_premium_url= 'https://sellerthemes.com/mega-premium/';	
 		}else{

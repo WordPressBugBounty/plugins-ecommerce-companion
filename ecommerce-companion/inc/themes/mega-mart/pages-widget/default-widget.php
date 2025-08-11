@@ -113,4 +113,5 @@ $activate = array(
 	set_theme_mod( 'footer_contact_hour_link', __('9:00 Am To 09:00 Pm','ecommerce-companion'));
 	set_theme_mod('hdr_contact_ttl', __('Hotline Number','ecommerce-companion'));
 	set_theme_mod('hdr_contact_subttl', __('+70 975 975 70','ecommerce-companion'));
+	set_theme_mod('blog_ttl', __('Our Blogs','ecommerce-companion'));
 ?>

@@ -2,12 +2,12 @@
 	if( !function_exists('mega_mart_above_header')):
 	function mega_mart_above_header(){
 	$theme = wp_get_theme();	
-	$order_link_hs 		= get_theme_mod('order_link_hs','1');
+	$order_link_hs 			= get_theme_mod('order_link_hs','1');
 	$abv_hdr_slide_custom 	= get_theme_mod('abv_hdr_first_slide_custom','Welcome To Our Mart, Save 20%-50% Sitewide!!, Save Upto 35% Off Today');
-	$daytext_hs 		= get_theme_mod('daytext_hs','1');
+	$daytext_hs 			= get_theme_mod('daytext_hs','1');
 	$daytext 				= get_theme_mod('daytext','Deal of the day!');
 	$above_header_first_hs	= get_theme_mod('above_header_first_hs', '1');
-	$hs_hdr_anim 	= get_theme_mod('hs_hdr_anim','1');
+	$hs_hdr_anim 			= get_theme_mod('hs_hdr_anim','1');
 	
 ?>
 <!--===// Start: Header Above
@@ -21,7 +21,7 @@
 							if( $theme->name == 'theme-3' ) { 
 								 if( $hs_hdr_anim == '1' ): header_slides($abv_hdr_slide_custom); endif;
 								} else {
-								if($above_header_first_hs == '1'): hdr_widget_2_content(); endif;
+								if($above_header_first_hs == '1'): hdr_widget___content(); endif;
 							} 
 						?>								
 					</div>
@@ -35,7 +35,7 @@
 					<?php endif; ?>	
 						<?php 
 						if( $theme->name != 'theme-3' ) {
-							if( $hs_hdr_anim == '1' ): header_slides($abv_hdr_slide_custom); endif;
+							if( $hs_hdr_anim == '1' ): header___slides($abv_hdr_slide_custom); endif;
 						} 
 					?>
 						<?php if($order_link_hs == '1') : ?> 
@@ -75,8 +75,15 @@
 	<!--===// End: Header Above
    =================================-->
    <?php
-   if(! function_exists('hdr_widget_2_content')) {
-	function hdr_widget_2_content() {
+    }
+endif;
+	
+add_action('mega_mart_above_header','mega_mart_above_header' );
+
+
+if(! function_exists('hdr_widget___content')) {
+	function hdr_widget___content() {
+	$theme = wp_get_theme();
 		$above_header_first_content	= get_theme_mod('above_header_first_content', mega_mart_above_header_first_content_default());			
 	?>			
 	<aside id="info_widget-2" class="widget grocery_info_widget">
@@ -97,25 +104,21 @@
 	</aside>
 	<?php } }
 
-if ( ! function_exists( 'header_slides' ) ) {
-function header_slides($txt) {	
+if ( ! function_exists( 'header___slides' ) ) {
+	function header___slides($txt) {	
 	$headerslide_text_explode	=	explode(',', $txt);
 	array_walk($headerslide_text_explode, 'trim_value'); //Remove WhiteSpace form both side of separator
 	$header_slides ='';
-	print_r($hs_hdr_anim);
 	?>
 	
 	<aside class="widget newstextwidget">
 		<div class="newsflash owl-carousel">
 										
-	<?php				
+	<?php
 	foreach($headerslide_text_explode as $text){ 
 		echo $header_slides.'<div class="textslide-item">'. esc_html(sprintf(/* Translators: Slider Text */__('%s','ecommerce-companion'),$text)).' <a href="javascript:void(0)" class="icon-holder"><i class="fa fa-tag"></i></a></div>';
 	}
 	?>
 		</div>
 	</aside>
-	<?php } } }
-endif;
-	
-add_action('mega_mart_above_header','mega_mart_above_header' );
+<?php } }
