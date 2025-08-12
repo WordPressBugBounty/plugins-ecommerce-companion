@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.8
 Requires PHP: 6.1
-Stable tag: 8.1.48
+Stable tag: 8.1.49
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -46,6 +46,7 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 - [Pet Bazaar](https://wordpress.org/themes/pet-bazaar/)		- [Free Demo](https://preview.sellerthemes.com/lite/petbazaar/)
 - [Paw Bazaar](https://wordpress.org/themes/paw-bazaar/)		- [Free Demo](https://preview.sellerthemes.com/lite/pawbazaar/)
 - [Pet Store](https://wordpress.org/themes/pet-store/)			- [Free Demo](https://preview.sellerthemes.com/lite/petstore/)
+- [Mega Mart](https://wordpress.org/themes/mega-mart/)			- [Free Demo](https://preview.sellerthemes.com/lite/megamart/)
 
 
 == Installation ==
@@ -89,6 +90,7 @@ Yes, This plugin is specially make for Seller Themes. You can install theme for 
 - [Pet Bazaar](https://wordpress.org/themes/pet-bazaar/)
 - [Paw Bazaar](https://wordpress.org/themes/paw-bazaar/)
 - [Pet Store](https://wordpress.org/themes/pet-store/)
+- [Mega Mart](https://wordpress.org/themes/mega-mart/)
 
 == Screenshots ==
 
@@ -114,6 +116,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.49 =
+* Readme Updated
 
 = 8.1.48 =
 * New Theme Added
