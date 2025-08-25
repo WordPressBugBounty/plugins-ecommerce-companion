@@ -51,7 +51,7 @@ class eCommerce_Comapnion_Activator {
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pages-widget/default-post.php';
 			}
 			
-			if ( 'Mega Mart' == $theme->name || 'Super Mart' == $theme->name ){
+			if ( 'Mega Mart' == $theme->name || 'Super Mart' == $theme->name || 'Grocerly' == $theme->name ){
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/pages-widget/upload-media.php';
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/pages-widget/home-page.php';
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/pages-widget/default-widget.php';

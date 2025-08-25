@@ -80,3 +80,6 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Super Mart' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/super-mart/super-mart.php';
 	}
+	if( 'Grocerly' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/grocerly/grocerly.php';
+	}

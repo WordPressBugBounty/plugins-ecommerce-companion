@@ -1,7 +1,7 @@
 <?php
 
 $MediaId = get_option('mega_mart_media_id');
-$content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing mollis dolor facilisis porttitor.</p>';
+$content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing mollis dolor facilisis porttitor.</p><!--more--><p>This is the rest of the content that will appear only on single post view.</p>';
 
 $product_titles = array(
     "Juicy Lemons",
@@ -106,13 +106,13 @@ foreach ($posts as $index => $data) {
     $post_id = wp_insert_post($post_args);
 
     // 2. Then update the content with read more button
-    if ($post_type === 'post' && !is_wp_error($post_id)) {
-        $read_more = '<a href="' . get_permalink($post_id) . '" class="more-link btn">Read More</a>';
-        wp_update_post([
-            'ID' => $post_id,
-            'post_content' => $content . $read_more,
-        ]);
-    }
+    // if ($post_type === 'post' && !is_wp_error($post_id)) {
+        // $read_more = '<a href="' . get_permalink($post_id) . '" class="more-link btn">Read More</a>';
+        // wp_update_post([
+            // 'ID' => $post_id,
+            // 'post_content' => $content . $read_more,
+        // ]);
+    // }
 	
     if (!is_wp_error($post_id) && isset($MediaId[$index + 1])) {
         set_post_thumbnail($post_id, $MediaId[$index + 1]);
