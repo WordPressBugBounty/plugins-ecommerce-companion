@@ -18,7 +18,7 @@
 				<div class="d-flex align-items-center justify-content-between">
 					<div class="widget-left text-lg-left text-center">
 						<?php 
-							if( $theme->name == 'theme-3' ) { 
+							if( $theme->name == 'Daily Mart' ) { 
 								 if( $hs_hdr_anim == '1' ): header_slides($abv_hdr_slide_custom); endif;
 								} else {
 								if($above_header_first_hs == '1'): hdr_widget___content(); endif;
@@ -34,7 +34,7 @@
 						</div>
 					<?php endif; ?>	
 						<?php 
-						if( $theme->name != 'theme-3' ) {
+						if( $theme->name != 'Daily Mart' ) {
 							if( $hs_hdr_anim == '1' ): header___slides($abv_hdr_slide_custom); endif;
 						} 
 					?>
@@ -97,7 +97,7 @@ if(! function_exists('hdr_widget___content')) {
 				$icon = ! empty( $item->icon_value ) ? apply_filters( 'mega_mart_translate_single_string', $item->icon_value, 'header above section' ) : ''; 
 ?>
 			<li>
-				<a class="infoicon-fa-gift tool-bounce tool-bottom-left" href="javascript:void(0)"><i class="fa <?php echo esc_attr($icon); ?>"></i> <?php if($theme ->name != 'theme-3') { ?><div><?php if(!empty($text)): echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text)).'<br>'; endif; ?><span class="info_description_name"><?php echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text2)) ?></span></div> <?php } ?></a>
+				<a class="infoicon-fa-gift tool-bounce tool-bottom-left" href="javascript:void(0)"><i class="fa <?php echo esc_attr($icon); ?>"></i> <?php if($theme ->name != 'Daily Mart') { ?><div><?php if(!empty($text)): echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text)).'<br>'; endif; ?><span class="info_description_name"><?php echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text2)) ?></span></div> <?php } ?></a>
 			</li>
 			<?php } endif; ?>
 		</ul>

@@ -83,3 +83,6 @@ $theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Grocerly' == $theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/grocerly/grocerly.php';
 	}
+	if( 'Daily Mart' == $theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/daily-mart/daily-mart.php';
+	}

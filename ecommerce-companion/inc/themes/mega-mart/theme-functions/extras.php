@@ -15,6 +15,10 @@ if ($theme->name == 'Super Mart') {
     for ($i = 1; $i <= 4; $i++) {
         $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/grocerly/assets/images/page-slider/img01.png';
     }
+} elseif ($theme->name == 'Daily Mart') {
+    for ($i = 1; $i <= 4; $i++) {
+        $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/daily-mart/assets/images/page-slider/img01.jpg';
+    }
 } else {
     for ($i = 1; $i <= 4; $i++) {
         $slide_image1[] = ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/mega-mart/assets/images/page-slider/img0' . $i . '.jpg';
@@ -123,7 +127,9 @@ return apply_filters(
 		if( 'Super Mart' == $theme->name){
 			$mega_mart_premium_url= 'https://sellerthemes.com/super-mart-premium/';
 		}elseif( 'Grocerly' == $theme->name){
-			$mega_mart_premium_url= 'https://sellerthemes.com/grocerly-premium/';	
+			$mega_mart_premium_url= 'https://sellerthemes.com/grocerly-premium/';
+		}elseif( 'Daily Mart' == $theme->name){
+			$mega_mart_premium_url= 'https://sellerthemes.com/daily-mart-premium/';	
 		}else{
 			$mega_mart_premium_url= 'https://sellerthemes.com/mega-mart-premium/';
 		}	

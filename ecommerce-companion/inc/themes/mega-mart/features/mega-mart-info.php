@@ -29,6 +29,24 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'section' => 'info_setting',
 		)
 	);
+	
+	$wp_customize->add_setting( 
+		'info_hs' , 
+			array(
+			'default' => '1',
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'mega_mart_sanitize_checkbox',
+		) 
+	);
+	
+	$wp_customize->add_control(
+	'info_hs', 
+		array(
+			'label'	      => esc_html__( 'Hide/Show', 'ecommerce-companion' ),
+			'section'     => 'info_setting',
+			'type'        => 'checkbox'
+		) 
+	);
 	/**
 	 * Customizer Repeater for add slides
 	 */

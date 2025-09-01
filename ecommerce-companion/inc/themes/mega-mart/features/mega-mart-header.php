@@ -194,6 +194,14 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		) 
 	);
 	
+	$theme = wp_get_theme();
+	if($theme->name == 'Daily Mart'):
+	$section_position = 'header_navigation';
+	$repeater_fields = false;
+	else: 
+	$section_position = 'above_header';
+	$repeater_fields = true;	
+	endif;
 	
 	// Head // 
 	$wp_customize->add_setting(
@@ -209,7 +217,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'above_header_first_head',
 		array(
 		    'label'   		=> __('Custom Widget Text','ecommerce-companion'),
-		    'section'		=> 'above_header',
+		    'section'		=> $section_position,
 			'type' 			=> 'hidden',
 		)  
 	);	
@@ -228,7 +236,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'above_header_first_hs', 
 		array(
 			'label'	      => esc_html__( 'Hide/Show', 'ecommerce-companion' ),
-			'section'     => 'above_header',
+			'section'     => $section_position,
 			'type'        => 'checkbox'
 		) 
 	);
@@ -250,11 +258,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'above_header_first_content', 
 			array(
 				'label'   => esc_html__('Contents','ecommerce-companion'),
-				'section' => 'above_header',
+				'section' => $section_position,
 				'add_field_label'                   => esc_html__( 'Add New ', 'ecommerce-companion' ),
 				'item_name'                         => esc_html__( 'Content', 'ecommerce-companion' ),
-				'customizer_repeater_text_control' => true,
-				'customizer_repeater_text2_control' => true,
+				'customizer_repeater_text_control' => $repeater_fields,
+				'customizer_repeater_text2_control' => $repeater_fields,
 				'customizer_repeater_icon_control' => true,
 				'customizer_repeater_link_control' => true,
 			) 
