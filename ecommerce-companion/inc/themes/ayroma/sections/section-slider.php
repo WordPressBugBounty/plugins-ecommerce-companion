@@ -1,6 +1,7 @@
  <!--===// Start: Slider
     =================================--> 
-<?php  
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_ayroma_slider' ) ) :
 	function ecommerce_comp_ayroma_slider() {
 	$slider_setting_hs				= get_theme_mod('slider_setting_hs','1');		
@@ -96,7 +97,7 @@ if ( ! function_exists( 'ecommerce_comp_ayroma_slider' ) ) :
 endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_ayroma_slider' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 11, 'ecommerce_comp_ayroma_slider' );
-add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 11, 'ecommerce_comp_ayroma_slider' );
+add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

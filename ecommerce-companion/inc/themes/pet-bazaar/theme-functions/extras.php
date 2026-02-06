@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
  *
  * Header Text
@@ -13,7 +13,7 @@
 		<aside class="widget textwidget">
 			<div class="text-container">
 				<div class="newsflash owl-carousel">
-					<?php echo header_slides($abv_hdr_antext); ?>				
+					<?php echo wp_kses_post(ecommerce_companion_header_slides($abv_hdr_antext)); ?>				
 				</div>
 			</div>
 		</aside>
@@ -24,8 +24,8 @@ add_action('pet_bazaar_hdr_text','pet_bazaar_hdr_text');
 
 /* Header Slides */
 
-if ( ! function_exists( 'header_slides' ) ) {
-function header_slides($txt) {
+if ( ! function_exists( 'ecommerce_companion_header_slides' ) ) {
+function ecommerce_companion_header_slides($txt) {
 	$headerslide_text_explode	=	explode(', ', $txt);
 	
 	$header_slides ='';
@@ -98,8 +98,8 @@ function pet_bazaar_get_social_icon_default() {
 	);
 }
 
- if(! function_exists ('footer_socials') ){
-	 function footer_socials(){ 
+ if(! function_exists ('pet_bazaar_footer_socials') ){
+	 function pet_bazaar_footer_socials(){ 
 		 $social_icons		= get_theme_mod('social_icons', pet_bazaar_get_social_icon_default());
 	?>
 		<aside class="widget widget_social_widget">
@@ -120,7 +120,7 @@ function pet_bazaar_get_social_icon_default() {
 		<?php 
 	 }
  }
-add_action('footer_socials','footer_socials');
+add_action('pet_bazaar_footer_socials','pet_bazaar_footer_socials');
 
 /*
  *
@@ -185,23 +185,23 @@ add_action('footer_socials','footer_socials');
 				 array(
 				array(
 					'image_url'       => ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/paw-bazaar/assets/images/testimonial/test05.png',
-					'title'           => esc_html__( 'Michael Ryhs', 'pet-bazaar' ),
-					'subtitle'           => esc_html__( 'Marketer', 'pet-bazaar' ),
-					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'pet-bazaar-pro' ),
+					'title'           => esc_html__( 'Michael Ryhs', 'ecommerce-companion' ),
+					'subtitle'           => esc_html__( 'Marketer', 'ecommerce-companion' ),
+					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'ecommerce-companion' ),
 					'id'              => 'customizer_repeater_testimonial_001',
 				),
 				array(
 					'image_url'       => ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/paw-bazaar/assets/images/testimonial/test02.png',
-					'title'           => esc_html__( 'Michael Ryhs', 'pet-bazaar' ),
-					'subtitle'           => esc_html__( 'CEO', 'pet-bazaar' ),
-					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'pet-bazaar-pro' ),
+					'title'           => esc_html__( 'Michael Ryhs', 'ecommerce-companion' ),
+					'subtitle'           => esc_html__( 'CEO', 'ecommerce-companion' ),
+					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'ecommerce-companion' ),
 					'id'              => 'customizer_repeater_testimonial_002',
 				),
 				array(
 					'image_url'       => ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/paw-bazaar/assets/images/testimonial/test03.png',
-					'title'           => esc_html__( 'Michael Ryhs', 'pet-bazaar' ),
-					'subtitle'           => esc_html__( 'Team Leader', 'pet-bazaar' ),
-					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'pet-bazaar-pro' ),
+					'title'           => esc_html__( 'Michael Ryhs', 'ecommerce-companion' ),
+					'subtitle'           => esc_html__( 'Team Leader', 'ecommerce-companion' ),
+					'text'	  =>  esc_html__( 'There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available There are many variations of passages of Lorem Ipsum available', 'ecommerce-companion' ),
 					'id'              => 'customizer_repeater_testimonial_003',
 				)
 			)
@@ -262,7 +262,7 @@ add_action('footer_socials','footer_socials');
 		}elseif( 'Feauty' == $theme->name){
 			$pet_bazaar_premium_url= 'https://sellerthemes.com/feauty-premium/';	
 		}else{
-			$pet_bazaar_premium_url= 'https://sellerthemes.com/pet-bazaar-premium/';
+			$pet_bazaar_premium_url= 'https://sellerthemes.com/ecommerce-companion-premium/';
 		}	
 		return $pet_bazaar_premium_url;
 	}

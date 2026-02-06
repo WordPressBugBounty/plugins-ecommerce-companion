@@ -1,14 +1,15 @@
 <?php
-$theme = wp_get_theme();
-if( 'Express Store' == $theme->name){
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_theme = wp_get_theme();
+if( 'Express Store' == $ecommerce_companion_theme->name){
 	$retailsy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/express-store/assets/images/footerlogo.png';
-}elseif('Storefit' == $theme->name){
+}elseif('Storefit' == $ecommerce_companion_theme->name){
 	$retailsy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/storefit/assets/images/footerlogo.png';
 }else{
 	$retailsy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/retailsy/assets/images/footerlogo.png';
 }
 
-$activate = array(
+$ecommerce_companion_activate = array(
         'retailsy-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -62,9 +63,9 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('retailsy_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('retailsy_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 	set_theme_mod('browse_cat_ttl',__('<i class="fa fa-list-ul"></i> Browse Categories','ecommerce-companion'));
 	set_theme_mod('hdr_contact_ttl',__('+12 348 567 90','ecommerce-companion'));
 	set_theme_mod('hdr_contact_url','#');

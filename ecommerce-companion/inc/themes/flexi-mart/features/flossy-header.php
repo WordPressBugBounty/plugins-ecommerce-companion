@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function ecommerce_flossy_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 // Logo Width // 
@@ -49,7 +50,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
         'above_header',
         array(
         	'priority'      => 1,
-            'title' 		=> __('Above Header','flossy'),
+            'title' 		=> __('Above Header','ecommerce-companion'),
 			'panel'  		=> 'header_section',
 		)
     );

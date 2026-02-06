@@ -1,4 +1,5 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_ayroma_testimonial' ) ) :
 	function ecommerce_comp_ayroma_testimonial() {
 	$testimonial_setting_hs	= get_theme_mod('testimonial_setting_hs','1');	
@@ -77,7 +78,7 @@ if ( ! function_exists( 'ecommerce_comp_ayroma_testimonial' ) ) :
 <?php endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_ayroma_testimonial' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_ayroma_testimonial' );
-add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_testimonial', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_ayroma_testimonial' );
+add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_testimonial', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

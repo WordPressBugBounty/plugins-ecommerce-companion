@@ -1,6 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function aromatic_product_grab2_setting( $wp_customize ) {
-$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+	$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Product Grab Section
 	=========================================*/

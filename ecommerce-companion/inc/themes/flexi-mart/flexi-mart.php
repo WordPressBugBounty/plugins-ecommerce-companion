@@ -1,7 +1,8 @@
 <?php
-/**
+	/**
  * @package   Flossy
  */
+ if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flexi-mart/sections/above-header.php';
@@ -25,6 +26,6 @@ if ( ! function_exists( 'ecommerce_comp_flossy_frontpage_sections' ) ) :
 	add_action( 'flossy_sections', 'ecommerce_comp_flossy_frontpage_sections' );
 endif;
 
-set_theme_mod('hdr_offer_code_lbl', __('Click Here'));
-set_theme_mod('hdr_contact_us_title', __('Call Us'));
-set_theme_mod('hdr_contact_us_number', __('+91 70 975 975 70'));
+set_theme_mod('hdr_offer_code_lbl', __('Click Here','ecommerce-companion'));
+set_theme_mod('hdr_contact_us_title', __('Call Us','ecommerce-companion'));
+set_theme_mod('hdr_contact_us_number', __('+91 70 975 975 70','ecommerce-companion'));

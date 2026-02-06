@@ -1,4 +1,5 @@
-<?php  
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_storely_service' ) ) :
 	function ecommerce_comp_storely_service() {
 	$service_hs 			= get_theme_mod('service_hs','1');		
@@ -49,7 +50,7 @@ if ( ! function_exists( 'ecommerce_comp_storely_service' ) ) :
 <?php endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_storely_service' ) ) {
-$section_priority = apply_filters( 'storely_section_priority', 13, 'ecommerce_comp_storely_service' );
-add_action( 'storely_sections', 'ecommerce_comp_storely_service', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'storely_section_priority', 13, 'ecommerce_comp_storely_service' );
+add_action( 'storely_sections', 'ecommerce_comp_storely_service', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

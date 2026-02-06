@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_footer_marquee_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
@@ -33,7 +34,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 'ftr_mrq_content', 
 		array(
 		 'sanitize_callback' => 'mega_mart_repeater_sanitize',
-		  'default' => hdr_mrq_content_default()
+		  'default' => ecommerce_companion_hdr_mrq_content_default()
 		)
 	);
 	
@@ -57,7 +58,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class mega_mart_ftr_mrq__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_ftr_mrq_section_premium up-to-pro" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Marquees Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_ftr_mrq_section_premium up-to-pro" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Marquees Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

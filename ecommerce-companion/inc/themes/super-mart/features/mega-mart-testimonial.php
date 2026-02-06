@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -84,7 +85,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		public function render_content() { 	
 			
 		?>
-			<a class="customizer_testimonial_upgrade_section up-to-pro" style="display: none;" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank"><?php esc_html_e('Upgrade To Pro For More Testimonial','mega-mart'); ?></a>
+			<a class="customizer_testimonial_upgrade_section up-to-pro" style="display: none;" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank"><?php esc_html_e('Upgrade To Pro For More Testimonial','ecommerce-companion'); ?></a>
 			
 		<?php }
 	}
@@ -133,7 +134,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		public function render_content() { 	
 			
 		?>
-			<a class="customizer_testimonial_col_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank"><?php esc_html_e('Unlock With Super Mart Pro','mega-mart'); ?></a>
+			<a class="customizer_testimonial_col_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank"><?php esc_html_e('Unlock With Super Mart Pro','ecommerce-companion'); ?></a>
 			
 		<?php }
 	}

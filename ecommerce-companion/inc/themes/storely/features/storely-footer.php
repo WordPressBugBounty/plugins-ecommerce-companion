@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function ecommerce_storely_footer( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	// Footer Panel // 
@@ -152,7 +153,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class storely_footer_above_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_footer_above_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Info Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_footer_above_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Info Available in the Premium Version','ecommerce-companion'); ?></a>
 			<?php
 			}
 		}
@@ -293,7 +294,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class storely_footer_address_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_footer_address_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Address Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_footer_address_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Address Available in the Premium Version','ecommerce-companion'); ?></a>
 			<?php
 			}
 		}

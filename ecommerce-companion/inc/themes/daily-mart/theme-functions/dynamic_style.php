@@ -1,5 +1,6 @@
 <?php
-if( ! function_exists( 'ecommerce_comp_daily_mart_dynamic_style' ) ):
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if( ! function_exists( 'ecommerce_comp_daily_mart_dynamic_style' ) ):
     function ecommerce_comp_daily_mart_dynamic_style() {
 
 		$output_css = '';

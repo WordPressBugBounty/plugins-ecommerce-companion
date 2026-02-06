@@ -1,5 +1,6 @@
 <?php  
-if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
 	function ecommerce_comp_pet_bazaar_feature_product() {
 	$feature_product_hs				= get_theme_mod('feature_product_hs','1'); 
 	$feature_product_ttl 			= get_theme_mod('feature_product_ttl',__('Feature Product','ecommerce-companion'));
@@ -15,6 +16,8 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
 		'post_type' => 'product',
 		'posts_per_page' => $feature_product_num,
 	);
+	
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 	$args['tax_query'] = array(
 		array(
 			'taxonomy' => 'product_cat',
@@ -44,10 +47,10 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
 								$product_cat_name = get_term_by( 'slug', $product_category, 'product_cat' );
 								?>
 							<?php if($i == '0'){  ?>
-								<a href="javascript:void(0)" product-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>" class="active"><?php  echo esc_html__($product_cat_name->name); ?></a>
+								<a href="javascript:void(0)" product-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>" class="active"><?php  echo esc_html($product_cat_name->name); ?></a>
 							
 							<?php }else{ ?>		
-								<a href="javascript:void(0)" product-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>"><?php  echo esc_html__($product_cat_name->name); ?></a>
+								<a href="javascript:void(0)" product-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>"><?php  echo esc_html($product_cat_name->name); ?></a>
 							<?php }} ?>
 						</div>
 					</div>
@@ -90,7 +93,7 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) :
 endif;
 
 if ( function_exists( 'ecommerce_comp_pet_bazaar_feature_product' ) ) {
-$section_priority = apply_filters( 'pet_bazaar_section_priority', 13, 'ecommerce_comp_pet_bazaar_feature_product' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_feature_product', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 13, 'ecommerce_comp_pet_bazaar_feature_product' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_feature_product', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

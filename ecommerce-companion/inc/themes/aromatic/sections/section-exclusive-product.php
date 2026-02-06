@@ -1,5 +1,6 @@
 <?php  
-if ( ! function_exists( 'ecommerce_comp_aromatic_product' ) ) :
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_aromatic_product' ) ) :
 	function ecommerce_comp_aromatic_product() {
 	$exclusive_product2_setting_hs		= get_theme_mod('exclusive_product2_setting_hs','1');		
 	$exclusive_product2_ttl 			= get_theme_mod('exclusive_product2_ttl',__('Exclusive Product','ecommerce-companion'));
@@ -11,6 +12,7 @@ $args                   = array(
 	'posts_per_page' => 20,
 );
 if(!empty($exclusive_product2_cat)):
+/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 $args['tax_query'] = array(
 	array(
 		'taxonomy' => 'product_cat',
@@ -46,7 +48,7 @@ endif;
 <?php } endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_aromatic_product' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_aromatic_product' );
-add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_product', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_aromatic_product' );
+add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_product', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

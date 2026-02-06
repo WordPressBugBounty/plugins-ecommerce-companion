@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if( ! function_exists( 'ecommerce_comp_storely_dynamic_style' ) ):
     function ecommerce_comp_storely_dynamic_style() {
 

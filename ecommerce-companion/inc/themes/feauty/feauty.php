@@ -1,7 +1,8 @@
 <?php
-/**
+	/**
  * @package   Aromatic
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/aromatic/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/functions-style.php';
@@ -30,10 +31,10 @@ endif;
 /**
  * Remove Customize Panel from parent theme
  */
-function feauty_remove_parent_setting( $wp_customize ) {
+function ecommerce_companion_feauty_remove_parent_setting( $wp_customize ) {
 	$wp_customize->remove_control('hdr_social_head');	
 	$wp_customize->remove_control('hs_hdr_social');	
 	$wp_customize->remove_control('hdr_social_ttl');	
 	$wp_customize->remove_control('social_icons');		
 }
-add_action( 'customize_register', 'feauty_remove_parent_setting',99 );
+add_action( 'customize_register', 'ecommerce_companion_feauty_remove_parent_setting',99 );

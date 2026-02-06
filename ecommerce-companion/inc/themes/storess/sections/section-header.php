@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'storely_section_header' ) ) :
 	function storely_section_header() { 
 	$hdr_right_hs 				= get_theme_mod('hdr_right_hs','1');

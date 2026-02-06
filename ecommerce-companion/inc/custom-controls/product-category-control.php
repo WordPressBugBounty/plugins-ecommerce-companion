@@ -32,7 +32,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 						<?php
 						foreach ($this->cats as $cat) {
 							$selected = is_array($this->value()) && in_array($cat->name, $this->value()) ? 'selected="selected"' : '';
-							printf('<option value="%s" %s>%s</option>', esc_attr($cat->slug), $selected, esc_html($cat->name));
+							printf('<option value="%s" %s>%s</option>', esc_attr($cat->slug), esc_attr($selected), esc_html($cat->name));
 						}
 						?>
 					</select>

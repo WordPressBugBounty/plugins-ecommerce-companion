@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_flossy_lproducts' ) ) :
 	function ecommerce_comp_flossy_lproducts() {
 		$lproduct_hs 				= get_theme_mod('lproduct_hs','1');
@@ -17,6 +18,7 @@
 		);
 	
 	if(!empty($latest_product_cat) && !is_customize_preview()):
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'product_cat',
@@ -94,7 +96,7 @@
 <?php  } endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_flossy_lproducts' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 12, 'ecommerce_comp_flossy_lproducts' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_lproducts', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 12, 'ecommerce_comp_flossy_lproducts' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_lproducts', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

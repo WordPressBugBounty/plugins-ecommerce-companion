@@ -1,8 +1,8 @@
 <?php
-/**
+	/**
  * Flossy Above Header Second
  */
- 
+ if ( ! defined( 'ABSPATH' ) ) exit;
 	 
 if ( ! function_exists( 'flossy_abv_hdr_group_2' ) ) {
 	function flossy_abv_hdr_group_2() {		

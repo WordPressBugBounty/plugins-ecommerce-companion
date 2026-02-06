@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_pet_bazaar_category' ) ) :
 function ecommerce_comp_pet_bazaar_category() {
 	$category_cat			= get_theme_mod('category_cat');
@@ -12,6 +13,8 @@ function ecommerce_comp_pet_bazaar_category() {
 		'post_type' => 'product',
 		'posts_per_page' => $category_num,
 	);
+	
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 	$args['tax_query'] = array(
 		array(
 			'taxonomy' => 'product_cat',
@@ -37,10 +40,10 @@ function ecommerce_comp_pet_bazaar_category() {
 					<div class="categories2-item">   
 						<div class="cate-img">
 							<i class="fa-solid <?php echo esc_attr($thumbnail_url); ?>"></i>
-							<span class="count-categorie"><?php esc_html_e($product_count); ?></span>
+							<span class="count-categorie"><?php echo esc_html($product_count); ?></span>
 						</div>
 						<div class="cate-name">
-							<h2><a href="<?php echo esc_url($category_link); ?>"><?php esc_html_e($category_name->name); ?></a></h2>
+							<h2><a href="<?php echo esc_url($category_link); ?>"><?php echo esc_html($category_name->name); ?></a></h2>
 						</div>
 					</div>
 				<?php }
@@ -54,7 +57,7 @@ function ecommerce_comp_pet_bazaar_category() {
 
 <?php
 if ( function_exists( 'ecommerce_comp_pet_bazaar_category' ) ) {
-	$section_priority = apply_filters( 'pet_bazaar_section_priority', 11 , 'ecommerce_comp_pet_bazaar_category' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_category', absint( $section_priority ) );
+	$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 11 , 'ecommerce_comp_pet_bazaar_category' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_category', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

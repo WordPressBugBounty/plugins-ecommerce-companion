@@ -1,5 +1,6 @@
 <?php  	
-if ( ! function_exists( 'ecommerce_comp_pet_bazaar_funfact' ) ) :
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_funfact' ) ) :
 	function ecommerce_comp_pet_bazaar_funfact() {
 	$funfact_contents 			= get_theme_mod('funfact_contents',pet_bazaar_get_funfact_default());
 	$funfact_hs					= get_theme_mod('funfact_hs','1');
@@ -27,7 +28,7 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_funfact' ) ) :
 							<?php endif; ?>	
 							
 							<?php if(!empty($text)): ?>
-								<span><?php esc_html(/*Translators: %s:Text */printf(__('%s.','ecommerce-companion'),$text))?></span>
+								<span><?php echo esc_html($text); ?></span>
 							<?php endif; ?>	
 						</div>
 					</div>
@@ -42,7 +43,7 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_funfact' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_pet_bazaar_funfact' ) ) {
-$section_priority = apply_filters( 'pet_bazaar_section_priority', 15, 'ecommerce_comp_pet_bazaar_funfact' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_funfact', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 15, 'ecommerce_comp_pet_bazaar_funfact' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_funfact', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

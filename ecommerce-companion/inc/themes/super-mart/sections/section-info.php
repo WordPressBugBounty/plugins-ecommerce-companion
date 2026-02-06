@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_mega_mart_info' ) ) :
 	function ecommerce_comp_mega_mart_info() {
 	$info_content = get_theme_mod('info_content',mega_mart_get_info_default() );	
@@ -19,15 +20,15 @@
 					<div class="infoservice-item">
 						<?php if(!empty($icon)) { ?>
 							<div class="infoservice-icon">
-								<i class="fa <?php esc_attr_e($icon); ?>"></i>
+								<i class="fa <?php echo esc_attr($icon); ?>"></i>
 							</div>
 						<?php } ?>
 						<div class="infoservice-content">
 							<?php if(!empty($title)) { ?>
-								<h6><?php echo esc_html(sprintf(/* Translators: Info Title */__('%s','ecommerce-companion'),$title)) ?></h6>
+								<h6><?php echo esc_html($title); ?></h6>
 							<?php } ?>								
 							<?php if(!empty($subtitle)) { ?>
-								<p><?php echo esc_html(sprintf(/* Translators: Info Subtitle */__('%s','ecommerce-companion'),$subtitle)) ?></p>
+								<p><?php echo esc_html($subtitle); ?></p>
 							<?php } ?>
 						</div>
 					</div>
@@ -39,7 +40,7 @@
 	<?php	endif; } endif;
 	
 if ( function_exists( 'ecommerce_comp_mega_mart_info' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 14, 'ecommerce_comp_mega_mart_info' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_info', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 14, 'ecommerce_comp_mega_mart_info' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_info', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

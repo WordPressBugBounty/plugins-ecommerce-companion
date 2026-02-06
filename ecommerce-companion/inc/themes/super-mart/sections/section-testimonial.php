@@ -1,4 +1,5 @@
 <?php  
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_mega_mart_testimonial' ) ) :
 	function ecommerce_comp_mega_mart_testimonial() {
 	$testimonial_contents 			= get_theme_mod('testimonial_contents',mega_mart_get_testimonial_default());	
@@ -10,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-8 col-lg-3">
-				<div class="section-title"><?php echo esc_html(/*Translators: %s: Section Title */ sprintf(__('%s','ecommerce-companion'),$testimonial_section_title )); ?></div>
+				<div class="section-title"><?php echo esc_html($testimonial_section_title); ?></div>
 			</div>
 			<div class="col-4 col-lg-9 d-flex justify-content-end align-items-center">
 				<div class="custom-owl-nav">
@@ -40,16 +41,16 @@
 										<div class="client-detail">
 										<?php if($image):  ?>
 											<div class="client-img">
-												<img src="<?php  echo esc_url($image); ?>" alt="<?php echo esc_html(/*Translators: %s: Client Name */ sprintf(__('%s','ecommerce-companion'),$title )); ?>">
+												<img src="<?php  echo esc_url($image); ?>" alt="<?php echo esc_html($title ); ?>">
 											</div>
 											<?php endif; ?>
 											<div>
 											<?php if(!empty($title)): ?>
-												<h5><?php echo esc_html(/*Translators: %s: Client Name */ sprintf(__('%s','ecommerce-companion'),$title )); ?></h5>
+												<h5><?php echo esc_html($title ); ?></h5>
 											<?php endif; ?>
 											
 											<?php if(!empty($subtitle)): ?>
-												<p><?php echo esc_html(/*Translators: %s: Client Designation */ sprintf(__('%s','ecommerce-companion'),$subtitle )); ?></p>
+												<p><?php echo esc_html($subtitle ); ?></p>
 											<?php endif; ?>
 											
 											<?php if(!empty($text)): ?>
@@ -63,23 +64,23 @@
 										</div>
 										<?php if(!empty($description)): ?>
 											<div class="client-text">
-												<p class="ellipsis"><?php echo esc_html(/*Translators: %s: Client Review */ sprintf(__('%s','ecommerce-companion'),$description )); ?></p>
+												<p class="ellipsis"><?php echo esc_html($description ); ?></p>
 											</div>
 										<?php endif; ?>
 									</div>
 									<div class="client-bottom">
 									<?php if(!empty($image2)): ?>
 										<div class="me-2">
-											<img src="<?php  echo esc_url($image2); ?>" alt="<?php echo esc_html(/*Translators: %s: Product  Name */ sprintf(__('%s','ecommerce-companion'),$text2 )); ?>">
+											<img src="<?php  echo esc_url($image2); ?>" alt="<?php echo esc_attr($text2); ?>">
 										</div>
 									<?php endif; ?>
 										<div >
 										<?php if(!empty($text2)): ?>
-											<h5><?php echo esc_html(/*Translators: %s: Product  Name */ sprintf(__('%s','ecommerce-companion'),$text2 )); ?></h5>
+											<h5><?php echo esc_html($text2 ); ?></h5>
 										<?php endif; ?>
 										
 										<?php if(!empty($text3)): ?>
-											<p><?php echo esc_html(/*Translators: %s: Product  Price */ sprintf(__('%s','ecommerce-companion'),$text3 )); ?></p>
+											<p><?php echo esc_html($text3); ?></p>
 										<?php endif; ?>
 										</div>
 									</div>
@@ -95,7 +96,7 @@
 <?php	endif; } endif;
 	
 if ( function_exists( 'ecommerce_comp_mega_mart_testimonial' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 18, 'ecommerce_comp_mega_mart_testimonial' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_testimonial', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 18, 'ecommerce_comp_mega_mart_testimonial' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_testimonial', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

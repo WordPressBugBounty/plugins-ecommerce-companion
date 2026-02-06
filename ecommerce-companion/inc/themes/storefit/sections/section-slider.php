@@ -1,4 +1,5 @@
-<?php  
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_retailsy_slider' ) ) :
 	function ecommerce_comp_retailsy_slider() {
 	$slider_ttl 			= get_theme_mod('slider_ttl',__('Exclusive Offers 30% Off','ecommerce-companion'));
@@ -50,7 +51,7 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_slider' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_retailsy_slider' ) ) {
-$section_priority = apply_filters( 'retailsy_section_priority', 11, 'ecommerce_comp_retailsy_slider' );
-add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'retailsy_section_priority', 11, 'ecommerce_comp_retailsy_slider' );
+add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

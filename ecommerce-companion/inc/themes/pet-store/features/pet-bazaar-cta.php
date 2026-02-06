@@ -1,8 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function pet_bazaar_cta_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
-	Call To Action Section
+		Call To Action Section
 	=========================================*/
 	$wp_customize->add_section(
 		'cta_setting', array(
@@ -36,7 +37,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'cta_title' , 
 			array(
-			'default' => __('Get 30% off for the First Time Appointment'),
+			'default' => __('Get 30% off for the First Time Appointment','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'pet_bazaar_sanitize_text',
 			'priority' => 1,
@@ -55,7 +56,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'cta_description' , 
 			array(
-			'default' => __('Lorem ipsum dolor, sit amet consectetur adipisicing elit.'),
+			'default' => __('Lorem ipsum dolor, sit amet consectetur adipisicing elit.','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'pet_bazaar_sanitize_text',
 			'priority' => 1,

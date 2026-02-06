@@ -1,4 +1,5 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_retailsy_banner' ) ) :
 	function ecommerce_comp_retailsy_banner() {
 	$banner_contents 		= get_theme_mod('banner_contents',retailsy_get_banner_default());
@@ -54,7 +55,7 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_banner' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_retailsy_banner' ) ) {
-$section_priority = apply_filters( 'retailsy_section_priority', 13, 'ecommerce_comp_retailsy_banner' );
-add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_banner', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'retailsy_section_priority', 13, 'ecommerce_comp_retailsy_banner' );
+add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_banner', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

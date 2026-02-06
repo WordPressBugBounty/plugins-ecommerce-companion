@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function pet_bazaar_funfact_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -83,7 +84,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class pet_bazaar_funfact__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_funfact_section_premium up-to-pro" href="<?php echo esc_url(pet_bazaar_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Funfact Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_funfact_section_premium up-to-pro" href="<?php echo esc_url(pet_bazaar_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Funfact Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

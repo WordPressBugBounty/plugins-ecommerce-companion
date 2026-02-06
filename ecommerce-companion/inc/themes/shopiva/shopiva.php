@@ -2,6 +2,7 @@
 /**
  * @package   Storely
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/shoply/theme-functions/extras.php';

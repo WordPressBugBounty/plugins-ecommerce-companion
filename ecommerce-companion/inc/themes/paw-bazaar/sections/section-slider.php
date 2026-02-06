@@ -1,5 +1,6 @@
 <?php  
-if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
 	function ecommerce_comp_pet_bazaar_slider() {
 	$slider 						= get_theme_mod('slider',pet_bazaar_get_slider_default());
 	$slider_autoplay				= get_theme_mod('slider_autoplay','false');
@@ -25,16 +26,16 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
                     <div class="slide-text-wrapper content-one text-center mx-auto">
 						<?php  if ( ! empty( $subtitle ) ): ?>
                         <h1 class="slide-text slide-text-title mb-3">
-                            <?php esc_html(/*Translators: %s: Subtitle*/ printf(__('%s','ecommerce-companion'),$subtitle)); ?>
+                            <?php echo esc_html($subtitle); ?>
                         </h1>
 						<?php endif; ?>
 						<?php  if ( ! empty( $description ) ): ?>
                         <p class="slide-text slide-text-description mb-4">
-                            <?php esc_html(/*Translators: %s: description*/ printf(__('%s','ecommerce-companion'),$description)); ?>
+                            <?php echo esc_html($description); ?>
                         </p>
 						<?php endif; ?>
 						<?php  if ( ! empty( $button ) ): ?>
-                        <a href="<?php esc_url($link); ?>" class="slide-text btn-on active"><?php esc_html(/*Translators: %s: Button Label*/ printf(__('%s','ecommerce-companion'),$button)); ?> <i class="fa fa-chevron-right"></i> <span></span></a>
+                        <a href="<?php esc_url($link); ?>" class="slide-text btn-on active"><?php echo esc_html($button); ?> <i class="fa fa-chevron-right"></i> <span></span></a>
 						<?php endif; ?>
                     </div>
                 </div>				
@@ -46,7 +47,7 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) {
-$section_priority = apply_filters( 'pet_bazaar_section_priority', 11, 'ecommerce_comp_pet_bazaar_slider' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 11, 'ecommerce_comp_pet_bazaar_slider' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

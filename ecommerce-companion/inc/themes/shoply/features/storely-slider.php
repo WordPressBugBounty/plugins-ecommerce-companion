@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function storely_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -112,7 +113,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class storely_slider__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_slider_section_premium up-to-pro" href="https://sellerthemes.com/shoply-premium/" target="_blank" style="display: none;"><?php _e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_slider_section_premium up-to-pro" href="https://sellerthemes.com/shoply-premium/" target="_blank" style="display: none;"><?php esc_html_e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}
@@ -256,7 +257,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class storely_slider_info_section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_slider_info_section_premium up-to-pro" href="https://sellerthemes.com/shoply-premium/" target="_blank" style="display: none;"><?php _e('More Info Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_slider_info_section_premium up-to-pro" href="https://sellerthemes.com/shoply-premium/" target="_blank" style="display: none;"><?php esc_html_e('More Info Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

@@ -1,5 +1,6 @@
-<?php  
-if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 	function ecommerce_comp_mega_mart_slider() {
 	$slider 						= get_theme_mod('slider',mega_mart_get_slider_default());
 	
@@ -56,15 +57,15 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 							<div class="banner-content">
 								<div class="banner-footer">
 									<?php  if ( ! empty( $left_side_title1 ) ): ?>
-									<p class="secondary-color2 text-animation"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$left_side_title1)); ?></p>
+									<p class="secondary-color2 text-animation"><?php echo esc_html($left_side_title1); ?></p>
 									<?php endif; ?>	
 									
 									<?php  if ( ! empty( $left_side_subtitle1 ) ): ?>
-									<h4 class="primary-color text-animation"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$left_side_subtitle1)); ?></h4>
+									<h4 class="primary-color text-animation"><?php echo esc_html($left_side_subtitle1); ?></h4>
 									<?php endif; ?>
 									
 									<?php  if ( ! empty( $left_side_btn_lbl1 ) ): ?>
-									<a href="<?php echo esc_attr($left_side_btn_link1); ?>" <?php if($left_btn_newtab1 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($left_btn_newtab1 =='yes') {echo 'noreferrer noopener';} ?> <?php if($left_btn_nofollow1 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$left_side_btn_lbl1 )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+									<a href="<?php echo esc_attr($left_side_btn_link1); ?>" <?php if($left_btn_newtab1 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($left_btn_newtab1 =='yes') {echo 'noreferrer noopener';} ?> <?php if($left_btn_nofollow1 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html( $left_side_btn_lbl1 ); ?></span> <i class="fa fa-shopping-bag"></i></a>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -81,15 +82,15 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 							<div class="banner-content">
 								<div class="banner-footer">
 									<?php  if ( ! empty( $left_side_title2 ) ): ?>
-									<p class="secondary-color text-animation"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$left_side_title2)); ?></p>
+									<p class="secondary-color text-animation"><?php echo esc_html($left_side_title2); ?></p>
 									<?php endif; ?>	
 									
 									<?php  if ( ! empty( $left_side_subtitle2 ) ): ?>
-									<h4 class="text-animation"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$left_side_subtitle2)); ?></h4>
+									<h4 class="text-animation"><?php echo esc_html($left_side_subtitle2); ?></h4>
 									<?php endif; ?>
 									
 									<?php  if ( ! empty( $left_side_btn_lbl2 ) ): ?>
-									<a href="<?php echo esc_attr($left_side_btn_link2); ?>" <?php if($left_btn_newtab2 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($left_btn_newtab2 =='yes') {echo 'noreferrer noopener';} ?> <?php if($left_btn_nofollow2 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$left_side_btn_lbl2 )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+									<a href="<?php echo esc_attr($left_side_btn_link2); ?>" <?php if($left_btn_newtab2 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($left_btn_newtab2 =='yes') {echo 'noreferrer noopener';} ?> <?php if($left_btn_nofollow2 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html( $left_side_btn_lbl2 ); ?></span> <i class="fa fa-shopping-bag"></i></a>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -119,20 +120,20 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 					<aside class="banner-item style-4">
 						<?php if ( ! empty( $image ) ) { ?>
 						<div class="banner-img ms-auto">
-							<img src="<?php echo esc_url($image); ?>" alt="<?php esc_html_e('Slider-'.$index,'ecommerce-companion'); ?>">
+							<img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr('Slider-'.$index); ?>">
 						</div>
 						<?php } ?>
 						<div class="banner-content">
 							<?php  if ( ! empty( $title ) ): ?>
-							<span class="banner-badge style-2 bg-1 text-white" data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$title)); ?></span>
+							<span class="banner-badge style-2 bg-1 text-white" data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html($title); ?></span>
 							<?php endif; ?>
 							
 							<?php  if ( ! empty( $subtitle ) || !empty( $subtitle2 ) || !empty( $subtitle3 ) ): ?>
-							<h3 class="text-dark" data-animation="fadeInLeft" data-delay="200ms"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$subtitle)); ?> <span class="primary-color2"><?php echo esc_html(/*Translators: %s: Subtitle 2 */ sprintf(__('%s','ecommerce-companion'),$subtitle2)); ?></span> <?php echo esc_html(/*Translators: %s: Subtitle 3 */ sprintf(__('%s','ecommerce-companion'),$subtitle3)); ?></h3>
+							<h3 class="text-dark" data-animation="fadeInLeft" data-delay="200ms"><?php echo esc_html($subtitle); ?> <span class="primary-color2"><?php echo esc_html($subtitle2); ?></span> <?php echo esc_html($subtitle3); ?></h3>
 							<?php endif; ?>
 							
 							<?php  if ( ! empty( $button_text ) ): ?>
-							<a class="btn btn-primary more-link" href="<?php echo esc_attr($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" data-animation="fadeInLeft" data-delay="150ms" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$button_text )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+							<a class="btn btn-primary more-link" href="<?php echo esc_attr($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" data-animation="fadeInLeft" data-delay="150ms" class="btn btn-primary main-button"><span><?php echo esc_html($button_text ); ?></span> <i class="fa fa-shopping-bag"></i></a>
 							<?php endif; ?>
 						</div>
 					</aside>
@@ -152,15 +153,15 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 							<div class="banner-content">
 								<div class="banner-footer">
 									<?php  if ( ! empty( $right_side_title1 ) ): ?>
-									<p class="secondary-color2 text-animation"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$right_side_title1)); ?></p>
+									<p class="secondary-color2 text-animation"><?php echo esc_html($right_side_title1); ?></p>
 									<?php endif; ?>	
 									
 									<?php  if ( ! empty( $right_side_subtitle1 ) ): ?>
-									<h4 class="primary-color text-animation"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$right_side_subtitle1)); ?></h4>
+									<h4 class="primary-color text-animation"><?php echo esc_html($right_side_subtitle1); ?></h4>
 									<?php endif; ?>
 									
 									<?php  if ( ! empty( $right_side_btn_lbl1 ) ): ?>
-									<a href="<?php echo esc_attr($right_side_btn_link1); ?>" <?php if($right_btn_newtab1 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($right_btn_newtab1 =='yes') {echo 'noreferrer noopener';} ?> <?php if($right_btn_nofollow1 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$right_side_btn_lbl1 )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+									<a href="<?php echo esc_attr($right_side_btn_link1); ?>" <?php if($right_btn_newtab1 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($right_btn_newtab1 =='yes') {echo 'noreferrer noopener';} ?> <?php if($right_btn_nofollow1 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html($right_side_btn_lbl1); ?></span> <i class="fa fa-shopping-bag"></i></a>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -177,15 +178,15 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 							<div class="banner-content">
 								<div class="banner-footer">
 									<?php  if ( ! empty( $right_side_title2 ) ): ?>
-									<p class="secondary-color text-animation"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$right_side_title2)); ?></p>
+									<p class="secondary-color text-animation"><?php echo esc_html($right_side_title2); ?></p>
 									<?php endif; ?>	
 									
 									<?php  if ( ! empty( $right_side_subtitle2 ) ): ?>
-									<h4 class="text-animation"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$right_side_subtitle2)); ?></h4>
+									<h4 class="text-animation"><?php echo esc_html($right_side_subtitle2); ?></h4>
 									<?php endif; ?>
 									
 									<?php  if ( ! empty( $right_side_btn_lbl2 ) ): ?>
-									<a href="<?php echo esc_attr($right_side_btn_link2); ?>" <?php if($right_btn_newtab2 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($right_btn_newtab2 =='yes') {echo 'noreferrer noopener';} ?> <?php if($right_btn_nofollow2 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$right_side_btn_lbl2 )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+									<a href="<?php echo esc_attr($right_side_btn_link2); ?>" <?php if($right_btn_newtab2 =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($right_btn_newtab2 =='yes') {echo 'noreferrer noopener';} ?> <?php if($right_btn_nofollow2 =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html($right_side_btn_lbl2); ?></span> <i class="fa fa-shopping-bag"></i></a>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -200,7 +201,7 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 } }
 endif;
 if ( function_exists( 'ecommerce_comp_mega_mart_slider' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

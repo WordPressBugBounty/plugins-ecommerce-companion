@@ -5,6 +5,7 @@
  * @package     eCommerce Companion
  * @since       eCommerce Companion 1.0
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 $ecommerce_comp_control_dir =  ECOMMERCE_COMP_PLUGIN_DIR . 'inc/custom-controls';
 
@@ -13,7 +14,7 @@ if(class_exists( 'woocommerce' )):
 	require $ecommerce_comp_control_dir . '/product-category-control.php';
 endif;
 if ( ! class_exists( 'Ecommerce_Comp_Customizer' ) ) {
-
+	
 	/**
 	 * Customizer Loader
 	 *

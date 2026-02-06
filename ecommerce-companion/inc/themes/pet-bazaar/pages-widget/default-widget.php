@@ -1,13 +1,14 @@
 <?php
-	$theme = wp_get_theme();
-	$name = strtolower(str_replace(' ', '-', $theme));
-	if($name == 'paw-bazaar') {
-		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/footer-logo.png';
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$ecommerce_companion_theme = wp_get_theme();
+	$ecommerce_companion_name = strtolower(str_replace(' ', '-', $ecommerce_companion_theme));
+	if($ecommerce_companion_name == 'paw-bazaar') {
+		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$ecommerce_companion_name.'/assets/images/footer-logo.png';
 	}else{
-		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/logo.png';
+		$pet_bazaar_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$ecommerce_companion_name.'/assets/images/logo.png';
 	}
 
-$activate = array(
+$ecommerce_companion_activate = array(
         'pet-bazaar-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -60,7 +61,7 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('pet_bazaar_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('pet_bazaar_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 ?>

@@ -1,5 +1,6 @@
-<?php  
-if ( ! function_exists( 'ecommerce_comp_ayroma_info' ) ) :
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_ayroma_info' ) ) :
 	function ecommerce_comp_ayroma_info() {
 	$info_setting_hs			= get_theme_mod('info_setting_hs','1');	
 	$info_contents 				= get_theme_mod('info_contents',aromatic_get_info_default());
@@ -54,7 +55,7 @@ if ( ! function_exists( 'ecommerce_comp_ayroma_info' ) ) :
 endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_ayroma_info' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 12, 'ecommerce_comp_ayroma_info' );
-add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_info', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 12, 'ecommerce_comp_ayroma_info' );
+add_action( 'aromatic_sections', 'ecommerce_comp_ayroma_info', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

@@ -1,6 +1,7 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_aromatic_grab' ) ) :
-	function ecommerce_comp_aromatic_grab() {
+function ecommerce_comp_aromatic_grab() {
 	$product_grab2_setting_hs =	get_theme_mod('product_grab2_setting_hs','1');	
 	$product_grab2_ttl 		=	get_theme_mod('product_grab2_ttl',__('Grab Our Products Now','ecommerce-companion'));	
 	$product_grab2_desc 	=	get_theme_mod('product_grab2_desc',__('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nobis totam veritatis dolorum fugiat, molestias officiis','ecommerce-companion'));
@@ -43,7 +44,7 @@ endif;
 }
 endif;
 if ( function_exists( 'ecommerce_comp_aromatic_grab' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 15, 'ecommerce_comp_aromatic_grab' );
-add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_grab', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 15, 'ecommerce_comp_aromatic_grab' );
+add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_grab', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

@@ -1,8 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+	
 function aromatic_exclusive_product2_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
-	Exclusive Product  Section
+		Exclusive Product  Section
 	=========================================*/
 	$wp_customize->add_section(
 		'exclusive_product2_setting', array(

@@ -1,6 +1,7 @@
  <!--===// Start: Slider
     =================================--> 
-<?php  
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_aromatic_slider' ) ) :
 	function ecommerce_comp_aromatic_slider() {
 	$slider2_setting_hs				= get_theme_mod('slider2_setting_hs','1');	
@@ -102,7 +103,7 @@ endif;
 }
 endif;
 if ( function_exists( 'ecommerce_comp_aromatic_slider' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 11, 'ecommerce_comp_aromatic_slider' );
-add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 11, 'ecommerce_comp_aromatic_slider' );
+add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

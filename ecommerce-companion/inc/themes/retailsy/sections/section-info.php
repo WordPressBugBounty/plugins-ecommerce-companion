@@ -1,4 +1,5 @@
-<?php  
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_retailsy_info' ) ) :
 	function ecommerce_comp_retailsy_info() {
 	$info_contents 			= get_theme_mod('info_contents',retailsy_get_info_default());
@@ -43,7 +44,7 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_info' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_retailsy_info' ) ) {
-$section_priority = apply_filters( 'retailsy_section_priority', 12, 'ecommerce_comp_retailsy_info' );
-add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_info', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'retailsy_section_priority', 12, 'ecommerce_comp_retailsy_info' );
+add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_info', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

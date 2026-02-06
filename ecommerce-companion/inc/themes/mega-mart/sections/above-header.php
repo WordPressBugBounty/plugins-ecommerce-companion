@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if( !function_exists('mega_mart_above_header')):
 	function mega_mart_above_header(){
 	$theme = wp_get_theme();	
@@ -21,7 +22,7 @@
 							if( $theme->name == 'Daily Mart' ) { 
 								 if( $hs_hdr_anim == '1' ): header_slides($abv_hdr_slide_custom); endif;
 								} else {
-								if($above_header_first_hs == '1'): hdr_widget___content(); endif;
+								if($above_header_first_hs == '1'): mega_mart_hdr_widget___content(); endif;
 							} 
 						?>								
 					</div>
@@ -29,13 +30,13 @@
 					<?php if( $daytext_hs == '1' ) : ?>
 						<div class="widget daytextwidget">
 							<div class="daytext-content">
-								<i class="fa fa-tag"></i> <?php echo esc_html(sprintf(/* Translators: Info Day Deal Text */__('%s','ecommerce-companion'),$daytext)); ?>
+								<i class="fa fa-tag"></i> <?php echo esc_html($daytext); ?>
 							</div>
 						</div>
 					<?php endif; ?>	
 						<?php 
 						if( $theme->name != 'Daily Mart' ) {
-							if( $hs_hdr_anim == '1' ): header___slides($abv_hdr_slide_custom); endif;
+							if( $hs_hdr_anim == '1' ): ecommerce_companion_header___slides($abv_hdr_slide_custom); endif;
 						} 
 					?>
 						<?php if($order_link_hs == '1') : ?> 
@@ -81,8 +82,8 @@ endif;
 add_action('mega_mart_above_header','mega_mart_above_header' );
 
 
-if(! function_exists('hdr_widget___content')) {
-	function hdr_widget___content() {
+if(! function_exists('mega_mart_hdr_widget___content')) {
+	function mega_mart_hdr_widget___content() {
 	$theme = wp_get_theme();
 		$above_header_first_content	= get_theme_mod('above_header_first_content', mega_mart_above_header_first_content_default());			
 	?>			
@@ -97,15 +98,15 @@ if(! function_exists('hdr_widget___content')) {
 				$icon = ! empty( $item->icon_value ) ? apply_filters( 'mega_mart_translate_single_string', $item->icon_value, 'header above section' ) : ''; 
 ?>
 			<li>
-				<a class="infoicon-fa-gift tool-bounce tool-bottom-left" href="javascript:void(0)"><i class="fa <?php echo esc_attr($icon); ?>"></i> <?php if($theme ->name != 'Daily Mart') { ?><div><?php if(!empty($text)): echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text)).'<br>'; endif; ?><span class="info_description_name"><?php echo esc_html(sprintf(/* Translators: Info First Text */__('%s','ecommerce-companion'),$text2)) ?></span></div> <?php } ?></a>
+				<a class="infoicon-fa-gift tool-bounce tool-bottom-left" href="javascript:void(0)"><i class="fa <?php echo esc_attr($icon); ?>"></i> <?php if($theme ->name != 'Daily Mart') { ?><div><?php if(!empty($text)): echo esc_html($text).'<br>'; endif; ?><span class="info_description_name"><?php echo esc_html($text2) ?></span></div> <?php } ?></a>
 			</li>
 			<?php } endif; ?>
 		</ul>
 	</aside>
 	<?php } }
 
-if ( ! function_exists( 'header___slides' ) ) {
-	function header___slides($txt) {	
+if ( ! function_exists( 'ecommerce_companion_header___slides' ) ) {
+	function ecommerce_companion_header___slides($txt) {	
 	$headerslide_text_explode	=	explode(',', $txt);
 	array_walk($headerslide_text_explode, 'trim_value'); //Remove WhiteSpace form both side of separator
 	$header_slides ='';
@@ -116,7 +117,7 @@ if ( ! function_exists( 'header___slides' ) ) {
 										
 	<?php
 	foreach($headerslide_text_explode as $text){ 
-		echo $header_slides.'<div class="textslide-item">'. esc_html(sprintf(/* Translators: Slider Text */__('%s','ecommerce-companion'),$text)).' <a href="javascript:void(0)" class="icon-holder"><i class="fa fa-tag"></i></a></div>';
+		echo esc_html($header_slides).'<div class="textslide-item">'. esc_html($text).' <a href="javascript:void(0)" class="icon-holder"><i class="fa fa-tag"></i></a></div>';
 	}
 	?>
 		</div>

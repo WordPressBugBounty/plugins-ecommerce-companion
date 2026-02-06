@@ -2,9 +2,9 @@
 Contributors: sellerthemes
 Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
-Tested up to: 6.8
-Requires PHP: 6.1
-Stable tag: 8.1.54
+Tested up to: 6.9
+Requires PHP: 5.6
+Stable tag: 8.1.60
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -12,8 +12,8 @@ eCommerce Companion plugin only for Seller Themes. Its fully WooCommerce Compati
 
 == Description ==
 
-Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of <a href="https://sellerthemes.com/" rel="nofollow">Seller Themes</a> with full WooCommerce support. More than 10000+ trusted websites with Seller Themes. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! See below our popular free themes listed here. <a href="https://wordpress.org/themes/storely/" rel="nofollow">Storely</a>, <a href="https://wordpress.org/themes/shopient/" rel="nofollow">Shopient</a>, <a href="https://wordpress.org/themes/retailsy/" rel="nofollow">Retailsy</a>, <a href="https://wordpress.org/themes/express-store/" rel="nofollow">Express Store</a>, <a href="https://wordpress.org/themes/flossy/" rel="nofollow">Flossy</a>, <a href="https://wordpress.org/themes/pet-bazaar/" rel="nofollow">Pet Bazaar</a>. See All Themes Here
-<a href="https://www.sellerthemes.com/themes/" rel="dofollow">https://www.sellerthemes.com/themes/</a> and Documentation Here <a href="https://sellerthemes.ticksy.com/articles/" rel="dofollow">https://sellerthemes.ticksy.com/articles/</a>
+Introducing the eCommerce Companion Plugin, the essential tool for effortless setup of <a href="https://sellerthemes.com/" rel="nofollow">Seller Themes</a> with full WooCommerce support. More than 10000+ trusted websites with Seller Themes. With our plugin, sellers can streamline their online store setup process in just a few clicks. We ensure seamless integration of all themes with WooCommerce, eliminating compatibility issues. Experience enhanced functionality tailored for sellers, from customizable product pages to smooth checkout processes. Our plugin guarantees optimal performance, delivering lightning-fast load times for an exceptional shopping experience. Responsive design ensures your store looks stunning on any device. Stay ahead with regular updates and dedicated support from our expert team. Elevate your eCommerce game with the eCommerce Companion Plugin today! See below our popular free themes listed here. <a href="https://wordpress.org/themes/mega-mart/" rel="nofollow">Mega Mart</a>, <a href="https://wordpress.org/themes/storely/" rel="nofollow">Storely</a>, <a href="https://wordpress.org/themes/shopient/" rel="nofollow">Shopient</a>, <a href="https://wordpress.org/themes/retailsy/" rel="nofollow">Retailsy</a>, <a href="https://wordpress.org/themes/express-store/" rel="nofollow">Express Store</a>, <a href="https://wordpress.org/themes/flossy/" rel="nofollow">Flossy</a>, <a href="https://wordpress.org/themes/pet-bazaar/" rel="nofollow">Pet Bazaar</a>. See All Themes Here
+<a href="https://www.sellerthemes.com/themes/" rel="dofollow">https://www.sellerthemes.com/themes/</a>,  Documentation Here <a href="https://sellerthemes.ticksy.com/articles/" rel="dofollow">https://sellerthemes.ticksy.com/articles/</a> and Create Ticket Here <a href="https://sellerthemes.ticksy.com/" rel="dofollow">https://sellerthemes.ticksy.com/</a>
 
 **Features:**
 &#9989; Header Section
@@ -117,11 +117,30 @@ Yes, This plugin is specially make for Seller Themes. You can install theme for 
 
 == License ==
 
-eCommerce Companion WordPress plugin, Copyright (C) 2025 Seller Themes
+eCommerce Companion WordPress plugin, Copyright (C) 2026 Seller Themes
 eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 
 == Changelog ==
+
+= 8.1.60 =
+* Added: Woocommerce Product Icon Meta
+
+= 8.1.59 =
+* New Theme Added
+
+= 8.1.58 =
+* Readme Updated
+* Fixed Plugin Check Issues
+
+= 8.1.57 =
+* Tested WP 6.9 Compatibility
+
+= 8.1.56 =
+* Added Support Link
+
+= 8.1.55 =
+* Readme Updated
 
 = 8.1.54 =
 * Readme Updated

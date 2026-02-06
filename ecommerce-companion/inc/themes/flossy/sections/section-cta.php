@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_flossy_cta' ) ) :
 	function ecommerce_comp_flossy_cta(){
 	$cta_hs			= get_theme_mod( 'cta_hs','1');
@@ -40,6 +41,6 @@
 <?php endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_flossy_cta' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 13, 'ecommerce_comp_flossy_cta' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_cta', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 13, 'ecommerce_comp_flossy_cta' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_cta', absint( $ecommerce_companion_section_priority ) );
 }?>

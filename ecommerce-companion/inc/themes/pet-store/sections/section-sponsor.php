@@ -1,4 +1,5 @@
 <?php  
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_sponsor' ) ) :
 	function ecommerce_comp_pet_bazaar_sponsor() {
 	$sponsor_contents 		= get_theme_mod('sponsor4_contents',pet_bazaar_get_sponsor_default());	
@@ -26,7 +27,7 @@
 
 <?php
 if ( function_exists( 'ecommerce_comp_pet_bazaar_sponsor' ) ) {
-	$section_priority = apply_filters( 'pet_bazaar_section_priority', 13 , 'ecommerce_comp_pet_bazaar_sponsor' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_sponsor', absint( $section_priority ) );
+	$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 13 , 'ecommerce_comp_pet_bazaar_sponsor' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_sponsor', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

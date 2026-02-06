@@ -1,6 +1,5 @@
- <!--===// Start: Slider
-    =================================--> 
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 	function ecommerce_comp_mega_mart_slider() {
 	$slider_setting_hs				= get_theme_mod('slider_setting_hs','1');	
@@ -39,23 +38,23 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 									<div class="theme-content text-left">
 										<?php  if ( ! empty( $title ) ): ?>
 										<div class="sub-title" data-animation="fadeInRight" data-delay="150ms">
-											<h3><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$title)); ?></h3>
+											<h3><?php echo esc_html($title); ?></h3>
 										</div>
 										<?php endif; ?>
 										<?php  if ( ! empty( $subtitle ) || ! empty( $subtitle2 ) || ! empty( $subtitle3 ) ): ?>
-										<h1 data-animation="fadeInRight" data-delay="200ms"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$subtitle)); ?> <span><?php echo esc_html(/*Translators: %s: Subtitle2 */ sprintf(__('%s','ecommerce-companion'),$subtitle2)); ?></span><br><span><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$subtitle3)); ?></span></h1>  
+										<h1 data-animation="fadeInRight" data-delay="200ms"><?php echo esc_html($subtitle); ?> <span><?php echo esc_html($subtitle2); ?></span><br><span><?php echo esc_html($subtitle3); ?></span></h1>  
 										<?php endif; ?>
 										
 										<?php  if ( ! empty( $button_text ) ): ?>
-										<a data-animation="fadeInRight" data-delay="800ms" href="<?php echo esc_url($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$button_text )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+										<a data-animation="fadeInRight" data-delay="800ms" href="<?php echo esc_url($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" class="btn btn-primary main-button"><span><?php echo esc_html($button_text ); ?></span> <i class="fa fa-shopping-bag"></i></a>
 									</div>
 									<?php endif; ?>
 									
 									<?php  if ( ! empty( $text ) || ! empty( $text2 ) ): ?>
 									<div class="theme-content-offer aline-right" data-animation="fadeInRight" data-delay="800ms">
 										<div class="offer-badge">
-											<h1><?php echo esc_html(/*Translators: %s: Offer Title */ sprintf(__('%s','ecommerce-companion'),$text)); ?></h1>
-											<p><?php echo esc_html(/*Translators: %s: Offer Subtitle */ sprintf(__('%s','ecommerce-companion'),$text2)); ?></p>
+											<h1><?php echo esc_html($text); ?></h1>
+											<p><?php echo esc_html($text2); ?></p>
 										</div>
 									</div>
 									<?php endif; ?>
@@ -77,18 +76,18 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 					<div class="item">
 						<?php if ( ! empty( $image ) ) { ?>
 						<div class="main-slider-img">
-							<img src="<?php  echo esc_url($image);  ?>" alt="slider <?php echo $index ?>" />
+							<img src="<?php  echo esc_url($image);  ?>" alt="slider <?php echo esc_attr($index); ?>" />
 						</div>
 						<?php } ?>
 						<?php if ( ! empty( $image2 ) ) { ?>
 						<div class="categories-img">
-							<img src="<?php  echo esc_url($image2);  ?>" alt="Thumb <?php echo $index ?>" />
+							<img src="<?php  echo esc_url($image2);  ?>" alt="Thumb <?php echo esc_attr($index); ?>" />
 						</div>
 						<?php } ?>
 						<?php  if ( ! empty( $text ) || ! empty( $text2 ) ): ?>
 						<div class="categories-content">
-							<h6><?php echo esc_html(/*Translators: %s: Slider Tab Title */ sprintf(__('%s','ecommerce-companion'),$text3)); ?></h6>
-							<span><?php echo esc_html(/*Translators: %s: Slider Tab Subtitle */ sprintf(__('%s','ecommerce-companion'),$text4)); ?></span>
+							<h6><?php echo esc_html($text3); ?></h6>
+							<span><?php echo esc_html($text4); ?></span>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -103,7 +102,7 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_mega_mart_slider' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

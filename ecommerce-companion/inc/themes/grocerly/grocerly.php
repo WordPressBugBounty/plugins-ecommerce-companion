@@ -1,7 +1,8 @@
 <?php
 /**
- * @package Super Mart
+ * @package Grocerly
  */
+ if ( ! defined( 'ABSPATH' ) ) exit;
  
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/grocerly/theme-functions/extras.php';

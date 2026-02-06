@@ -1,9 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_MediaId = get_option('mega_mart_media_id');
+$ecommerce_companion_content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing mollis dolor facilisis porttitor.</p><!--more--><p>This is the rest of the content that will appear only on single post view.</p>';
 
-$MediaId = get_option('mega_mart_media_id');
-$content = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing mollis dolor facilisis porttitor.</p><!--more--><p>This is the rest of the content that will appear only on single post view.</p>';
-
-$product_titles = array(
+$ecommerce_companion_product_titles = array(
     "Juicy Lemons",
     "Fresh Organic Peas",
     "Fresh Potatoes",
@@ -15,20 +15,20 @@ $product_titles = array(
 );
 
 // Create blog post categories
-$blog_categories = array(
+$ecommerce_companion_blog_categories = array(
     'grocery' => 'Grocery',
     'fusion' => 'Fusion',
     'flavours' => 'Flavours',
 );
 
-$created_blog_cats = [];
-foreach ($blog_categories as $slug => $name) {
-    $result = wp_insert_term($name, 'category', ['slug' => $slug]);
-    $created_blog_cats[$slug] = !is_wp_error($result) ? $result['term_id'] : get_term_by('slug', $slug, 'category')->term_id;
+$ecommerce_companion_created_blog_cats = [];
+foreach ($ecommerce_companion_blog_categories as $ecommerce_companion_slug => $ecommerce_companion_name) {
+    $ecommerce_companion_result = wp_insert_term($ecommerce_companion_name, 'category', ['slug' => $ecommerce_companion_slug]);
+    $ecommerce_companion_created_blog_cats[$ecommerce_companion_slug] = !is_wp_error($ecommerce_companion_result) ? $ecommerce_companion_result['term_id'] : get_term_by('slug', $ecommerce_companion_slug, 'category')->term_id;
 }
 
 // Create WooCommerce product categories
-$woo_categories = array(
+$ecommerce_companion_woo_categories = array(
     'nutrients' => 'Nutrients',
     'baked-items' => 'Baked Items',
     'beverages' => 'Beverages',
@@ -37,11 +37,11 @@ $woo_categories = array(
     'vegetables' => 'Vegetables',
 );
 
-$created_product_cats = [];
+$ecommerce_companion_created_product_cats = [];
 if (class_exists('woocommerce')) {
-    foreach ($woo_categories as $slug => $name) {
-        $result = wp_insert_term($name, 'product_cat', ['slug' => $slug]);
-        $created_product_cats[$slug] = !is_wp_error($result) ? $result['term_id'] : get_term_by('slug', $slug, 'product_cat')->term_id;
+    foreach ($ecommerce_companion_woo_categories as $ecommerce_companion_slug => $ecommerce_companion_name) {
+        $ecommerce_companion_result = wp_insert_term($ecommerce_companion_name, 'product_cat', ['slug' => $ecommerce_companion_slug]);
+        $ecommerce_companion_created_product_cats[$ecommerce_companion_slug] = !is_wp_error($ecommerce_companion_result) ? $ecommerce_companion_result['term_id'] : get_term_by('slug', $ecommerce_companion_slug, 'product_cat')->term_id;
     }
 }
 
@@ -66,8 +66,8 @@ $posts = [
 ];
 
 // Add Product Posts
-foreach ($product_titles as $index => $title) {
-    $product_category_map = [
+foreach ($ecommerce_companion_product_titles as $ecommerce_companion_index => $ecommerce_companion_title) {
+    $ecommerce_companion_product_category_map = [
         [ 'vegetables' ],
         [ 'vegetables' ],
         [ 'vegetables' ],
@@ -79,43 +79,43 @@ foreach ($product_titles as $index => $title) {
     ];
 
     $posts[] = [
-        'post_title' => $title,
-        'product_cats' => $product_category_map[$index]
+        'post_title' => $ecommerce_companion_title,
+        'product_cats' => $ecommerce_companion_product_category_map[$ecommerce_companion_index]
     ];
 }
 
 kses_remove_filters();
 
-foreach ($posts as $index => $data) {
-    $post_type = isset($data['product_cats']) ? 'product' : 'post';
-    $post_args = [
-        'post_title'   => $data['post_title'],
+foreach ($posts as $ecommerce_companion_index => $ecommerce_companion_data) {
+    $post_type = isset($ecommerce_companion_data['product_cats']) ? 'product' : 'post';
+    $ecommerce_companion_post_args = [
+        'post_title'   => $ecommerce_companion_data['post_title'],
         'post_status'  => 'publish',
-        'post_content' => $content,
+        'post_content' => $ecommerce_companion_content,
         'post_author'  => 1,
         'post_type'    => $post_type,
     ];
 
     // Add categories and tags
     if ($post_type === 'post') {
-        $post_args['post_category'] = [$created_blog_cats[$data['post_category_slug']]];
-        $post_args['tax_input'] = ['post_tag' => $data['tags']];
+        $ecommerce_companion_post_args['post_category'] = [$ecommerce_companion_created_blog_cats[$ecommerce_companion_data['post_category_slug']]];
+        $ecommerce_companion_post_args['tax_input'] = ['post_tag' => $ecommerce_companion_data['tags']];
     }
 
     // 1. Insert post first
-    $post_id = wp_insert_post($post_args);
+    $post_id = wp_insert_post($ecommerce_companion_post_args);
 
     // 2. Then update the content with read more button
     // if ($post_type === 'post' && !is_wp_error($post_id)) {
         // $read_more = '<a href="' . get_permalink($post_id) . '" class="more-link btn">Read More</a>';
         // wp_update_post([
             // 'ID' => $post_id,
-            // 'post_content' => $content . $read_more,
+            // 'post_content' => $ecommerce_companion_content . $read_more,
         // ]);
     // }
 	
-    if (!is_wp_error($post_id) && isset($MediaId[$index + 1])) {
-        set_post_thumbnail($post_id, $MediaId[$index + 1]);
+    if (!is_wp_error($post_id) && isset($ecommerce_companion_MediaId[$ecommerce_companion_index + 1])) {
+        set_post_thumbnail($post_id, $ecommerce_companion_MediaId[$ecommerce_companion_index + 1]);
     }
 
     // Product metadata
@@ -129,13 +129,13 @@ foreach ($posts as $index => $data) {
         update_post_meta($post_id, '_regular_price', '10');
         update_post_meta($post_id, '_sale_price', '8');
         update_post_meta($post_id, '_price', '10');
-        update_post_meta($post_id, '_sku', 'SKU-' . $index);
+        update_post_meta($post_id, '_sku', 'SKU-' . $ecommerce_companion_index);
         wc_update_product_stock($post_id, 100, 'set');
 
         // Assign categories
-        if (!empty($data['product_cats'])) {
-            $cat_ids = array_map(fn($slug) => $created_product_cats[$slug], $data['product_cats']);
-            wp_set_object_terms($post_id, $cat_ids, 'product_cat');
+        if (!empty($ecommerce_companion_data['product_cats'])) {
+            $ecommerce_companion_cat_ids = array_map(fn($ecommerce_companion_slug) => $ecommerce_companion_created_product_cats[$ecommerce_companion_slug], $ecommerce_companion_data['product_cats']);
+            wp_set_object_terms($post_id, $ecommerce_companion_cat_ids, 'product_cat');
         }
     }
 }
@@ -144,7 +144,7 @@ kses_init_filters();
 
 // Assign thumbnails/icons to categories
 if (class_exists('woocommerce')) {
-    $category_icons = [
+    $ecommerce_companion_category_icons = [
         'nutrients' => '',
         'baked-items' => '',
         'beverages' => '',
@@ -155,7 +155,7 @@ if (class_exists('woocommerce')) {
         'uncategorized' => '',
     ];
 
-    $category_images = [
+    $ecommerce_companion_category_images = [
         'nutrients' => 22,
         'baked-items' => 23,
         'beverages' => 24,
@@ -166,13 +166,13 @@ if (class_exists('woocommerce')) {
         'uncategorized' => 4,
     ];
 
-    foreach ($category_icons as $slug => $icon) {
-        $term = get_term_by('slug', $slug, 'product_cat');
+    foreach ($ecommerce_companion_category_icons as $ecommerce_companion_slug => $ecommerce_companion_icon) {
+        $term = get_term_by('slug', $ecommerce_companion_slug, 'product_cat');
         if ($term) {
-            update_term_meta($term->term_id, 'mega_mart_product_cat_icon', $icon);
+            update_term_meta($term->term_id, 'mega_mart_product_cat_icon', $ecommerce_companion_icon);
 
-            if (!empty($category_images[$slug]) && get_post($category_images[$slug])) {
-                update_term_meta($term->term_id, 'thumbnail_id', $category_images[$slug]);
+            if (!empty($ecommerce_companion_category_images[$ecommerce_companion_slug]) && get_post($ecommerce_companion_category_images[$ecommerce_companion_slug])) {
+                update_term_meta($term->term_id, 'thumbnail_id', $ecommerce_companion_category_images[$ecommerce_companion_slug]);
             }
         }
     }

@@ -1,6 +1,5 @@
-<!--===// Start: Slider
-    =================================--> 
-<?php  
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_flossy_slider' ) ) :
 	function ecommerce_comp_flossy_slider(){
 	$slider_hs 						= get_theme_mod('slider_hs','1');
@@ -61,7 +60,7 @@
 endif;}
 endif;
 if ( function_exists( 'ecommerce_comp_flossy_slider' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 11, 'ecommerce_comp_flossy_slider' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 11, 'ecommerce_comp_flossy_slider' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

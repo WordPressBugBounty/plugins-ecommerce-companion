@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'flossy_above_header' ) ) :
 	function flossy_above_header(){ 
 		

@@ -1,88 +1,92 @@
 <?php
-$theme = wp_get_theme(); // Gets the Current Theme Name
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_theme = wp_get_theme(); // Gets the Current Theme Name
 	
-	if( 'Storely' == $theme->name){
+	if( 'Storely' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/storely.php';
 	}
 
-	if( 'Shoply' == $theme->name){
+	if( 'Shoply' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/shoply/shoply.php';
 	}
 
-	if( 'Storess' == $theme->name){
+	if( 'Storess' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storess/storess.php';
 	}
 
-	if( 'Storezia' == $theme->name){
+	if( 'Storezia' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storezia/storezia.php';
 	}
 
-	if( 'Shopiva' == $theme->name){
+	if( 'Shopiva' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/shopiva/shopiva.php';
 	}
 
-	if( 'Shopient' == $theme->name){
+	if( 'Shopient' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/shopient/shopient.php';
 	}
 
-	if( 'Aromatic' == $theme->name){
+	if( 'Aromatic' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/aromatic/aromatic.php';
 	}
 
-	if( 'Ayroma' == $theme->name){
+	if( 'Ayroma' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/ayroma/ayroma.php';
 	}
 
-	if( 'Feauty' == $theme->name){
+	if( 'Feauty' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/feauty/feauty.php';
 	}
 
-	if( 'Retailsy' == $theme->name){
+	if( 'Retailsy' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/retailsy/retailsy.php';
 	}
 	
-	if( 'Express Store' == $theme->name){
+	if( 'Express Store' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/express-store/express-store.php';
 	}
 	
-	if( 'Storefit' == $theme->name){
+	if( 'Storefit' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storefit/storefit.php';
 	}
 	
-	if( 'Flossy' == $theme->name){
+	if( 'Flossy' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/flossy.php';
 	}
 	
-	if( 'Flow Store' == $theme->name){
+	if( 'Flow Store' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flow-store/flow-store.php';
 	}
 	
-	if( 'Flexi Mart' == $theme->name){
+	if( 'Flexi Mart' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flexi-mart/flexi-mart.php';
 	}
 	
-	if( 'Pet Bazaar' == $theme->name){
+	if( 'Pet Bazaar' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/pet-bazaar.php';
 	}
 	
-	if( 'Paw Bazaar' == $theme->name){
+	if( 'Paw Bazaar' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/paw-bazaar/paw-bazaar.php';
 	}
 	
-	if( 'Pet Store' == $theme->name){
+	if( 'Pet Store' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-store/pet-store.php';
 	}
 	
-	if( 'Mega Mart' == $theme->name){
+	if( 'Mega Mart' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/mega-mart.php';
 	}
 	
-	if( 'Super Mart' == $theme->name){
+	if( 'Super Mart' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/super-mart/super-mart.php';
 	}
-	if( 'Grocerly' == $theme->name){
+	if( 'Grocerly' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/grocerly/grocerly.php';
 	}
-	if( 'Daily Mart' == $theme->name){
+	if( 'Daily Mart' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/daily-mart/daily-mart.php';
+	}
+	if( 'Electromix' == $ecommerce_companion_theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/electromix.php';
 	}

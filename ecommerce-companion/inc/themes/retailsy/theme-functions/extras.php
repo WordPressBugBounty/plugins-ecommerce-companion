@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
  *
  * Slider Default
@@ -177,7 +178,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 								$category_id = $cat->term_id;
 								$child_class = (retailsy_has_Children($category_id))?'menu-item-has-children':'';
 								
-								echo '<li class="menu-item main-top-menu '.$child_class.'"><a href="'.get_term_link($cat->slug, 'product_cat').'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $cat->name.'</a>';
+								echo '<li class="menu-item main-top-menu '.esc_attr($child_class).'"><a href="'.esc_url(get_term_link($cat->slug, 'product_cat')).'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html($cat->name).'</a>';
 								$args2 = array(
 									'taxonomy'     => $taxonomy,
 									'parent'       => $category_id,
@@ -192,7 +193,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 										
 								
 										$retailsy_product_cat_icon = get_term_meta($sub_category->term_id, 'retailsy_product_cat_icon', true);
-										echo  '<li class="menu-item '.$child_class.'"><a class="nav-link" href="'. get_term_link($sub_category->slug, 'product_cat') .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $sub_category->name .'</a>';
+										echo  '<li class="menu-item '.esc_attr($child_class).'"><a class="nav-link" href="'. esc_url(get_term_link($sub_category->slug, 'product_cat')) .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html($sub_category->name) .'</a>';
 										
 										$args3 = array(
 											'taxonomy'     => $taxonomy,
@@ -208,7 +209,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 												$child_class = (retailsy_has_Children($sub_category3->term_id))?'menu-item-has-children':'';
 												
 												$retailsy_product_cat_icon = get_term_meta($sub_category3->term_id, 'retailsy_product_cat_icon', true);
-												echo  '<li class="menu-item '.$child_class.'"><a class="nav-link" href="'. get_term_link($sub_category3->slug, 'product_cat') .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $sub_category3->name .'</a>';
+												echo  '<li class="menu-item '.esc_attr($child_class).'"><a class="nav-link" href="'. esc_url(get_term_link($sub_category3->slug, 'product_cat')) .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html($sub_category3->name) .'</a>';
 												
 												$args4 = array(
 													'taxonomy'     => $taxonomy,
@@ -223,7 +224,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 														$child_class = (retailsy_has_Children($sub_category4->term_id))?'menu-item-has-children':'';
 														
 														$retailsy_product_cat_icon = get_term_meta($sub_category4->term_id, 'retailsy_product_cat_icon', true);
-														echo  '<li class="menu-item '.$child_class.'"><a class="nav-link" href="'. get_term_link($sub_category4->slug, 'product_cat') .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $sub_category4->name .'</a>';
+														echo  '<li class="menu-item '.esc_attr($child_class).'"><a class="nav-link" href="'. esc_url(get_term_link($sub_category4->slug, 'product_cat')) .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html($sub_category4->name) .'</a>';
 														
 														$args5 = array(
 															'taxonomy'     => $taxonomy,
@@ -239,7 +240,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 																$child_class = (retailsy_has_Children($sub_category5->term_id))?'menu-item-has-children':'';
 																
 																$retailsy_product_cat_icon = get_term_meta($sub_category5->term_id, 'retailsy_product_cat_icon', true);
-																echo  '<li class="menu-item '.$child_class.'"><a class="nav-link" href="'. get_term_link($sub_category5->slug, 'product_cat') .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $sub_category5->name .'</a>';
+																echo  '<li class="menu-item '.esc_attr($child_class).'"><a class="nav-link" href="'. esc_url(get_term_link($sub_category5->slug, 'product_cat')) .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html(sub_category5->name) .'</a>';
 																
 																$args6 = array(
 																	'taxonomy'     => $taxonomy,
@@ -256,7 +257,7 @@ if ( ! function_exists( 'retailsy_hdr_browse_cat' ) ) {
 																		$child_class = (retailsy_has_Children($sub_category6->term_id))?'menu-item-has-children':'';
 																		
 																		$retailsy_product_cat_icon = get_term_meta($sub_category6->term_id, 'retailsy_product_cat_icon', true);
-																		echo  '<li class="menu-item '.$child_class.'"><a class="nav-link" href="'. get_term_link($sub_category6->slug, 'product_cat') .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa {$retailsy_product_cat_icon}'></i>":''); echo $sub_category6->name .'</a></li>';
+																		echo  '<li class="menu-item '.esc_attr($child_class).'"><a class="nav-link" href="'. esc_url(get_term_link($sub_category6->slug, 'product_cat')) .'">'.(!empty($retailsy_product_cat_icon) ? "<i class='fa ".esc_attr($retailsy_product_cat_icon) ."'></i>":''); echo esc_html($sub_category6->name) .'</a></li>';
 																	}
 																	echo '</ul>';
 																}

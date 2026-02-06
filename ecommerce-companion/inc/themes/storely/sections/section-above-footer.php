@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'storely_above_footer' ) ) :
 	function storely_above_footer() {
 	?>

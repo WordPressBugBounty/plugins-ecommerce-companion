@@ -1,7 +1,8 @@
 <?php
-/**
+	/**
  * @package   Flossy
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/sections/above-header.php';

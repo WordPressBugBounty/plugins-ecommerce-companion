@@ -1,10 +1,11 @@
-<?php  
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_testimonial' ) ) :
 	function ecommerce_comp_pet_bazaar_testimonial() {
 	$hs_testimonial			= get_theme_mod('hs_testimonial','1');
 	$testimonial_contents 			= get_theme_mod('testimonial_contents',pet_bazaar_get_testimonial_default());	
-	$testimonial_section_title		= get_theme_mod('testimonial_section_title',__('<span>our</span> testimonial','pet-bazaar'));	
-	$testimonial_section_subtitle 	= get_theme_mod('testimonial_section_subtitle',__('There are many variations of passages of Lorem Ipsum available','pet-bazaar'));
+	$testimonial_section_title		= get_theme_mod('testimonial_section_title',__('<span>our</span> testimonial','ecommerce-companion'));	
+	$testimonial_section_subtitle 	= get_theme_mod('testimonial_section_subtitle',__('There are many variations of passages of Lorem Ipsum available','ecommerce-companion'));
 	if($hs_testimonial == '1'){
 ?>	
 <section id="testimonial-section" class="testimonial5 has-background">
@@ -25,7 +26,7 @@
 		?>
 			<div class="client5-item">
                     <div class="client5-description">
-                        <p><?php if($text): esc_html(/*Translatots: %s: Text */printf(__('%s','pet-bazaar'),$text)); endif; ?></p>
+                        <p><?php if($text): echo esc_html($text); endif; ?></p>
                         <i class="fa fa-quote-left"></i>
                     </div>
                     <div class="client5-bottom">
@@ -33,8 +34,8 @@
                             <img src="<?php if($image): echo esc_url($image); endif; ?>" alt="">
                         </div>
                         <div class="client-detail">
-                            <h6><?php if($title): esc_html(/*Translatots: %s: Title */printf(__('%s','pet-bazaar'),$title)); endif; ?></h6>
-                            <span><?php if($subtitle): esc_html(/*Translatots: %s: Subtitle */printf(__('%s','pet-bazaar'),$subtitle)); endif; ?></span>
+                            <h6><?php if($title): echo esc_html($title); endif; ?></h6>
+                            <span><?php if($subtitle): echo esc_html($subtitle); endif; ?></span>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@
 
 <?php
 if ( function_exists( 'ecommerce_comp_pet_bazaar_testimonial' ) ) {
-$section_priority = apply_filters( 'pet_bazaar_section_priority', 15, 'ecommerce_comp_pet_bazaar_testimonial' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_testimonial', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 15, 'ecommerce_comp_pet_bazaar_testimonial' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_testimonial', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

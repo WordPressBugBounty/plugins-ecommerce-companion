@@ -1,8 +1,9 @@
-<?php 
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_mega_mart_brand' ) ) :
 	function ecommerce_comp_mega_mart_brand() {	
 	$brand_hs				= get_theme_mod('brand_hs','1');	
-	$brand_contents 			= get_theme_mod('brand_contents',get_brand_default());	
+	$brand_contents 			= get_theme_mod('brand_contents',ecommerce_companion_get_brand_default());	
 	$brand_section_title		= get_theme_mod('brand_section_title',__('Our Brands','ecommerce-companion'));
 	if($brand_hs == '1'):
 	?>
@@ -10,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-8 col-lg-3">
-				<div class="section-title"><?php echo esc_html(/*Translators: %s: Section Title */ sprintf(__('%s','ecommerce-companion'),$brand_section_title )); ?></div>
+				<div class="section-title"><?php echo esc_html($brand_section_title); ?></div>
 			</div>
 			<div class="col-4 col-lg-9 d-flex justify-content-end align-items-center">
 				<div class="custom-owl-nav">
@@ -34,7 +35,7 @@
 					if(!empty($image)):  
 					?>
 						<div class="brand-item wow fadeInUp" data-wow-delay="<?php echo esc_attr($index*100); ?>ms" data-wow-duration="1500ms">
-							<a href="#<?php echo esc_url($link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html(/*Translators: %s: Brand Title */ sprintf(__('%s','ecommerce-companion'),$title )); ?>" class="brand"></a>
+							<a href="#<?php echo esc_url($link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>"><img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html( $title ); ?>" class="brand"></a>
 						</div>
 					<?php endif; }} ?>
 					</div>
@@ -46,7 +47,7 @@
 <?php	endif; } endif;
 	
 if ( function_exists( 'ecommerce_comp_mega_mart_brand' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 30, 'ecommerce_comp_mega_mart_brand' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_brand', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 30, 'ecommerce_comp_mega_mart_brand' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_brand', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

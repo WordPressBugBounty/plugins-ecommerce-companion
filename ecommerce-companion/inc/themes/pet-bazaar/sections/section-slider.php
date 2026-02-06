@@ -1,6 +1,5 @@
- <!--===// Start: Slider
-    =================================--> 
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
 	function ecommerce_comp_pet_bazaar_slider() {
 	$slider_setting_hs				= get_theme_mod('slider_setting_hs','1');	
@@ -32,17 +31,17 @@ if ( ! function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) :
 			<div class="container">
                     <div class="slide-text-wrapper content-one mx-auto text-center">
 						<?php  if ( ! empty( $subtitle ) ): ?>
-                        <h1 class="slide-text slide-text-title mb-3" style="color: <?php echo $subtitle_color; ?>">
-                            <?php  esc_html(/*Translators: %s: Subtitle*/ printf(__('%s.','ecommerce-companion'),$subtitle)); ?>
+                        <h1 class="slide-text slide-text-title mb-3" style="color: <?php echo esc_attr($subtitle_color); ?>">
+                            <?php  echo esc_html($subtitle); ?>
                         </h1>
 						<?php endif; ?>
 						<?php  if ( ! empty( $description ) ): ?>
-                        <p class="slide-text slide-text-description mb-4" style="color: <?php echo $description_color; ?>">
-                            <?php esc_html(/*Translators: %s: description*/ printf(__('%s.','ecommerce-companion'),$description)); ?>
+                        <p class="slide-text slide-text-description mb-4" style="color: <?php echo esc_attr($description_color); ?>">
+                            <?php echo esc_html($description); ?>
                         </p>
 						<?php endif; ?>
 						<?php  if ( ! empty( $button ) ): ?>
-                        <a href="<?php echo esc_url($link); ?>" class="slide-text btn-on active"><?php esc_html(/*Translators: %s: Button Label*/ printf(__('%s.','ecommerce-companion'),$button)); ?> <i class="fa fa-chevron-right"></i> <span></span></a>
+                        <a href="<?php echo esc_url($link); ?>" class="slide-text btn-on active"><?php echo esc_html($button); ?> <i class="fa fa-chevron-right"></i> <span></span></a>
 						<?php endif; ?>
                     </div>
                 </div>				
@@ -55,7 +54,7 @@ endif;
 }
 endif;
 if ( function_exists( 'ecommerce_comp_pet_bazaar_slider' ) ) {
-$section_priority = apply_filters( 'pet_bazaar_section_priority', 11, 'ecommerce_comp_pet_bazaar_slider' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 11, 'ecommerce_comp_pet_bazaar_slider' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

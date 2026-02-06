@@ -1,13 +1,14 @@
 <?php
-if( 'Ayroma' == $theme->name){
-	$aromatic_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/ayroma/assets/images/logo.png';
-}elseif('Feauty' == $theme->name){
-	$aromatic_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/feauty/assets/images/logo.png';
-}else{
-	$aromatic_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/aromatic/assets/images/logo.png';
-}
-$activate = array(
-        'aromatic-sidebar-primary' => array(
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if( 'Ayroma' == $theme->name){
+		$ecommerce_companion_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/ayroma/assets/images/logo.png';
+	}elseif('Feauty' == $theme->name){
+		$ecommerce_companion_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/feauty/assets/images/logo.png';
+	}else{
+		$ecommerce_companion_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/aromatic/assets/images/logo.png';
+	}
+	$ecommerce_companion_activate = array(
+			'aromatic-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
             'archives-1',
@@ -22,7 +23,7 @@ $activate = array(
     /* the default titles will appear */
 		update_option('widget_text', array(  
 		1 => array('title' => '',
-        'text'=>'<a href="#" class="logo"><img src="'.esc_url($aromatic_logo_url).'"></a>
+        'text'=>'<a href="#" class="logo"><img src="'.esc_url($ecommerce_companion_logo_url).'"></a>
                             <div class="textwidget">
                                 <p class="about-template">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                                     quas recusandae
@@ -53,7 +54,7 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('aromatic_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('aromatic_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 ?>

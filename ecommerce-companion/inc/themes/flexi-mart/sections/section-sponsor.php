@@ -1,5 +1,6 @@
-<?php  
-if ( ! function_exists( 'ecommerce_comp_flossy_sponsor' ) ) :
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_flossy_sponsor' ) ) :
 	function ecommerce_comp_flossy_sponsor(){
 	$sponsor2_ttl 			= get_theme_mod('sponsor2_ttl','Our <span>Partner</span>');
 	$sponsor2_desc 			= get_theme_mod('sponsor2_desc','Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa doloremque asperiores porro.');
@@ -42,6 +43,6 @@ if ( ! function_exists( 'ecommerce_comp_flossy_sponsor' ) ) :
 <!-- END: START-SPONCERS -->
 	<?php } endif;
 	if ( function_exists( 'ecommerce_comp_flossy_sponsor' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 14, 'ecommerce_comp_flossy_sponsor' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_sponsor', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 14, 'ecommerce_comp_flossy_sponsor' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_sponsor', absint( $ecommerce_companion_section_priority ) );
 } ?>

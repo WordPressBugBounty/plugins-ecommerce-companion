@@ -1,5 +1,6 @@
 <?php
-function ayroma_lite_header_settings( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function ecommerce_companion_ayroma_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
    /*=========================================
 	Header Support
@@ -189,5 +190,5 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		)  
 	);	
 }
-add_action( 'customize_register', 'ayroma_lite_header_settings' );
+add_action( 'customize_register', 'ecommerce_companion_ayroma_header_settings' );
 

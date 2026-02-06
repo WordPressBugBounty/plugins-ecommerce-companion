@@ -1,25 +1,28 @@
-<?php  
-if ( ! function_exists( 'ecommerce_comp_feauty_product' ) ) :
+<?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	if ( ! function_exists( 'ecommerce_comp_feauty_product' ) ) :
 	function ecommerce_comp_feauty_product() {
 	$exclusive_product3_setting_hs		= get_theme_mod('exclusive_product3_setting_hs','1');
 	$exclusive_product3_ttl 			= get_theme_mod('exclusive_product3_ttl',__('Exclusive Product','ecommerce-companion'));
 	$exclusive_product3_desc 			= get_theme_mod('exclusive_product3_desc',__('Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, ratione!','ecommerce-companion'));
 	$exclusive_product3_cat				= get_theme_mod('exclusive_product3_cat'); 
-if($exclusive_product3_setting_hs=='1'):	
-if ( class_exists( 'woocommerce' ) ) {
-$args                   = array(
-	'post_type' => 'product',
-	'posts_per_page' => 20,
-);
-if(!empty($exclusive_product3_cat)):
-$args['tax_query'] = array(
-	array(
-		'taxonomy' => 'product_cat',
-		'field' => 'slug',
-		'terms' => $exclusive_product3_cat,
-	),
-);	
-endif;
+	if($exclusive_product3_setting_hs=='1'):	
+	if ( class_exists( 'woocommerce' ) ) {
+	$args                   = array(
+		'post_type' => 'product',
+		'posts_per_page' => 20,
+	);
+	
+	if(!empty($exclusive_product3_cat)):
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
+	$args['tax_query'] = array(
+		array(
+			'taxonomy' => 'product_cat',
+			'field' => 'slug',
+			'terms' => $exclusive_product3_cat,
+		),
+	);	
+	endif;
 ?>	
 <section class="our-exclusive-products pt-default exclusive-products-home3" id="our-exclusive-products">
 	<div class="container">
@@ -46,7 +49,7 @@ endif;
 					 $class="slideInLeft"; 
 				}
 			?>
-				<div class="col-md-6 col-lg-3 col-xxl-3 wow <?php echo $class; ?>  slow" data-wow-delay="1.5s">
+				<div class="col-md-6 col-lg-3 col-xxl-3 wow <?php echo esc_attr($class); ?>  slow" data-wow-delay="1.5s">
 					<ul class="products">
 						<?php get_template_part('woocommerce/content','product'); ?>
 					</ul>
@@ -58,7 +61,7 @@ endif;
 <?php } endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_feauty_product' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_feauty_product' );
-add_action( 'aromatic_sections', 'ecommerce_comp_feauty_product', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 13, 'ecommerce_comp_feauty_product' );
+add_action( 'aromatic_sections', 'ecommerce_comp_feauty_product', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

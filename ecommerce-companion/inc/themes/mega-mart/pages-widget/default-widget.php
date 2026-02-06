@@ -1,13 +1,14 @@
 <?php
-	$theme = wp_get_theme();
-	$name = strtolower(str_replace(' ', '-', $theme));
-	if($name == 'theeme') {
-		$mega_mart_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/footer-logo.png';
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	$ecommerce_companion_theme = wp_get_theme();
+	$ecommerce_companion_name = strtolower(str_replace(' ', '-', $ecommerce_companion_theme));
+	if($ecommerce_companion_name == 'theeme') {
+		$mega_mart_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$ecommerce_companion_name.'/assets/images/footer-logo.png';
 	} else {
-		$mega_mart_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$name.'/assets/images/footer-logo.png';
+		$mega_mart_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/'.$ecommerce_companion_name.'/assets/images/footer-logo.png';
 	}
 	
-$blocks = array(
+$ecommerce_companion_blocks = array(
     '<!-- wp:html -->
 	<div class="logo mb-3">
 		<a href="javascript:void(0);"><img decoding="async" src="'.$mega_mart_logo_url.'" alt="image"></a>
@@ -68,7 +69,7 @@ $blocks = array(
     '<!-- wp:group --><!-- wp:heading --><h2 class="wp-block-heading">Latest Posts</h2><!-- /wp:heading --><!-- wp:latest-posts /--><!-- /wp:group -->', 
     '<!-- wp:group --><!-- wp:heading --><h2 class="wp-block-heading">Calendar</h2><!-- /wp:heading --><!-- wp:calendar /--><!-- /wp:group -->', 
 );
-$activate = array(
+$ecommerce_companion_activate = array(
 		'mega-mart-footer-widget' => array(
 			'block-1'
         ),
@@ -90,19 +91,19 @@ $activate = array(
     );
     	
 	update_option('widget_block', array(
-		1 => array('content' => $blocks[0]), // 1 Represent block-1
-		2 => array('content' => $blocks[1]), //2 Represent block-2
-		3 => array('content' => $blocks[2]), 
-		4 => array('content' => $blocks[3]), 
-		5 => array('content' => $blocks[4]), 
-		6 => array('content' => $blocks[5]), 
-		7 => array('content' => $blocks[6]), 
-		8 => array('content' => $blocks[7]), 
+		1 => array('content' => $ecommerce_companion_blocks[0]), // 1 Represent block-1
+		2 => array('content' => $ecommerce_companion_blocks[1]), //2 Represent block-2
+		3 => array('content' => $ecommerce_companion_blocks[2]), 
+		4 => array('content' => $ecommerce_companion_blocks[3]), 
+		5 => array('content' => $ecommerce_companion_blocks[4]), 
+		6 => array('content' => $ecommerce_companion_blocks[5]), 
+		7 => array('content' => $ecommerce_companion_blocks[6]), 
+		8 => array('content' => $ecommerce_companion_blocks[7]), 
 	));
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('mega_mart_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('mega_mart_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 	
 	set_theme_mod( 'footer_contact_call_title', __('Order Anytime','ecommerce-companion'));
 	set_theme_mod( 'footer_contact_call_link', __('70 975 975 70','ecommerce-companion'));

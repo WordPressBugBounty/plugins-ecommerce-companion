@@ -2,6 +2,7 @@
 /**
  * @package Express Store
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/retailsy/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/functions-style.php';

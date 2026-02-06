@@ -1,4 +1,5 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_storely_binfo' ) ) :
 	function ecommerce_comp_storely_binfo() {
 	$banner_info_hs 		= get_theme_mod('banner_info_hs','1');
@@ -54,7 +55,7 @@ if ( ! function_exists( 'ecommerce_comp_storely_binfo' ) ) :
 endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_storely_binfo' ) ) {
-$section_priority = apply_filters( 'storely_section_priority', 13, 'ecommerce_comp_storely_binfo' );
-add_action( 'storely_sections', 'ecommerce_comp_storely_binfo', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'storely_section_priority', 13, 'ecommerce_comp_storely_binfo' );
+add_action( 'storely_sections', 'ecommerce_comp_storely_binfo', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

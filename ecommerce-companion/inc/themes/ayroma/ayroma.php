@@ -1,7 +1,8 @@
 <?php
-/**
- * @package   Aromatic
+	/**
+ * @package   Ayroma
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/aromatic/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/functions-style.php';

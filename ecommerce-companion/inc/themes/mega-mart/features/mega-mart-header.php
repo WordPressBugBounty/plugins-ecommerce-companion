@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_lite_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	// Logo Width // 
@@ -100,7 +101,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'abv_hdr_first_slide_custom' , 
 			array(
-			'default' => __('Welcome To Our Mart, Save 20%-50% Sitewide!!, Save Upto 35% Off Today'),
+			'default' => __('Welcome To Our Mart, Save 20%-50% Sitewide!!, Save Upto 35% Off Today','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'mega_mart_sanitize_text',
 			'priority' => 1,
@@ -139,7 +140,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'daytext' , 
 			array(
-			'default' => __('Deal of the day!'),
+			'default' => __('Deal of the day!','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'mega_mart_sanitize_text',
 			'priority' => 1,

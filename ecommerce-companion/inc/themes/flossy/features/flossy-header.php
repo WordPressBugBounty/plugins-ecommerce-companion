@@ -1,6 +1,7 @@
 <?php
-function ecommerce_flossy_header_settings( $wp_customize ) {
-$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+	if ( ! defined( 'ABSPATH' ) ) exit;
+	function ecommerce_flossy_header_settings( $wp_customize ) {
+	$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 // Logo Width // 
 	if ( class_exists( 'Ecommerce_Comp_Customizer_Range_Control' ) ) {
 		$wp_customize->add_setting(
@@ -49,7 +50,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
         'above_header',
         array(
         	'priority'      => 1,
-            'title' 		=> __('Above Header','flossy'),
+            'title' 		=> __('Above Header','ecommerce-companion'),
 			'panel'  		=> 'header_section',
 		)
     );
@@ -71,7 +72,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'hdr_left_widget',
 		array(
 			'type' => 'hidden',
-			'label' => __('Widget Left','flossy'),
+			'label' => __('Widget Left','ecommerce-companion'),
 			'section' => 'above_header',
 		)
 	);
@@ -133,7 +134,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'hdr_right_widget',
 		array(
 			'type' => 'hidden',
-			'label' => __('Widget Right','flossy'),
+			'label' => __('Widget Right','ecommerce-companion'),
 			'section' => 'above_header',
 		)
 	);
@@ -169,7 +170,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class flossy_header_social_premium extends WP_Customize_Control {
 			public function render_content() {
 			?>
-				<a class="customizer_header_social_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php _e('More Icons Available in the Premium Version','ecommerce-companion'); ?></a>			
+				<a class="customizer_header_social_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php esc_html_e('More Icons Available in the Premium Version','ecommerce-companion'); ?></a>			
 			<?php
 			}
 		}

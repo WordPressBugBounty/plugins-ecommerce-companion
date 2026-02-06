@@ -1,4 +1,5 @@
-<?php  
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_retailsy_fproduct' ) ) :
 	function ecommerce_comp_retailsy_fproduct() {
 	$feature_product_ttl 			= get_theme_mod('feature_product_ttl',__('Feature Product','ecommerce-companion'));
@@ -13,8 +14,9 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_fproduct' ) ) :
 	$args                   = array(
 		'post_type' => 'product',
 		'posts_per_page' => $feature_product_num,
-	);
+		);
 	if(!empty($feature_product_cat) && !is_customize_preview()):
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'product_cat',
@@ -43,11 +45,10 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_fproduct' ) ) :
 											$product_cat_name = get_term_by( 'slug', $product_category, 'product_cat' );
 											?>
 										<?php if($i == '0'){  ?>
-												<a href="javascript:void(0)" class="item orange-text"
-											data-owl-filter=".<?php echo 'product_cat-'.$product_category; ?>"><?php  echo $product_cat_name->name; ?></a>
+												<a href="javascript:void(0)" class="item orange-text" data-owl-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>"><?php  echo esc_html($product_cat_name->name); ?></a>
 										
 										<?php }else{ ?>		
-												<a href="javascript:void(0)" class="item" data-owl-filter=".<?php echo 'product_cat-'.$product_category; ?>"><?php  echo $product_cat_name->name; ?></a>
+												<a href="javascript:void(0)" class="item" data-owl-filter=".<?php echo 'product_cat-'.esc_attr($product_category); ?>"><?php  echo esc_html($product_cat_name->name); ?></a>
 										<?php }} ?>	
 									</nav>
 								</div>
@@ -83,7 +84,7 @@ if ( ! function_exists( 'ecommerce_comp_retailsy_fproduct' ) ) :
 }
 endif;
 if ( function_exists( 'ecommerce_comp_retailsy_fproduct' ) ) {
-$section_priority = apply_filters( 'retailsy_section_priority', 14, 'ecommerce_comp_retailsy_fproduct' );
-add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_fproduct', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'retailsy_section_priority', 14, 'ecommerce_comp_retailsy_fproduct' );
+add_action( 'retailsy_sections', 'ecommerce_comp_retailsy_fproduct', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

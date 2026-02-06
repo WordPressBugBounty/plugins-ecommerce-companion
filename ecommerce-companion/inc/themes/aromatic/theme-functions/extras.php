@@ -1,7 +1,7 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 /*
- *
+	*
  * Social Icon
  */
 function aromatic_get_social_icon_default() {
@@ -413,7 +413,7 @@ if ( ! function_exists( 'aromatic_hdr_account' ) ) {
 				<?php if(is_user_logged_in()): ?>
 					<a href="<?php echo esc_url(wp_logout_url( home_url())); ?>" class="cta-01"><span><?php echo wp_kses_post($hdr_acc_btn_lbl); ?></span></a>
 				<?php else: ?>
-					<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="cta-01"><span><?php echo wp_kses_post($hdr_acc_login_lbl); ?></span></a>
+					<a href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>" class="cta-01"><span><?php echo wp_kses_post($hdr_acc_login_lbl); ?></span></a>
 				<?php endif; ?>					
 			</div>
 		<?php endif;

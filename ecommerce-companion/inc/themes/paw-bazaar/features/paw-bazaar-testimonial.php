@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function pet_bazaar_testimonial_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -6,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	=========================================*/
 	$wp_customize->add_section(
 		'testimonial_setting', array(
-			'title' => esc_html__( 'Testimonial Section', 'pet-bazaar' ),
+			'title' => esc_html__( 'Testimonial Section', 'ecommerce-companion' ),
 			'priority' => 9,
 			'panel' => 'pet_bazaar_frontpage_sections',
 		)
@@ -66,7 +67,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'testimonial_content_head',
 		array(
 			'type' => 'hidden',
-			'label' => __('Content','pet-bazaar'),
+			'label' => __('Content','ecommerce-companion'),
 			'section' => 'testimonial_setting',
 		)
 	);	
@@ -76,7 +77,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'testimonial_section_title' , 
 			array(
-			'default' => __('<span>our</span> testimonial','pet-bazaar'),
+			'default' => __('<span>our</span> testimonial','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'pet_bazaar_sanitize_text',
 			'priority' => 1,
@@ -86,7 +87,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'testimonial_section_title', 
 		array(
-			'label'	      => esc_html__( 'Section Title', 'pet-bazaar' ),
+			'label'	      => esc_html__( 'Section Title', 'ecommerce-companion' ),
 			'section'     => 'testimonial_setting',
 		) 
 	);
@@ -95,7 +96,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'testimonial_section_subtitle' , 
 			array(
-			'default' => __('There are many variations of passages of Lorem Ipsum available','pet-bazaar'),
+			'default' => __('There are many variations of passages of Lorem Ipsum available','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'pet_bazaar_sanitize_text',
 			'priority' => 1,
@@ -105,7 +106,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'testimonial_section_subtitle', 
 		array(
-			'label'	      => esc_html__( 'Subtitle', 'pet-bazaar' ),
+			'label'	      => esc_html__( 'Subtitle', 'ecommerce-companion' ),
 			'section'     => 'testimonial_setting',
 		) 
 	);
@@ -127,10 +128,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			new Pet_Bazaar_Repeater( $wp_customize, 
 				'testimonial_contents', 
 					array(
-						'label'   => esc_html__('Testimonial','pet-bazaar'),
+						'label'   => esc_html__('Testimonial','ecommerce-companion'),
 						'section' => 'testimonial_setting',
-						'add_field_label'                   => esc_html__( 'Add New Testimonial', 'pet-bazaar' ),
-						'item_name'                         => esc_html__( 'Testimonial', 'pet-bazaar' ),
+						'add_field_label'                   => esc_html__( 'Add New Testimonial', 'ecommerce-companion' ),
+						'item_name'                         => esc_html__( 'Testimonial', 'ecommerce-companion' ),
 						'customizer_repeater_image_control' => true,
 						'customizer_repeater_title_control' => true,
 						'customizer_repeater_subtitle_control' => true,
@@ -143,7 +144,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class pet_bazaar_testimonial__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_testimonial_section_premium up-to-pro" href="<?php echo esc_url(pet_bazaar_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Testimonial Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_testimonial_section_premium up-to-pro" href="<?php echo esc_url(pet_bazaar_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Testimonial Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

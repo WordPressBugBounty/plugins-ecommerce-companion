@@ -8,6 +8,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @package customizer-controls
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return;
@@ -35,11 +36,11 @@ class Ecommerce_Comp_Customizer_Range_Control extends WP_Customize_Control {
 				'jquery-ui-button',
 				'jquery-ui-sortable',
 			),
-			false,
+			'9.0',
 			true
 		);
 	
-		wp_enqueue_style( 'ecommerce-comp-controls', ECOMMERCE_COMP_PLUGIN_URL . '/inc/custom-controls/assets/css/controls.css' );
+		wp_enqueue_style( 'ecommerce-comp-controls', ECOMMERCE_COMP_PLUGIN_URL . '/inc/custom-controls/assets/css/controls.css',array(), '9.0', false );
 	}
 	
 	/**

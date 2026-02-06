@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function flossy_banner_info_1_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -88,7 +89,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class flossy_bannerinfo__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_information_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php _e('More Information Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_information_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php esc_html_e('More Information Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_pet_bazaar_cta' ) ) :
 	function ecommerce_comp_pet_bazaar_cta() {
 	$cta_image 				= get_theme_mod('cta_image', ECOMMERCE_COMP_PLUGIN_URL . 'inc/themes/pet-store/assets/images/cta.png');
@@ -35,12 +36,12 @@
 								  <?php endif; ?>
 							</div>
 							<div class="cta-info">
-								<?php if($cta_title) : ?><h5><?php esc_html(/* translators: %s: Title */printf(__('%s','ecommerce-companion'),$cta_title)); ?></h5> <?php endif; ?>
-								<?php if($cta_description) : ?><p><?php esc_html(/* translators: %s: Description */printf(__('%s','ecommerce-companion'),$cta_description)); ?></p> <?php endif; ?>
+								<?php if($cta_title) : ?><h5><?php echo esc_html($cta_title); ?></h5> <?php endif; ?>
+								<?php if($cta_description) : ?><p><?php echo esc_html($cta_description); ?></p> <?php endif; ?>
 							</div>
 						</div>
 						<?php if(!empty($cta_button_lbl)): ?>
-						<div class="button-cta"><a href="<?php esc_url($cta_button_link);?>" class="btn-on active"><?php esc_html(/* translators: %s: Button Label */printf(__('%s','ecommerce-companion'),$cta_button_lbl)); ?><span style="top: 46.3991px; left: 8.26733px;"></span></a></div>
+						<div class="button-cta"><a href="<?php esc_url($cta_button_link);?>" class="btn-on active"><?php echo esc_html($cta_button_lbl); ?><span style="top: 46.3991px; left: 8.26733px;"></span></a></div>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -52,7 +53,7 @@
 
 <?php
 if ( function_exists( 'ecommerce_comp_pet_bazaar_cta' ) ) {
-	$section_priority = apply_filters( 'pet_bazaar_section_priority', 13 , 'ecommerce_comp_pet_bazaar_cta' );
-add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_cta', absint( $section_priority ) );
+	$ecommerce_companion_section_priority = apply_filters( 'pet_bazaar_section_priority', 13 , 'ecommerce_comp_pet_bazaar_cta' );
+add_action( 'pet_bazaar_sections', 'ecommerce_comp_pet_bazaar_cta', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

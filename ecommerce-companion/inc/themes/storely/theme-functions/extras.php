@@ -14,6 +14,8 @@
  * @param  string $sidebar_id Sidebar ID.
  * @return string Sidebar name.
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 function storely_lite_get_sidebar_name_by_id( $sidebar_id = '' ) {
 
 	if ( ! $sidebar_id ) {
@@ -170,7 +172,8 @@ function storely_get_social_icon_default() {
  *
  * Banner Info Default
  */
-if( 'Storezia' == $theme->name){ 
+$storely_theme = wp_get_theme(); // gets the current theme
+if( 'Storezia' == $storely_theme->name){ 
 	 function storely_get_banner_info_default() {
 		return apply_filters(
 			'storely_get_banner_info_default', json_encode(

@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class ecommerce_companion_social_icon_widget extends WP_Widget{
 		// Construct
 		public function __construct() {
@@ -33,119 +33,124 @@ class ecommerce_companion_social_icon_widget extends WP_Widget{
 		}
 		
 		function ecommerce_companion_enqueue_admin_scripts() { 			
-			wp_enqueue_script( 'social-icon-widget-js', ECOMMERCE_COMP_PLUGIN_URL.'inc/widget/js/main.js', array( 'jquery', 'jquery-ui-sortable' ) );
+			wp_enqueue_script( 'social-icon-widget-js', ECOMMERCE_COMP_PLUGIN_URL.'inc/widget/js/main.js', array( 'jquery', 'jquery-ui-sortable' ),'9.0',true );
 			
-			wp_enqueue_script( 'icon-picker-js', ECOMMERCE_COMP_PLUGIN_URL.'inc/widget/fonticonpicker/jquery.fonticonpicker.min.js', array( 'jquery', 'jquery-ui-sortable' ) );
+			wp_enqueue_script( 'icon-picker-js', ECOMMERCE_COMP_PLUGIN_URL.'inc/widget/fonticonpicker/jquery.fonticonpicker.min.js', array( 'jquery', 'jquery-ui-sortable' ),'9.0',true );
 			
-			wp_enqueue_style( 'font-awesome-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/css/font-awesome/css/font-awesome.min.css');
+			wp_enqueue_style( 'font-awesome-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/css/font-awesome/css/font-awesome.min.css',array(),'9.0',false);
 			
-			wp_enqueue_style( 'social-icon-widget-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/css/admin.css', false );
+			wp_enqueue_style( 'social-icon-widget-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/css/admin.css', array(),'9.0',false );
 			
-			wp_enqueue_style( 'icon-picker-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/fonticonpicker/jquery.fonticonpicker.min.css', false );
+			wp_enqueue_style( 'icon-picker-css', ECOMMERCE_COMP_PLUGIN_URL . 'inc/widget/fonticonpicker/jquery.fonticonpicker.min.css', array(),'9.0',false );
 		}
 
 		
 		// Widget Form Section  
 		function form( $instance ) {
-		$icon_color = isset($instance['color'])? $instance['color'] : "#6800e8";  //if $this->defaults not used
-		
+		// Use a default color if none is set
+		$icon_color = isset( $instance['color'] ) ? $instance['color'] : "#6800e8";
+
+		// Ensure defaults are applied
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 		$social_links = $this->get_social();
-?>
+		?>
+
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'ecommerce-companion' ); ?>:</label>
-			<input id="<?php echo $this->get_field_id( 'title' ); ?>" type="text" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" class="widefat" />
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ecommerce-companion' ); ?>:</label>
+			<input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
-		
-		<script type='text/javascript'>
-		 
-				( function( $ ){
 
-					function initColorPicker( widget ) {
-						widget.find( '.my-color-picker' ).wpColorPicker( {
-							change: _.throttle( function() { // For Customizer
-								$(this).trigger( 'change' );
-							}, 3000 )
-						});
-					}
+		<script type="text/javascript">
+			( function( $ ) {
 
-					function onFormUpdate( event, widget ) {
-						initColorPicker( widget );
-					}
+				function initColorPicker( widget ) {
+					widget.find( '.my-color-picker' ).wpColorPicker( {
+						change: _.throttle( function() { // For Customizer
+							$(this).trigger( 'change' );
+						}, 3000 )
+					});
+				}
 
-					$( document ).on( 'widget-added widget-updated', onFormUpdate );
+				function onFormUpdate( event, widget ) {
+					initColorPicker( widget );
+				}
 
-					$( document ).ready( function() {
-						$( '#widgets-right .widget:has(.my-color-picker)' ).each( function () {
-							initColorPicker( $( this ) );
-						} );
+				$( document ).on( 'widget-added widget-updated', onFormUpdate );
+
+				$( document ).ready( function() {
+					$( '#widgets-right .widget:has(.my-color-picker)' ).each( function () {
+						initColorPicker( $( this ) );
 					} );
-				}( jQuery ) );
+				} );
+			}( jQuery ) );
+		</script>
 
-				</script>
-				
 		<p>
-			<label for="<?php echo $this->get_field_id( 'color' ); ?>"><?php _e( 'Color','ecommerce-companion'); ?> :</label>
-			<input class="my-color-picker" type="text" id="<?php echo $this->get_field_id( 'color' ); ?>" name="<?php echo $this->get_field_name( 'color' ); ?>" value="<?php echo $icon_color; ?>" class="widefat" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'color' ) ); ?>"><?php esc_html_e( 'Color', 'ecommerce-companion' ); ?>:</label>
+			<input class="my-color-picker" type="text" id="<?php echo esc_attr( $this->get_field_id( 'color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'color' ) ); ?>" value="<?php echo esc_attr( $icon_color ); ?>" class="widefat" /> 
 		</p>
-				
+
 		<p>
-			<label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php _e( 'Icon Bg','ecommerce-companion'); ?> :</label>
-			<input class="my-color-picker" type="text" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo $instance['background_color']; ?>" class="widefat" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>"><?php esc_html_e( 'Icon Bg', 'ecommerce-companion' ); ?>:</label>
+			<input class="my-color-picker" type="text" id="<?php echo esc_attr( $this->get_field_id( 'background_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'background_color' ) ); ?>" value="<?php echo esc_attr( $instance['background_color'] ); ?>" class="widefat" /> 
 		</p>
+
 		<p>
-			<label for="<?php echo $this->get_field_id( 'bg_radius' ); ?>"><?php _e( 'Icon Bg Radius','ecommerce-companion'); ?> :</label>	
-			<input class="icon_bg_radius" type="number" id="<?php echo $this->get_field_id( 'bg_radius' ); ?>" name="<?php echo $this->get_field_name( 'bg_radius' ); ?>" value="<?php echo $instance['bg_radius']; ?>" class="widefat" min="0" style="padding-right:0;" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'bg_radius' ) ); ?>"><?php esc_html_e( 'Icon Bg Radius', 'ecommerce-companion' ); ?>:</label>    
+			<input class="icon_bg_radius" type="number" id="<?php echo esc_attr( $this->get_field_id( 'bg_radius' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'bg_radius' ) ); ?>" value="<?php echo esc_attr( $instance['bg_radius'] ); ?>" class="widefat" min="0" style="padding-right:0;" /> 
 		</p>
+
 		<p>
-			<label for="<?php echo $this->get_field_id( 'font_size' ); ?>"><?php _e( 'Font Size','ecommerce-companion'); ?> :</label>	
-			<input class="icon_bg_radius" type="number" id="<?php echo $this->get_field_id( 'font_size' ); ?>" name="<?php echo $this->get_field_name( 'font_size' ); ?>" value="<?php echo $instance['font_size']; ?>" class="widefat" min="14" style="padding-right:0;" /> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'font_size' ) ); ?>"><?php esc_html_e( 'Font Size', 'ecommerce-companion' ); ?>:</label>    
+			<input class="icon_bg_radius" type="number" id="<?php echo esc_attr( $this->get_field_id( 'font_size' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'font_size' ) ); ?>" value="<?php echo esc_attr( $instance['font_size'] ); ?>" class="widefat" min="14" style="padding-right:0;" /> 
 		</p>
-		
+
 		<ul class="mks_social_container mks-social-sortable">
-		  <?php foreach ( $instance['social'] as $link ) : ?>
-			  <li>
-			  	<?php $this->draw_social( $this, $social_links, $link ); ?>
-			  </li>
+			<?php foreach ( $instance['social'] as $link ) : ?>
+				<li>
+					<?php $this->draw_social( $this, $social_links, $link ); ?>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 
-
 		<p>
-	  	<a href="#" class="mks_add_social button"><?php _e( 'Add Icon', 'ecommerce-companion' ); ?></a>
-	  </p>
+			<a href="#" class="mks_add_social button"><?php esc_html_e( 'Add Icon', 'ecommerce-companion' ); ?></a>
+		</p>
 
-	  <div class="mks_social_clone" style="display:none">
+		<div class="mks_social_clone" style="display:none">
 			<?php $this->draw_social( $this, $social_links ); ?>
-	  </div>
-		
-<?php
+		</div>
+
+	<?php
 	}
 
-	function draw_social( $widget, $social_links, $selected = array( 'icon' => '', 'url' => '') ) { ?>
+	function draw_social( $widget, $social_links, $selected = array( 'icon' => '', 'url' => '' ) ) { ?>
 
-				<label class="mks-sw-icon"><?php _e( 'Icon', 'ecommerce-companion' ); ?> :</label>
-				<select type="text" class="iconPicker"name="<?php echo $widget->get_field_name( 'social_icon' ); ?>[]" value="<?php echo $selected['icon']; ?>" style="font-family: 'FontAwesome', Arial; width: 82%">
-					<?php foreach ( $social_links as $key => $link ) : ?>
-						<option value="<?php echo $key; ?>" <?php selected( $key, $selected['icon'] ); ?>><?php echo $link; ?></option>
-					<?php endforeach; ?>
-				</select>
+		<label class="mks-sw-icon"><?php esc_html_e( 'Icon', 'ecommerce-companion' ); ?> :</label>
+		<select type="text" class="iconPicker" name="<?php echo esc_attr( $widget->get_field_name( 'social_icon' ) ); ?>[]" value="<?php echo esc_attr( $selected['icon'] ); ?>" style="font-family: 'FontAwesome', Arial; width: 82%">
+			<?php foreach ( $social_links as $key => $link ) : ?>
+				<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $selected['icon'] ); ?>><?php echo esc_html( $link ); ?></option>
+			<?php endforeach; ?>
+		</select>
 
-				<p><label class="mks-sw-icon"><?php _e( 'Url', 'ecommerce-companion' ); ?> :</label>
-				<input type="text" name="<?php echo $widget->get_field_name( 'social_url' ); ?>[]" value="<?php echo $selected['url']; ?>" placeholder="Example.com" style="width: 82%"></p>
-								
-				<span class="mks-remove-social dashicons dashicons-no-alt"></span>
+		<p>
+			<label class="mks-sw-icon"><?php esc_html_e( 'Url', 'ecommerce-companion' ); ?> :</label>
+			<input type="text" name="<?php echo esc_attr( $widget->get_field_name( 'social_url' ) ); ?>[]" value="<?php echo esc_url( $selected['url'] ); ?>" placeholder="<?php esc_attr_e( 'Example.com', 'ecommerce-companion' ); ?>" style="width: 82%">
+		</p>
+		
+		<span class="mks-remove-social dashicons dashicons-no-alt"></span>
 
 	<?php }
+
 	
 	// Upadte data
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );	
-		$instance['color'] = strip_tags( $new_instance['color'] );	
-		$instance['background_color'] = strip_tags( $new_instance['background_color'] );	
-		$instance['bg_radius'] = strip_tags( $new_instance['bg_radius'] );	
-		$instance['font_size'] = strip_tags( $new_instance['font_size'] );	
+		$instance['title'] = wp_strip_all_tags( $new_instance['title'] );	
+		$instance['color'] = wp_strip_all_tags( $new_instance['color'] );	
+		$instance['background_color'] = wp_strip_all_tags( $new_instance['background_color'] );	
+		$instance['bg_radius'] = wp_strip_all_tags( $new_instance['bg_radius'] );	
+		$instance['font_size'] = wp_strip_all_tags( $new_instance['font_size'] );	
 		$instance['social'] = array();
 		if ( !empty( $new_instance['social_icon'] ) ) {
 			$protocols = wp_allowed_protocols();
@@ -158,34 +163,34 @@ class ecommerce_companion_social_icon_widget extends WP_Widget{
 		return $instance;
 	}
 	
-	// Front page data
+	// Front page data	
 	function widget( $args, $instance ) {
 
-		extract( $args );
+    extract( $args );
 
-		$instance = wp_parse_args( (array) $instance, $this->defaults );
-		
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		echo $before_widget;
+    $instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		if ( !empty( $title ) ) {
-			echo $before_title . $title . $after_title;
-		}
-?>
-		
-		<ul>
-		  <?php foreach ( $instance['social'] as $item ) : 
-			  if(!empty($item['url'])){ ?>
-					<li><a class="socicon-<?php echo esc_attr( $item['icon'] ); ?> tool-bounce tool-bottom-left" href="<?php echo esc_url($item['url']); ?>" aria-label="<?php echo $item['icon']; ?>" target="_blank" style=" font-size: <?php echo $instance['font_size']; ?>px;"><i class="fa <?php echo $item['icon']; ?>" style="color:<?php echo $instance['color'];?>; background-color: <?php echo $instance['background_color'];?>; border-radius: <?php echo $instance['bg_radius']; ?>px;"></i></a></li>
-				<?php	}
-		 	 endforeach; ?>
-		</ul>
-		
-		<?php
-		echo $after_widget;
-	}
-	
-	
+    $title = apply_filters( 'widget_title', $instance['title'] );
+
+    echo esc_html($args['before_widget']);
+
+    if ( !empty( $title ) ) {
+        echo esc_html($args['before_title']) . esc_html( $title ) . esc_html($args['after_title']);
+    }
+    ?>
+
+    <ul>
+        <?php foreach ( $instance['social'] as $item ) : 
+            if ( !empty( $item['url'] ) ) : ?>
+                <li><a class="socicon-<?php echo esc_attr( $item['icon'] ); ?> tool-bounce tool-bottom-left" href="<?php echo esc_url( $item['url'] ); ?>" aria-label="<?php echo esc_attr($item['icon']); ?>" target="_blank" style="font-size: <?php echo esc_attr( $instance['font_size'] ); ?>px;"><i class="fa <?php echo esc_attr( $item['icon'] ); ?>" style="color: <?php echo esc_attr( $instance['color'] ); ?>; background-color: <?php echo esc_attr( $instance['background_color'] ); ?>;  border-radius: <?php echo esc_attr( $instance['bg_radius'] ); ?>px;"></i></a></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+
+    <?php
+    echo esc_html($args['after_widget']);
+}
+
 	
 	// Define social icon List
 	protected function get_social_title( $social_name ) {

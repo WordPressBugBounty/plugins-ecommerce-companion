@@ -1,6 +1,7 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_aromatic_info' ) ) :
-	function ecommerce_comp_aromatic_info() {
+function ecommerce_comp_aromatic_info() {
 	$info2_setting_hs			= get_theme_mod('info2_setting_hs','1');	
 	$info_contents 				= get_theme_mod('info2_contents',aromatic_get_info2_default());
 	if($info2_setting_hs=='1'):
@@ -48,7 +49,7 @@ endif;
 }
 endif;
 if ( function_exists( 'ecommerce_comp_aromatic_info' ) ) {
-$section_priority = apply_filters( 'aromatic_section_priority', 12, 'ecommerce_comp_aromatic_info' );
-add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_info', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'aromatic_section_priority', 12, 'ecommerce_comp_aromatic_info' );
+add_action( 'aromatic_sections', 'ecommerce_comp_aromatic_info', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

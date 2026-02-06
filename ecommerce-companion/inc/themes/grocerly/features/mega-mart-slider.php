@@ -1,5 +1,6 @@
 <?php
-function super_mart_slider_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function ecommerce_companion_super_mart_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Slider Section Panel
@@ -102,7 +103,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class mega_mart_slider__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_slider_section_premium up-to-pro" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_slider_section_premium up-to-pro" href="<?php echo esc_url(mega_mart_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}
@@ -138,7 +139,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'left_content'.$i ,
 		array(
 			'type' => 'hidden',
-			'label' => __('Left content '.$i,'ecommerce-companion'),
+			'label' => __( 'Left content ', 'ecommerce-companion' ). $i ,
 			'section' => 'slider_setting',
 		)
 	);
@@ -171,7 +172,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'left_side_title'.$i, 
 		array(
-			'label'	      => esc_html__( 'Left Title '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Left Title ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -189,7 +190,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'left_side_subtitle'.$i, 
 		array(
-			'label'	      => esc_html__( 'Left Subtitle '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Left Subtitle ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -207,7 +208,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'left_side_btn_lbl'.$i, 
 		array(
-			'label'	      => esc_html__( 'Button Label '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Button Label ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -215,7 +216,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'left_side_btn_link'.$i , 
 			array(
-			'default' => __('','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'mega_mart_sanitize_url',
 		) 
@@ -281,7 +281,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'right_content'.$i ,
 		array(
 			'type' => 'hidden',
-			'label' => __('Right content '.$i,'ecommerce-companion'),
+			'label' => __('Right content ','ecommerce-companion').$i,
 			'section' => 'slider_setting',
 		)
 	);
@@ -314,7 +314,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'right_side_title'.$i, 
 		array(
-			'label'	      => esc_html__( 'Left Title '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Left Title ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -332,7 +332,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'right_side_subtitle'.$i, 
 		array(
-			'label'	      => esc_html__( 'Left Subtitle '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Left Subtitle ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -350,7 +350,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_control(
 	'right_side_btn_lbl'.$i, 
 		array(
-			'label'	      => esc_html__( 'Button Label '.$i, 'ecommerce-companion' ),
+			'label'	      => esc_html__( 'Button Label ', 'ecommerce-companion' ).$i,
 			'section'     => 'slider_setting',
 		) 
 	);
@@ -358,7 +358,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting( 
 		'right_side_btn_link'.$i , 
 			array(
-			'default' => __('','ecommerce-companion'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'mega_mart_sanitize_url',
 		) 
@@ -411,7 +410,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 }
 }
 
-add_action( 'customize_register', 'super_mart_slider_setting' );
+add_action( 'customize_register', 'ecommerce_companion_super_mart_slider_setting' );
 
 //selective refresh
 function mega_mart_slider_section_partials( $wp_customize ){	

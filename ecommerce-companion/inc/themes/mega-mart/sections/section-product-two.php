@@ -1,4 +1,5 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_mega_mart_product_two' ) ) :
 function ecommerce_comp_mega_mart_product_two() {
 $product_two_hs			= get_theme_mod('product_two_hs', '1');
@@ -29,6 +30,8 @@ if( $product_two_hs == '1' ):
 		'post_type' => 'product',
 		'posts_per_page' => -1,
 	);
+	
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 	$args['tax_query'] = array(
 		array(
 			'taxonomy' => 'product_cat',
@@ -44,12 +47,12 @@ if( $product_two_hs == '1' ):
 				<div class="heading-default">
 					<?php if( !empty($product_two_title)): ?>
 					<div class="title">
-						<h5><?php esc_html_e(sprintf(/*Translators: Heading Title */__('%s','ecommerce-companion'),$product_two_title)); ?></h5>
+						<h5><?php echo esc_html($product_two_title); ?></h5>
 					</div>
 					<?php endif; ?>
 					<?php if( !empty($product_two_heading_text)): ?>
 					<div class="heading-text">
-						<p><?php esc_html_e(sprintf(/*Translators: Heading Text */__('%s','ecommerce-companion'),$product_two_heading_text)); ?></p>
+						<p><?php echo esc_html($product_two_heading_text); ?></p>
 					</div>
 					<?php endif; ?>
 					<div class="heading-right">
@@ -58,29 +61,29 @@ if( $product_two_hs == '1' ):
 								<div class="dealsofday-count">
 									<h6 class="days">05</h6>
 								</div>
-								<p><?php esc_html_e('DAY','ecommerce-companion'); ?></p>
+								<p><?php echo esc_html('DAY','ecommerce-companion'); ?></p>
 							</div>
 							<div class="dealsofday-item">
 								<div class="dealsofday-count">
 									<h6 class="hours">15</h6>
 								</div>
-								<p><?php esc_html_e('HRS','ecommerce-companion'); ?></p>
+								<p><?php echo esc_html('HRS','ecommerce-companion'); ?></p>
 							</div>
 							<div class="dealsofday-item">
 								<div class="dealsofday-count">
 									<h6 class="minutes">55</h6>
 								</div>
-								<p><?php esc_html_e('MIN','ecommerce-companion'); ?></p>
+								<p><?php echo esc_html('MIN','ecommerce-companion'); ?></p>
 							</div>
 							<div class="dealsofday-item">
 								<div class="dealsofday-count">
 									<h6 class="seconds">20</h6>
 								</div>
-								<p><?php esc_html_e('SEC','ecommerce-companion'); ?></p>
+								<p><?php echo esc_html('SEC','ecommerce-companion'); ?></p>
 							</div>
 						</div>	
 					<?php if( !empty($product_two_button_title)): ?>						
-						<a href="<?php echo esc_url($product_two_button_link); ?>" class="btn" <?php if($product_two_newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($product_two_newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($product_two_nofollow =='yes') {echo 'nofollow';} ?>"><i class="fa fa-gift"></i> <?php esc_html_e(sprintf(/*Translators: Button Title */__('%s','ecommerce-companion'),$product_two_button_title)); ?></a>
+						<a href="<?php echo esc_url($product_two_button_link); ?>" class="btn" <?php if($product_two_newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($product_two_newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($product_two_nofollow =='yes') {echo 'nofollow';} ?>"><i class="fa fa-gift"></i> <?php echo esc_html($product_two_button_title); ?></a>
 					<?php endif; ?>
 					</div>
 				</div>
@@ -89,7 +92,7 @@ if( $product_two_hs == '1' ):
 				<div class="row">
 					<div class="col-8 col-lg-3 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 					<?php if( !empty($product_two_section_title)): ?>
-						<div class="section-title"><?php esc_html_e(sprintf(/*Translators: Section Title */__('%s','ecommerce-companion'),$product_two_section_title)); ?></div>
+						<div class="section-title"><?php echo esc_html($product_two_section_title); ?></div>
 					<?php endif; ?>
 					</div>
 					<?php if($product_two_hs_tab=='1' && !empty($product_two_cat)): 
@@ -103,10 +106,10 @@ if( $product_two_hs == '1' ):
 								$product_cat_name = get_term_by( 'slug', $product_category, 'product_cat' );
 								?>
 							<?php if($i == '0'){  ?>
-								<a href="javascript:void(0);" data-filter="<?php echo 'product_cat-'.esc_attr($product_category); ?>" class="active" rel="nofollow noopner noreferrer"><?php  echo esc_html__($product_cat_name->name); ?></a>
+								<a href="javascript:void(0);" data-filter="<?php echo 'product_cat-'.esc_attr($product_category); ?>" class="active" rel="nofollow noopner noreferrer"><?php  echo esc_html($product_cat_name->name); ?></a>
 							
 							<?php }else{ ?>		
-								<a href="javascript:void(0);" data-filter="<?php echo 'product_cat-'.esc_attr($product_category); ?>" rel="nofollow noopner noreferrer"><?php  echo esc_html__($product_cat_name->name); ?></a>
+								<a href="javascript:void(0);" data-filter="<?php echo 'product_cat-'.esc_attr($product_category); ?>" rel="nofollow noopner noreferrer"><?php  echo esc_html($product_cat_name->name); ?></a>
 								<?php }} ?>
 							</div>
 						</div>
@@ -122,13 +125,13 @@ if( $product_two_hs == '1' ):
 						<aside class="banner-item bg-1 wow fadeInUp lehr_effect" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<?php if( !empty($product_two_banner_one_title) || !empty($product_two_banner_one_text) ): ?>
 							<div class="banner-content">
-								<h4><?php esc_html_e(sprintf(/*Translators: Banner Title */__('%s','ecommerce-companion'),$product_two_banner_one_title)); ?></h4>
-								<h6><?php esc_html_e(sprintf(/*Translators: Banner Text */__('%s','ecommerce-companion'),$product_two_banner_one_text)); ?></h6>
+								<h4><?php echo esc_html($product_two_banner_one_title); ?></h4>
+								<h6><?php echo esc_html($product_two_banner_one_text); ?></h6>
 							</div>
 						<?php endif; ?>
 						<?php if( !empty($product_two_banner_one_img)): ?>
 							<div class="banner-img">
-								<img src="<?php echo esc_url($product_two_banner_one_img); ?>" alt="<?php esc_html_e(sprintf(/*Translators: Banner Title */__('%s','ecommerce-companion'),$product_two_banner_one_title)); ?>">
+								<img src="<?php echo esc_url($product_two_banner_one_img); ?>" alt="<?php echo esc_attr($product_two_banner_one_title); ?>">
 							</div>               
 						<?php endif; ?>
 						</aside>
@@ -137,13 +140,13 @@ if( $product_two_hs == '1' ):
 						<aside class="banner-item bg-4 wow fadeInUp lehr_effect" data-wow-delay="200ms" data-wow-duration="1500ms">
 							<?php if( !empty($product_two_banner_two_title) || !empty($product_two_banner_two_text) ): ?>
 							<div class="banner-content">
-								<h4><?php esc_html_e(sprintf(/*Translators: Banner Title */__('%s','ecommerce-companion'),$product_two_banner_two_title)); ?></h4>
-								<h6><?php esc_html_e(sprintf(/*Translators: Banner Text */__('%s','ecommerce-companion'),$product_two_banner_two_text)); ?></h6>
+								<h4><?php echo esc_html($product_two_banner_two_title); ?></h4>
+								<h6><?php echo esc_html($product_two_banner_two_text); ?></h6>
 							</div>
 						<?php endif; ?>
 						<?php if( !empty($product_two_banner_two_img)): ?>
 							<div class="banner-img">
-								<img src="<?php echo esc_url($product_two_banner_two_img); ?>" alt="<?php esc_html_e(sprintf(/*Translators: Banner Title */__('%s','ecommerce-companion'),$product_two_banner_two_title)); ?>">
+								<img src="<?php echo esc_url($product_two_banner_two_img); ?>" alt="<?php echo esc_attr($product_two_banner_two_title); ?>">
 							</div>               
 						<?php endif; ?>               
 						</aside>
@@ -182,7 +185,7 @@ if( $product_two_hs == '1' ):
 <?php } endif; } endif; ?>
 <?php
 if ( function_exists( 'ecommerce_comp_mega_mart_product_two' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 17, 'ecommerce_comp_mega_mart_product_two' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_product_two', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 17, 'ecommerce_comp_mega_mart_product_two' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_product_two', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

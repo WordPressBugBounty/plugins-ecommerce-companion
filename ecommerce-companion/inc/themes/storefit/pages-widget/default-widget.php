@@ -1,6 +1,7 @@
 <?php
-$storefit_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/storefit/assets/images/footerlogo.png';
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_storefit_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/storefit/assets/images/footerlogo.png';
+$ecommerce_companion_activate = array(
         'retailsy-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -23,7 +24,7 @@ $activate = array(
     /* the default titles will appear */
 		update_option('widget_text', array(  
 		1 => array('title' => '',
-        'text'=>'<a href="#" class="logo"><img src="'.esc_url($storefit_logo_url).'"></a>
+        'text'=>'<a href="#" class="logo"><img src="'.esc_url($ecommerce_companion_storefit_logo_url).'"></a>
                             <div class="textwidget">
                                 <p class="about-template">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                                     quas recusandae
@@ -54,9 +55,9 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('storefit_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('storefit_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 	set_theme_mod('browse_cat_ttl',__('<i class="fa fa-list-ul"></i> Browse Categories','ecommerce-companion'));
 	set_theme_mod('hdr_contact_ttl','+12 348 567 90');
 	set_theme_mod('hdr_contact_url','#');

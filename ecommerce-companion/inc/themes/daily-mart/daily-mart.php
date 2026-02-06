@@ -1,8 +1,9 @@
 <?php
-/**
+	/**
  * @package Daily Mart
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/daily-mart/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/functions-style.php';

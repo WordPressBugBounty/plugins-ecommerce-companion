@@ -1,14 +1,15 @@
 <?php
-$theme = wp_get_theme();
-if( 'Flow Store' == $theme->name){
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_theme = wp_get_theme();
+if( 'Flow Store' == $ecommerce_companion_theme->name){
 	$flossy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/flow-store/assets/images/logo-dark.png';
-}else if( 'Flexi Mart' == $theme->name){
+}else if( 'Flexi Mart' == $ecommerce_companion_theme->name){
 	$flossy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/flexi-mart/assets/images/logo.png';
 }else{
 	$flossy_logo_url = ECOMMERCE_COMP_PLUGIN_URL .'inc/themes/flossy/assets/images/logo.png';
 }
 
-$activate = array(
+$ecommerce_companion_activate = array(
         'flossy-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -86,9 +87,9 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('flossy_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('flossy_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 	set_theme_mod('browse_cat_ttl',__('<i class="fa fa-list-ul"></i> Browse Categories','ecommerce-companion'));
 	set_theme_mod('hdr_contact_ttl','+12 348 567 90');
 	set_theme_mod('hdr_contact_url','#');
@@ -99,7 +100,7 @@ $activate = array(
 	set_theme_mod('hide_show_offer_code','1');		
 	set_theme_mod('hdr_offer_code_lbl','OFF50%');
 	set_theme_mod('hide_show_contact_us','1');		
-	set_theme_mod('hdr_contact_us_title',__('Call Us'));		
+	set_theme_mod('hdr_contact_us_title',__('Call Us','ecommerce-companion'));		
 	set_theme_mod('hdr_contact_us_number','+70 975 975 70');		
 	set_theme_mod('hdr_contact_us_icon','fa fa-phone');
 ?>

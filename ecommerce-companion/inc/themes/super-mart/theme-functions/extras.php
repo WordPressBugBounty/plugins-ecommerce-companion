@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if(! function_exists('mega_mart_get_testimonial_default')) {
 	function mega_mart_get_testimonial_default() {
 		return apply_filters(

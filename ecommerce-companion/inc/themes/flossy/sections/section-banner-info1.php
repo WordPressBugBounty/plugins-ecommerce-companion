@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_flossy_bannerinfo' ) ) :
 	function ecommerce_comp_flossy_bannerinfo(){
 	$bannerinfo_hs				= get_theme_mod('bannerinfo_hs','1');
@@ -7,11 +8,11 @@
 ?>
 <!-- Start: Banner-section -->
 <section class="product-grid  pt-default bannerinfo-home" id="product-grid11" style="padding-bottom: 24px;">
-	<div class="bg-banner-1 bg-elements"><img src="<?php echo ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-5.png'; ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
+	<div class="bg-banner-1 bg-elements"><img src="<?php echo esc_url(ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-5.png'); ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
 	</div>
-	<div class="bg-banner-2 bg-elements"><img src="<?php echo ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-7.png'; ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
+	<div class="bg-banner-2 bg-elements"><img src="<?php echo esc_url(ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-7.png'); ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
 	</div>
-	<div class="bg-banner-3 bg-elements"><img src="<?php echo ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-13.png'; ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
+	<div class="bg-banner-3 bg-elements"><img src="<?php echo esc_url(ECOMMERCE_COMP_PLUGIN_URL.'inc/themes/flossy/assets/images/bg-elements/element-13.png'); ?>" alt="<?php echo esc_html__('bg-elements','ecommerce-companion'); ?>">
 	</div>
 	<div class="container p-3 p-sm-0">
 		<div class="grid">
@@ -62,6 +63,6 @@
 <?php endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_flossy_bannerinfo' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 11, 'ecommerce_comp_flossy_bannerinfo' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_bannerinfo', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 11, 'ecommerce_comp_flossy_bannerinfo' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_bannerinfo', absint( $ecommerce_companion_section_priority ) );
 }?>

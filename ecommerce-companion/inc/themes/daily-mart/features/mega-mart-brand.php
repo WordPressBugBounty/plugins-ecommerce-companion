@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_brand_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -55,7 +56,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_setting( 'brand_contents', 
 			array(
 			 'sanitize_callback' => 'mega_mart_repeater_sanitize',
-			 'default' => get_brand_default()
+			 'default' => ecommerce_companion_get_brand_default()
 			)
 		);
 		

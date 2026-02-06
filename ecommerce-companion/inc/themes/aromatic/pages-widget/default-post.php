@@ -1,17 +1,18 @@
 <?php
-$MediaId = get_option('aromatic_media_id');
-$title = "Cooking Healthful Joyful";
-$title2 = "Clothing Blog Section Contains";
-$title3 = "How to Have More Focused";
-$content='<p>Here are a few of our primary fashion blog categories.</p>';
-$product_ttl1 = "Bridal Dress";
-$product_ttl2 = "Fit Sopie";
-$product_ttl3 = "Stylish Wear";
-$product_ttl4 = "Smart Watch";
-$product_ttl5 = "Alarm Clock";
-$product_ttl6 = "Camera";
-$product_ttl7 = "Snaeakers";
-$product_ttl8 = "Hat";
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_MediaId = get_option('aromatic_media_id');
+$ecommerce_companion_title = "Cooking Healthful Joyful";
+$ecommerce_companion_title2 = "Clothing Blog Section Contains";
+$ecommerce_companion_title3 = "How to Have More Focused";
+$ecommerce_companion_content='<p>Here are a few of our primary fashion blog categories.</p>';
+$ecommerce_companion_product_ttl1 = "Bridal Dress";
+$ecommerce_companion_product_ttl2 = "Fit Sopie";
+$ecommerce_companion_product_ttl3 = "Stylish Wear";
+$ecommerce_companion_product_ttl4 = "Smart Watch";
+$ecommerce_companion_product_ttl5 = "Alarm Clock";
+$ecommerce_companion_product_ttl6 = "Camera";
+$ecommerce_companion_product_ttl7 = "Snaeakers";
+$ecommerce_companion_product_ttl8 = "Hat";
 
 wp_insert_term(
     'Fashion',
@@ -98,11 +99,11 @@ if ( class_exists( 'woocommerce' ) ) {
 	); 
 
 }
-$postData = array(
+$ecommerce_companion_postData = array(
 				array(
-					'post_title' => $title,
+					'post_aromatic_title' => $ecommerce_companion_title,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(1,16),
@@ -111,9 +112,9 @@ $postData = array(
 					),
 				),
 				array(
-					'post_title' => $title2,
+					'post_aromatic_title' => $ecommerce_companion_title2,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(1,16,17),
@@ -122,9 +123,9 @@ $postData = array(
 					),
 				),
 				array(
-					'post_title' => $title3,
+					'post_aromatic_title' => $ecommerce_companion_title3,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'post',
 					'post_category' => array(1,16,18),
@@ -133,65 +134,65 @@ $postData = array(
 					),
 				),
 				array(
-					'post_title' => $product_ttl1,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl1,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					'post_category' => array(15,17,18)
 				),
 				array(
-					'post_title' => $product_ttl2,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl2,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,19)
 				),
 				array(
-					'post_title' => $product_ttl3,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl3,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,18)
 				),
 				array(
-					'post_title' => $product_ttl4,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl4,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,20)
 				),
 				array(
-					'post_title' => $product_ttl5,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl5,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,18)
 				),
 				array(
-					'post_title' => $product_ttl6,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl6,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,19)
 				),
 				array(
-					'post_title' => $product_ttl7,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl7,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,18)
 				),
 				array(
-					'post_title' => $product_ttl8,
+					'post_aromatic_title' => $ecommerce_companion_product_ttl8,
 					'post_status' => 'publish',
-					'post_content' => $content,
+					'post_aromatic_content' => $ecommerce_companion_content,
 					'post_author' => 1,
 					'post_type'         =>   'product',
 					//'post_category' => array(15,17,20)
@@ -199,10 +200,10 @@ $postData = array(
 			);
 
 kses_remove_filters();
-//foreach ( $MediaId as $media) :
-foreach ( $postData as $i => $postData1) : 
-	$id = wp_insert_post($postData1);
-	set_post_thumbnail( $id, $MediaId[$i + 1] );
+//foreach ( $ecommerce_companion_MediaId as $media) :
+foreach ( $ecommerce_companion_postData as $ecommerce_companion_i=> $ecommerce_companion_postData1) : 
+	$id = wp_insert_post($ecommerce_companion_postData1);
+	set_post_thumbnail( $id, $ecommerce_companion_MediaId[$ecommerce_companion_i+ 1] );
 	
 	if ( class_exists( 'woocommerce' ) ) {
 		if($i>2 && $i<=10){

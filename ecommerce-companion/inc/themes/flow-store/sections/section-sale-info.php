@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	if ( ! function_exists( 'ecommerce_comp_flossy_saleinfo' ) ) :
 	function ecommerce_comp_flossy_saleinfo(){
 	$sale1_hs				= get_theme_mod('sale1_hs','1');
@@ -51,6 +52,6 @@
 	<?php }} endif;
 	
 if ( function_exists( 'ecommerce_comp_flossy_saleinfo' ) ) {
-$section_priority = apply_filters( 'flossy_section_priority', 12, 'ecommerce_comp_flossy_saleinfo' );
-add_action( 'flossy_sections', 'ecommerce_comp_flossy_saleinfo', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'flossy_section_priority', 12, 'ecommerce_comp_flossy_saleinfo' );
+add_action( 'flossy_sections', 'ecommerce_comp_flossy_saleinfo', absint( $ecommerce_companion_section_priority ) );
 }?>

@@ -1,4 +1,5 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_storely_pproducts' ) ) :
 	function ecommerce_comp_storely_pproducts() {
 	$pproduct_hs 					= get_theme_mod('pproduct_hs','1');
@@ -15,6 +16,7 @@ if ( ! function_exists( 'ecommerce_comp_storely_pproducts' ) ) :
 		'posts_per_page' => 500,
 	);
 	if(!empty($popular_product_cat) && !is_customize_preview()):
+	/* phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query -- Small posts_per_page, safe usage */
 	$args['tax_query'] = array(
 		array(
 			'taxonomy' => 'product_cat',
@@ -74,7 +76,7 @@ if ( ! function_exists( 'ecommerce_comp_storely_pproducts' ) ) :
 <?php } endif; }
 endif;
 if ( function_exists( 'ecommerce_comp_storely_pproducts' ) ) {
-$section_priority = apply_filters( 'storely_section_priority', 12, 'ecommerce_comp_storely_pproducts' );
-add_action( 'storely_sections', 'ecommerce_comp_storely_pproducts', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'storely_section_priority', 12, 'ecommerce_comp_storely_pproducts' );
+add_action( 'storely_sections', 'ecommerce_comp_storely_pproducts', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

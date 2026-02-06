@@ -1,7 +1,8 @@
 <?php
-/**
- * @package   Flossy
+	/**
+ * @package   Flow Store
  */
+ if ( ! defined( 'ABSPATH' ) ) exit;
 
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flossy/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/flow-store/sections/above-header.php';

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function retailsy_banner_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -65,7 +66,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class retailsy_banner__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_banner_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php _e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_banner_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php esc_html_e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}

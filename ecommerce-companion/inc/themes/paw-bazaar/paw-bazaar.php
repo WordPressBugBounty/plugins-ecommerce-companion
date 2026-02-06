@@ -1,7 +1,8 @@
 <?php
-/**
+	/**
  * @package   Paw Bazaar
  */
+ if ( ! defined( 'ABSPATH' ) ) exit;
  
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/pet-bazaar/theme-functions/extras.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/storely/theme-functions/functions-style.php';

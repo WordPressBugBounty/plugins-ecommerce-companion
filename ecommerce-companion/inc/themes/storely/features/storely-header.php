@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function ecommerce_storely_header_settings( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 	/*=========================================
@@ -154,7 +155,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		class storely_header_social_premium extends WP_Customize_Control {
 			public function render_content() {
 			?>
-				<a class="customizer_header_social_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php _e('More Icons Available in the Premium Version','ecommerce-companion'); ?></a>			
+				<a class="customizer_header_social_premium up-to-pro" href="<?php echo esc_url(storely_premium_links()); ?>" target="_blank" style="display: none;"><?php esc_html_e('More Icons Available in the Premium Version','ecommerce-companion'); ?></a>			
 			<?php
 			}
 		}

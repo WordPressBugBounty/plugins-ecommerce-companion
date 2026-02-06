@@ -1,4 +1,5 @@
-<?php  
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 	function ecommerce_comp_mega_mart_slider() {
 	$slider 						= get_theme_mod('slider',mega_mart_get_slider_default());
@@ -32,28 +33,28 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 				<aside class="banner-item style-3">
 				<?php if ( ! empty( $image ) ) { ?> 
 					<div class="banner-img">
-						<img src="<?php echo esc_url($image);  ?>" data-img-url="<?php echo esc_url($image);  ?>" alt="<?php esc_html_e('Slider-'.$index,'ecommerce-companion'); ?>"> 
+						<img src="<?php echo esc_url($image);  ?>" data-img-url="<?php echo esc_url($image);  ?>" alt="<?php echo esc_attr('Slider-'.$index); ?>"> 
 					</div>   
 					<?php } ?>
 					<div class="banner-content">
 						<?php  if ( ! empty( $text ) || ! empty( $text2 ) ): ?>
-						<span class="banner-badge style-1 bg-1" data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html(/*Translators: %s: Offer Title */ sprintf(__('%s','ecommerce-companion'),$text)); ?></span>
+						<span class="banner-badge style-1 bg-1" data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html($text); ?></span>
 						<?php endif; ?>
 						<div class="banner-footer">
 							<?php  if ( ! empty( $title ) ): ?>
-							<p class="primary-color" data-animation="fadeInLeft" data-delay="300ms"><?php echo esc_html(/*Translators: %s: Title */ sprintf(__('%s','ecommerce-companion'),$title)); ?></p>
+							<p class="primary-color" data-animation="fadeInLeft" data-delay="300ms"><?php echo esc_html($title); ?></p>
 							<?php endif; ?>
 							
 							<?php  if ( ! empty( $subtitle ) ): ?>
-							<h3 class="secondary-color" data-animation="fadeInLeft" data-delay="450ms"><?php echo esc_html(/*Translators: %s: Subtitle */ sprintf(__('%s','ecommerce-companion'),$subtitle)); ?></h3>
+							<h3 class="secondary-color" data-animation="fadeInLeft" data-delay="450ms"><?php echo esc_html($subtitle); ?></h3>
 							<?php endif; ?>
 							
 							<?php  if (  ! empty( $subtitle2 ) || ! empty( $subtitle2 ) ): ?>
-							<h3 class="secondary-color2" data-animation="fadeInLeft" data-delay="600ms"><?php echo esc_html(/*Translators: %s: Second Subtitle */ sprintf(__('%s %s','ecommerce-companion'),$subtitle2,$subtitle3)); ?></h3>
+							<h3 class="secondary-color2" data-animation="fadeInLeft" data-delay="600ms"><?php echo esc_html($subtitle2.' '.$subtitle3); ?></h3>
 							<?php endif; ?>
 							
 							<?php  if ( ! empty( $button_text ) ): ?>
-							<a href="<?php echo esc_attr($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" class="btn btn-primary more-link" data-animation="fadeInLeft" data-delay="750ms"><span><?php echo esc_html(/*Translators: %s: Button Text*/ sprintf(__('%s','ecommerce-companion'),$button_text )); ?></span> <i class="fa fa-shopping-bag"></i></a>
+							<a href="<?php echo esc_attr($button_link); ?>" <?php if($newtab =='yes') {echo 'target="_blank"'; } ?> rel="<?php if($newtab =='yes') {echo 'noreferrer noopener';} ?> <?php if($nofollow =='yes') {echo 'nofollow';} ?>" class="btn btn-primary more-link" data-animation="fadeInLeft" data-delay="750ms"><span><?php echo esc_html( $button_text ); ?></span> <i class="fa fa-shopping-bag"></i></a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -67,7 +68,7 @@ if ( ! function_exists( 'ecommerce_comp_mega_mart_slider' ) ) :
 } }
 endif;
 if ( function_exists( 'ecommerce_comp_mega_mart_slider' ) ) {
-$section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
-add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'mega_mart_section_priority', 12, 'ecommerce_comp_mega_mart_slider' );
+add_action( 'mega_mart_sections', 'ecommerce_comp_mega_mart_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>

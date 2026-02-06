@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_product_two_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
@@ -184,7 +185,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
     	'product_two_button_link',
     	array(
-	        'default'			=> __('','ecommerce-companion'),
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'mega_mart_sanitize_url',
 			//'transport'         => $selective_refresh,
@@ -276,7 +276,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	'product_two_contentf'.$key,
 		array(
 			'type' => 'hidden',
-			'label' => __('Banner '.$key,'ecommerce-companion'),
+			'label' => sprintf(/* Translators: Banner Serial Number */__('Banner %s','ecommerce-companion'),$key),
 			'section' => 'product_two_setting',
 		)
 	);
@@ -284,7 +284,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_setting(
 			'product_two_banner_'.$key.'_title',
 			array(
-				'default'			=> __($value['title'],'ecommerce-companion'),
+				'default'			=> $value['title'],
 				'capability'     	=> 'edit_theme_options',
 				'sanitize_callback' => 'mega_mart_sanitize_html',
 				//'transport'         => $selective_refresh,
@@ -294,7 +294,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_control( 
 			'product_two_banner_'.$key.'_title',
 			array(
-				'label'   => __('Banner Title '.$key,'ecommerce-companion'),
+				'label'   => sprintf(/* Translators: Title Serial Number */__('Banner Title %s','ecommerce-companion'),$key),
 				'section' => 'product_two_setting',
 				'type'           => 'text',
 			)  
@@ -303,7 +303,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_setting(
 			'product_two_banner_'.$key.'_text',
 			array(
-				'default'			=> __($value['text'],'ecommerce-companion'),
+				'default'			=> $value['text'],
 				'capability'     	=> 'edit_theme_options',
 				'sanitize_callback' => 'mega_mart_sanitize_html',
 				//'transport'         => $selective_refresh,
@@ -313,7 +313,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_control( 
 			'product_two_banner_'.$key.'_text',
 			array(
-				'label'   => __('Banner Text '.$key,'ecommerce-companion'),
+				'label'   => sprintf(/* Translators: Text Serial Number */__('Banner Text %s','ecommerce-companion'),$key),
 				'section' => 'product_two_setting',
 				'type'           => 'text',
 			)  
@@ -330,7 +330,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'product_two_banner_'.$key.'_img' ,
 			array(
-				'label'          => esc_html__( 'Banner Image '.$key, 'ecommerce-companion'),
+				'label'          => sprintf(/* Translators: Image Serial Number */__('Banner Image %s', 'ecommerce-companion'),$key),
 				'section'        => 'product_two_setting',
 			) 
 		));

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 function mega_mart_typography( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';	
 
@@ -106,11 +107,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	/*========================
 	 **** Pro Upgrade ****
 	======================== */
-	class  body_typo__section_upgrade extends WP_Customize_Control {
+	class  ecommerce_companion_body_typo__section_upgrade extends WP_Customize_Control {
 		public function render_content() { 
 			
 		?>
-			<a class="customizer_body_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','clever-fox'); ?></a>
+			<a class="customizer_body_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','ecommerce-companion'); ?></a>
 			
 		<?php }
 	}
@@ -121,7 +122,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'priority' => 5,
 	));
 	$wp_customize->add_control(
-		new  body_typo__section_upgrade(
+		new  ecommerce_companion_body_typo__section_upgrade(
 		$wp_customize,
 		'body_typo_upgrade_to_pro',
 			array(
@@ -544,11 +545,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	 **** Pro Upgrade ****
 	======================== */
 
-	class  heading_typo__section_upgrade extends WP_Customize_Control {
+	class  ecommerce_companion_heading_typo__section_upgrade extends WP_Customize_Control {
 		public function render_content() { 
 			
 		?>
-			<a class="customizer_heading_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','clever-fox'); ?></a>
+			<a class="customizer_heading_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','ecommerce-companion'); ?></a>
 			
 		<?php }
 	}
@@ -559,7 +560,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'priority' => 5,
 	));
 	$wp_customize->add_control(
-		new  heading_typo__section_upgrade(
+		new  ecommerce_companion_heading_typo__section_upgrade(
 		$wp_customize,
 		'heading_typo_upgrade_to_pro',
 			array(
@@ -813,11 +814,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	 **** Pro Upgrade ****
 	======================== */
 
-	class  menu_typo__section_upgrade extends WP_Customize_Control {
+	class  ecommerce_companion_menu_typo__section_upgrade extends WP_Customize_Control {
 		public function render_content() { 
 			
 		?>
-			<a class="customizer_menu_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','clever-fox'); ?></a>
+			<a class="customizer_menu_typo_section_premium up-to-pro" style="padding:9px 0; text-align:center;" href="https://sellerthemes.com/mega-mart-premium/" target="_blank"><?php esc_html_e('Upgrade To Pro For More Features','ecommerce-companion'); ?></a>
 			
 		<?php }
 	}
@@ -828,7 +829,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		'priority' => 5,
 	));
 	$wp_customize->add_control(
-		new  menu_typo__section_upgrade(
+		new  ecommerce_companion_menu_typo__section_upgrade(
 		$wp_customize,
 		'menu_typo_upgrade_to_pro',
 			array(

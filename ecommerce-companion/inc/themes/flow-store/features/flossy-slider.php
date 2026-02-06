@@ -1,5 +1,6 @@
 <?php
-function flow_store_slider_setting( $wp_customize ) {
+if ( ! defined( 'ABSPATH' ) ) exit;
+function ecommerce_companion_flow_store_slider_setting( $wp_customize ) {
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 		
 	/**
@@ -33,10 +34,10 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			
 					
 	//Pro feature
-		class flow_store_slider__section_premium extends WP_Customize_Control {
+		class ecommerce_companion_flow_store_slider__section_premium extends WP_Customize_Control {
 			public function render_content() { 
 			?>
-				<a class="customizer_slider_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php _e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
+				<a class="customizer_slider_section_premium up-to-pro" href="#" target="_blank" style="display: none;"><?php esc_html_e('More Slides Available in the Premium Version','ecommerce-companion'); ?></a>
 				
 			<?php
 			}
@@ -48,7 +49,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'priority' => 5,
 		));
 		$wp_customize->add_control(
-			new flow_store_slider__section_premium(
+			new ecommerce_companion_flow_store_slider__section_premium(
 			$wp_customize,
 			'flossy_slider_premium',
 				array(
@@ -58,4 +59,4 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		);
 }
 
-add_action( 'customize_register', 'flow_store_slider_setting' );
+add_action( 'customize_register', 'ecommerce_companion_flow_store_slider_setting' );

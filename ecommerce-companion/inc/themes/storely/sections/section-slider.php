@@ -1,4 +1,5 @@
 <?php  
+if ( ! defined( 'ABSPATH' ) ) exit;
 if ( ! function_exists( 'ecommerce_comp_storely_slider' ) ) :
 	function ecommerce_comp_storely_slider() {
 	$slider_hs 						= get_theme_mod('slider_hs','1');	
@@ -29,7 +30,7 @@ if ( ! function_exists( 'ecommerce_comp_storely_slider' ) ) :
 					?>
 						<div class="home-slider-info-wrap">
 							<?php if ( ! empty( $image ) ) : ?>
-								<img class="home-slider-image <?php if(!empty($image2)): echo esc_attr_e('side-item-image'); endif; ?>" src="<?php echo esc_url($image); ?>" <?php if ( ! empty( $title ) ) : ?>alt="<?php echo esc_attr($title); ?>"<?php endif; ?>>
+								<img class="home-slider-image <?php if(!empty($image2)): echo esc_attr('side-item-image'); endif; ?>" src="<?php echo esc_url($image); ?>" <?php if ( ! empty( $title ) ) : ?>alt="<?php echo esc_attr($title); ?>"<?php endif; ?>>
 							<?php endif; ?>	
 							<div class="home-slider-info-wrapper">
 								<div class="home-slider-vertical">
@@ -92,8 +93,8 @@ if ( ! function_exists( 'ecommerce_comp_storely_slider' ) ) :
 endif;}
 endif;
 if ( function_exists( 'ecommerce_comp_storely_slider' ) ) {
-$section_priority = apply_filters( 'storely_section_priority', 11, 'ecommerce_comp_storely_slider' );
-add_action( 'storely_sections', 'ecommerce_comp_storely_slider', absint( $section_priority ) );
+$ecommerce_companion_section_priority = apply_filters( 'storely_section_priority', 11, 'ecommerce_comp_storely_slider' );
+add_action( 'storely_sections', 'ecommerce_comp_storely_slider', absint( $ecommerce_companion_section_priority ) );
 }
 ?>
 

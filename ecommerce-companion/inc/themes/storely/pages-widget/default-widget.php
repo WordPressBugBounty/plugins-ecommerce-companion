@@ -1,5 +1,6 @@
 <?php
-$activate = array(
+if ( ! defined( 'ABSPATH' ) ) exit;
+$ecommerce_companion_activate = array(
         'storely-sidebar-primary' => array(
             'search-1',
             'recent-posts-1',
@@ -24,7 +25,7 @@ $activate = array(
 			1 => array('title' => 'Search'), 
 			2 => array('title' => 'Search')));	
 		
-    update_option('sidebars_widgets',  $activate);
-	$MediaId = get_option('storely_media_id');
-	set_theme_mod( 'custom_logo', $MediaId[0] );
+    update_option('sidebars_widgets',  $ecommerce_companion_activate);
+	$ecommerce_companion_MediaId = get_option('storely_media_id');
+	set_theme_mod( 'custom_logo', $ecommerce_companion_MediaId[0] );
 ?>

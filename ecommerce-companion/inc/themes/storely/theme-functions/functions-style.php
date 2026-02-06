@@ -6,6 +6,7 @@
  * @param  [string] $ext css value extension, eg. px, in, pc
  * @return [string]
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 function storely_media_range( $css_prop, $obj_value, $default, $media = 'desktop', $ext = '' ) {
     if( is_string( $obj_value ) && is_array( json_decode( $obj_value, true ) ) ){
         /* It means that we have media queries active */
