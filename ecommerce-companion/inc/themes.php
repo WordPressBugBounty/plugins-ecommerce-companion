@@ -90,3 +90,6 @@ $ecommerce_companion_theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Electromix' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/electromix.php';
 	}
+	if( 'Electromix Digital' == $ecommerce_companion_theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-digital/electromix-digital.php';
+	}
