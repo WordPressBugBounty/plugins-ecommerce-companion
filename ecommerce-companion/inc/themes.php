@@ -96,3 +96,6 @@ $ecommerce_companion_theme = wp_get_theme(); // Gets the Current Theme Name
 	if( 'Electromix Tech' == $ecommerce_companion_theme->name){
 		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-tech/electromix-tech.php';
 	}
+	if( 'Electromix Store' == $ecommerce_companion_theme->name){
+		require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-store/electromix-store.php';
+	}

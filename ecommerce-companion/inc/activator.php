@@ -58,7 +58,7 @@ class eCommerce_Comapnion_Activator {
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/mega-mart/pages-widget/default-post.php';
 			}
 				
-			if ( 'Electromix' == $theme->name || 'Electromix Digital' == $theme->name || 'Electromix Tech' == $theme->name ){
+			if ( 'Electromix' == $theme->name || 'Electromix Digital' == $theme->name || 'Electromix Tech' == $theme->name || 'Electromix Store' == $theme->name ){
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/pages-widget/upload-media.php';
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/pages-widget/home-page.php';
 				require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/pages-widget/default-widget.php';
