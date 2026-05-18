@@ -4,7 +4,7 @@ Tags: homepage setup, companion, one click demo, sections, customizer
 Requires at least: 6.0 or higher
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 8.1.66
+Stable tag: 8.1.67
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -51,6 +51,7 @@ You can check out our themes demo <a href="https://sellerthemes/themes" rel="nof
 - [Grocerly](https://wordpress.org/themes/grocerly/)			- [Free Demo](https://preview.sellerthemes.com/lite/grocerly/)
 - [Daily Mart](https://wordpress.org/themes/daily-mart/)		- [Free Demo](https://preview.sellerthemes.com/lite/daily-mart/)
 - [Electromix](https://wordpress.org/themes/electromix/)		- [Free Demo](https://preview.sellerthemes.com/lite/electromix/)
+- [Electromix Digital](https://wordpress.org/themes/electromix-digital/)		- [Free Demo](https://preview.sellerthemes.com/lite/electromix-digital/)
 
 
 == Installation ==
@@ -99,6 +100,7 @@ Yes, This plugin is specially make for Seller Themes. You can install theme for 
 - [Grocerly](https://wordpress.org/themes/grocerly/)
 - [Daily Mart](https://wordpress.org/themes/daily-mart/)
 - [Electromix](https://wordpress.org/themes/electromix/)
+- [Electromix Digital](https://wordpress.org/themes/electromix-digital/)
 
 == Screenshots ==
 
@@ -124,6 +126,9 @@ eCommerce Companion WordPress plugin is licensed under the GPL3 (https://www.gnu
 
 
 == Changelog ==
+
+= 8.1.67 =
+* Readme Updated
 
 = 8.1.66 =
 * Readme Updated
