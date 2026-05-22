@@ -10,9 +10,8 @@ require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/theme-functions/dynam
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-product-one.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-slider.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-product-two.php';
-require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-digital/features/electromix-info.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-cat-one.php';
-require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-digital/features/electromix-banner.php';
+require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-digital/features/electromix-banner2.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-products-slider.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix/features/electromix-banner3.php';
 require ECOMMERCE_COMP_PLUGIN_DIR . 'inc/themes/electromix-tech/features/electromix-products-slider-two.php';
