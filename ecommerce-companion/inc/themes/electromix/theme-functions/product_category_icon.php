@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Electromix Product Category Icon Meta
  */
@@ -8,9 +9,9 @@ add_action( 'product_cat_add_form_fields', 'electromix_product_taxonomy_add_new_
 function electromix_product_taxonomy_add_new_meta_field() {
     ?>
     <div class="form-field">
-        <label for="electromix_product_cat_icon"><?php esc_html_e( 'Icon', 'electromix' ); ?></label>
+        <label for="electromix_product_cat_icon"><?php esc_html_e( 'Icon', 'ecommerce-companion' ); ?></label>
         <input type="text" name="electromix_product_cat_icon" id="electromix_product_cat_icon" value="">
-        <p class="description"><?php esc_html_e( 'Example: fa-moon', 'electromix' ); ?></p>
+        <p class="description"><?php esc_html_e( 'Example: fa-moon', 'ecommerce-companion' ); ?></p>
         <?php wp_nonce_field( 'electromix_product_cat_icon_save', 'electromix_product_cat_icon_nonce' ); ?>
     </div>
     <?php
@@ -24,11 +25,11 @@ function electromix_product_taxonomy_edit_meta_field( $term ) {
     ?>
     <tr class="form-field">
         <th scope="row" valign="top">
-            <label for="electromix_product_cat_icon"><?php esc_html_e( 'Icon', 'electromix' ); ?></label>
+            <label for="electromix_product_cat_icon"><?php esc_html_e( 'Icon', 'ecommerce-companion' ); ?></label>
         </th>
         <td>
             <input type="text" name="electromix_product_cat_icon" id="electromix_product_cat_icon" value="<?php echo esc_attr( $electromix_product_cat_icon ); ?>">
-            <p class="description"><?php esc_html_e( 'Example: fa-moon', 'electromix' ); ?></p>
+            <p class="description"><?php esc_html_e( 'Example: fa-moon', 'ecommerce-companion' ); ?></p>
             <?php wp_nonce_field( 'electromix_product_cat_icon_save', 'electromix_product_cat_icon_nonce' ); ?>
         </td>
     </tr>
@@ -47,7 +48,7 @@ function electromix_save_taxonomy_product_meta( $term_id ) {
 
     // Nonce verification
     if ( ! isset( $_POST['electromix_product_cat_icon_nonce'] ) || 
-         ! wp_verify_nonce( $_POST['electromix_product_cat_icon_nonce'], 'electromix_product_cat_icon_save' ) ) {
+         ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['electromix_product_cat_icon_nonce'] ) ), 'electromix_product_cat_icon_save' ) ) {
         return;
     }
 
